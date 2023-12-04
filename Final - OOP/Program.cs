@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Final___OOP.winform;
+using Final___OOP.winform.student;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace Final___OOP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Menu_student());
         }
     }
 }
