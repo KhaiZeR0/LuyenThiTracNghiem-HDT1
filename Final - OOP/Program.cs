@@ -18,7 +18,7 @@ namespace Final___OOP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu_student());
+            Application.Run(new Menu());
         }
     }
 }
