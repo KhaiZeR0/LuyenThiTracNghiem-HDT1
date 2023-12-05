@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Final___OOP.winform.Admin
+namespace Final___OOP
 {
-    public partial class Menu : Form
+    public partial class menuAdmin : Form
     {
-        public Menu()
+        public menuAdmin()
         {
             InitializeComponent();
         }
-
-
     }
 }
