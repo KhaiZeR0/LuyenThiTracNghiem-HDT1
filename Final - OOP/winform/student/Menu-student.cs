@@ -16,5 +16,6 @@ namespace Final___OOP.winform.student
         {
             InitializeComponent();
         }
+
     }
 }
