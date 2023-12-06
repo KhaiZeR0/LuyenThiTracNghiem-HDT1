@@ -187,11 +187,23 @@
     <Compile Include="winform\login\passenter-reset.Designer.cs">
       <DependentUpon>passenter-reset.cs</DependentUpon>
     </Compile>
+    <Compile Include="winform\student\CourseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winform\student\CourseScreen.Designer.cs">
+      <DependentUpon>CourseScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="winform\student\Menu-student.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="winform\student\Menu-student.Designer.cs">
       <DependentUpon>Menu-student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winform\Teacher\menuTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winform\Teacher\menuTeacher.Designer.cs">
+      <DependentUpon>menuTeacher.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,8 +228,14 @@
     <EmbeddedResource Include="winform\login\passenter-reset.resx">
       <DependentUpon>passenter-reset.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="winform\student\CourseScreen.resx">
+      <DependentUpon>CourseScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="winform\student\Menu-student.resx">
       <DependentUpon>Menu-student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winform\Teacher\menuTeacher.resx">
+      <DependentUpon>menuTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
