@@ -9,57 +9,64 @@ GO
 
 CREATE TABLE Lophoc
 (
-	MaLop char primary key,
-	tenLop char
+	MaLop CHAR PRIMARY KEY,
+	TenLop CHAR
 );
 GO
 CREATE TABLE MonHoc
 (
-	MaMH char primary key,
-	tenMH char
+	MaMH CHAR PRIMARY KEY,
+	TenMH CHAR
 );
 GO
 CREATE TABLE Chuong
 (
-	MaChuong char primary key,
-	TenChuong char,
-	MaMH char not null
+	MaChuong CHAR PRIMARY KEY,
+	TenChuong CHAR NOT NULL,
+	MaMH CHAR,
+	CONSTRAINT fk_MonHoc_Chuong FOREIGN KEY (MaMH) REFERENCES MonHoc(MaMH)
 );
 GO
 CREATE TABLE TaiKhoan
 (
-	maTK char primary key,
-	email char not null,
-	matKhau char not null,
-	GioiTinh bit not null,
-	NgaySinh date not null,
-	NienKhoa char,
-	LoaiTK char(1) not null,
-	MaLop char
+	MaTK CHAR PRIMARY KEY,
+	TenTK VARCHAR NOT NULL,
+	MatKhau CHAR NOT NULL,
+	Email CHAR NOT NULL,
+	GioiTinh BIT NOT NULL,
+	NgaySinh DATE NOT NULL,
+	LoaiTK CHAR(1) NOT NULL,
+	MaLop CHAR,
+	CONSTRAINT fk_TaiKhoan_LopHoc FOREIGN KEY (MaLop) REFERENCES LopHoc(MaLop)
 );
 GO
 CREATE TABLE Cauhoi
 (
-	MaCauHoi char primary key,
-	NoiDungCauHoi nvarchar not null,
-	dapanA nvarchar not null,
-	dapanB nvarchar not null,
-	dapanC nvarchar not null,
-	dapanD nvarchar not null,
-	dapanDung nvarchar not null,
-	MaCHuong char
+	MaCauHoi CHAR PRIMARY KEY,
+	NoiDungCauHoi NVARCHAR NOT NULL,
+	DapanA NVARCHAR NOT NULL,
+	DapanB NVARCHAR NOT NULL,
+	DapanC NVARCHAR NOT NULL,
+	DapanD NVARCHAR NOT NULL,
+	DapanDung NVARCHAR NOT NULL,
+	MaChuong CHAR,
+	CONSTRAINT fk_CauHoi_Chuong FOREIGN KEY (MaChuong) REFERENCES Chuong(MaChuong)
 );
 CREATE TABLE DeThi
 (
-	MaDeThi char primary key,
-	TenDeThi nvarchar not null,
-	MaCauHoi char,
-	TGlambai time,
-	SoLuongCau int
+	MaDeThi CHAR PRIMARY KEY,
+	TenDeThi NVARCHAR NOT NULL,
+	TGlambai TIME,
+	SoLuongCau INT,
+	MaCauHoi CHAR,
+	CONSTRAINT fk_DeThi_CauHoi FOREIGN KEY (MaCauHoi) REFERENCES CauHoi(MaCauHoi)
 );
 CREATE TABLE BaiLam
 (
-	MaBaiLam char primary key,
-	MaHS char,
-	DapanDaChon nvarchar
+	MaBaiLam CHAR PRIMARY KEY,
+	MaHS CHAR,
+	DapanDaChon NVARCHAR,
+	TrangThai BIT,
+	CONSTRAINT fk_BaiLam_TaiKhoan FOREIGN KEY (MaHS) REFERENCES TaiKhoan(MaTK)
+
 );
