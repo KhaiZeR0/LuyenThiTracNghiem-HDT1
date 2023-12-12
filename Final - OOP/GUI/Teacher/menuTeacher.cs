@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Final___OOP.winform
+namespace Final___OOP.winform.Teacher
 {
-    public partial class passenter_reset : Form
+    public partial class menuTeacher : Form
     {
-        public passenter_reset()
+        public menuTeacher()
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Final___OOP.winform.Teacher
+namespace Final___OOP.winform
 {
-    public partial class menuTeacher : Form
+    public partial class login : Form
     {
-        public menuTeacher()
+        public login()
         {
             InitializeComponent();
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

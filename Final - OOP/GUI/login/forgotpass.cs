@@ -21,5 +21,20 @@ namespace Final___OOP.winform
         {
 
         }
+
+        private void btnotp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbconfirm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbemail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
