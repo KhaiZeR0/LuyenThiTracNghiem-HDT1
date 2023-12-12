@@ -166,7 +166,6 @@
     <Compile Include="Chuong.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\login\forgot.cs" />
     <Compile Include="DeThi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
@@ -317,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
+    <Folder Include="DAO\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ThiTracNghiemModel.Context.tt">
