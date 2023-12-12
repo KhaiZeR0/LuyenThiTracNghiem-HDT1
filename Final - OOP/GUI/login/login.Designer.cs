@@ -105,6 +105,7 @@
             this.linkforgot.TabIndex = 6;
             this.linkforgot.TabStop = true;
             this.linkforgot.Text = "Quên mật khẩu?";
+            this.linkforgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkforgot_LinkClicked);
             // 
             // login
             // 

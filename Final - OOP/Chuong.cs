@@ -17,7 +17,7 @@ namespace Final___OOP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Chuong()
         {
-            this.Cauhois = new HashSet<Cauhoi>();
+            this.Cauhoi = new HashSet<Cauhoi>();
         }
     
         public string MaChuong { get; set; }
@@ -25,7 +25,7 @@ namespace Final___OOP
         public string MaMH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cauhoi> Cauhois { get; set; }
+        public virtual ICollection<Cauhoi> Cauhoi { get; set; }
         public virtual MonHoc MonHoc { get; set; }
     }
 }

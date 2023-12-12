@@ -17,16 +17,16 @@ namespace Final___OOP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MonHoc()
         {
-            this.Chuongs = new HashSet<Chuong>();
-            this.DeThis = new HashSet<DeThi>();
+            this.Chuong = new HashSet<Chuong>();
+            this.DeThi = new HashSet<DeThi>();
         }
     
         public string MaMH { get; set; }
         public string TenMH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Chuong> Chuongs { get; set; }
+        public virtual ICollection<Chuong> Chuong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DeThi> DeThis { get; set; }
+        public virtual ICollection<DeThi> DeThi { get; set; }
     }
 }

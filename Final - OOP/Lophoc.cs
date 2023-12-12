@@ -17,16 +17,16 @@ namespace Final___OOP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lophoc()
         {
-            this.DeThis = new HashSet<DeThi>();
-            this.ThongTinSVs = new HashSet<ThongTinSV>();
+            this.DeThi = new HashSet<DeThi>();
+            this.ThongTinSV = new HashSet<ThongTinSV>();
         }
     
         public string MaLop { get; set; }
         public string TenLop { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DeThi> DeThis { get; set; }
+        public virtual ICollection<DeThi> DeThi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinSV> ThongTinSVs { get; set; }
+        public virtual ICollection<ThongTinSV> ThongTinSV { get; set; }
     }
 }

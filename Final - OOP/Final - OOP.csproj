@@ -160,12 +160,16 @@
     <Compile Include="BaiLam.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS\resetPassBUS.cs" />
+    <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="Cauhoi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Chuong.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\resetPassDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DeThi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
@@ -213,20 +217,17 @@
     <Compile Include="GUI\student\CourseScreen.Designer.cs">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\student\Menu-student.cs">
+    <Compile Include="GUI\student\Menustudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\student\Menu-student.Designer.cs">
-      <DependentUpon>Menu-student.cs</DependentUpon>
+    <Compile Include="GUI\student\Menustudent.Designer.cs">
+      <DependentUpon>Menustudent.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Teacher\menuTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Teacher\menuTeacher.Designer.cs">
       <DependentUpon>menuTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
@@ -278,8 +279,8 @@
     <EmbeddedResource Include="GUI\student\CourseScreen.resx">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\student\Menu-student.resx">
-      <DependentUpon>Menu-student.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\student\Menustudent.resx">
+      <DependentUpon>Menustudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Teacher\menuTeacher.resx">
       <DependentUpon>menuTeacher.cs</DependentUpon>
@@ -314,9 +315,9 @@
   <ItemGroup>
     <None Include="Resources\007fff.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="BUS\" />
-    <Folder Include="DAO\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ThiTracNghiemModel.Context.tt">
@@ -329,9 +330,6 @@
       <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
       <LastGenOutput>ThiTracNghiemModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -17,7 +17,7 @@ namespace Final___OOP
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DeThi()
         {
-            this.BaiLams = new HashSet<BaiLam>();
+            this.BaiLam = new HashSet<BaiLam>();
         }
     
         public string MaDeThi { get; set; }
@@ -30,7 +30,7 @@ namespace Final___OOP
         public string MaMH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BaiLam> BaiLams { get; set; }
+        public virtual ICollection<BaiLam> BaiLam { get; set; }
         public virtual Lophoc Lophoc { get; set; }
         public virtual MonHoc MonHoc { get; set; }
         public virtual ThongTinCB ThongTinCB { get; set; }
