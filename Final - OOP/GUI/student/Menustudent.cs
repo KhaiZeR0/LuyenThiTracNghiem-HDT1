@@ -17,5 +17,14 @@ namespace Final___OOP.winform.student
             InitializeComponent();
         }
 
+        private void btnthipages_Click(object sender, EventArgs e)
+        {
+            studentPages.PageIndex = 2;
+        }
+
+        private void btnketquapage_Click(object sender, EventArgs e)
+        {
+            studentPages.PageIndex = 1;
+        }
     }
 }

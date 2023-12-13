@@ -32,7 +32,6 @@ namespace Final___OOP.winform
                 {
                     if (taiKhoanBUS.KiemTraLoaiTaiKhoan(email))
                     {
-                        MessageBox.Show("Đăng nhập thành công");
                     }
                     else
                     {

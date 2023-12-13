@@ -17,6 +17,19 @@ namespace Final___OOP.winform.Teacher
             InitializeComponent();
         }
 
-        
+        private void btntracuu_Click(object sender, EventArgs e)
+        {
+            teacherPages.PageIndex = 1;
+        }
+
+        private void btnQLCHpage_Click(object sender, EventArgs e)
+        {
+            teacherPages.PageIndex = 2;
+        }
+
+        private void btndethipage_Click(object sender, EventArgs e)
+        {
+            teacherPages.PageIndex = 3;
+        }
     }
 }

@@ -48,12 +48,22 @@ namespace Final___OOP
 
         private void btnXoaSV_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnchung_Click(object sender, EventArgs e)
         {
             ADpages.PageIndex = 3;
+        }
+
+        private void btnQLSV_Click(object sender, EventArgs e)
+        {
+            ADpages.PageIndex = 1;
+        }
+
+        private void btnQLGV_Click(object sender, EventArgs e)
+        {
+            ADpages.PageIndex = 2;
         }
     }
 }

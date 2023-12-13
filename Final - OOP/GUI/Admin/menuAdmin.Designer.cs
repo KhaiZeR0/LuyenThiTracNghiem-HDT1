@@ -120,6 +120,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.ADpages = new Bunifu.UI.WinForms.BunifuPages();
+            this.blank = new System.Windows.Forms.TabPage();
             this.QLSV = new System.Windows.Forms.TabPage();
             this.dtpNgaySinhSV = new System.Windows.Forms.DateTimePicker();
             this.rbNuSV = new System.Windows.Forms.RadioButton();
@@ -188,7 +189,6 @@
             this.bunifuTextBox10 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuTextBox9 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.blank = new System.Windows.Forms.TabPage();
             this.btnchung = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnQLSV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnQLGV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -209,7 +209,7 @@
             // ADpages
             // 
             this.ADpages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.ADpages.AllowTransitions = true;
+            this.ADpages.AllowTransitions = false;
             this.ADpages.Controls.Add(this.blank);
             this.ADpages.Controls.Add(this.QLSV);
             this.ADpages.Controls.Add(this.QLGV);
@@ -217,12 +217,12 @@
             this.ADpages.Location = new System.Drawing.Point(142, 0);
             this.ADpages.Multiline = true;
             this.ADpages.Name = "ADpages";
-            this.ADpages.Page = this.blank;
-            this.ADpages.PageIndex = 0;
-            this.ADpages.PageName = "blank";
-            this.ADpages.PageTitle = "blank";
+            this.ADpages.Page = this.QLGV;
+            this.ADpages.PageIndex = 2;
+            this.ADpages.PageName = "QLGV";
+            this.ADpages.PageTitle = "Quản lý giảng viên";
             this.ADpages.SelectedIndex = 0;
-            this.ADpages.Size = new System.Drawing.Size(1111, 726);
+            this.ADpages.Size = new System.Drawing.Size(942, 726);
             this.ADpages.TabIndex = 1;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -241,6 +241,16 @@
             animation1.TransparencyCoeff = 0F;
             this.ADpages.Transition = animation1;
             this.ADpages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
+            // 
+            // blank
+            // 
+            this.blank.Location = new System.Drawing.Point(4, 4);
+            this.blank.Name = "blank";
+            this.blank.Padding = new System.Windows.Forms.Padding(3);
+            this.blank.Size = new System.Drawing.Size(934, 700);
+            this.blank.TabIndex = 5;
+            this.blank.Text = "blank";
+            this.blank.UseVisualStyleBackColor = true;
             // 
             // QLSV
             // 
@@ -265,8 +275,8 @@
             this.QLSV.Controls.Add(this.cbLopSV);
             this.QLSV.Location = new System.Drawing.Point(4, 4);
             this.QLSV.Name = "QLSV";
-            this.QLSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.QLSV.Size = new System.Drawing.Size(1103, 700);
+            this.QLSV.Padding = new System.Windows.Forms.Padding(3);
+            this.QLSV.Size = new System.Drawing.Size(934, 700);
             this.QLSV.TabIndex = 0;
             this.QLSV.Text = "Quản lý sinh viên";
             this.QLSV.UseVisualStyleBackColor = true;
@@ -275,7 +285,7 @@
             // 
             this.dtpNgaySinhSV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinhSV.Location = new System.Drawing.Point(179, 297);
-            this.dtpNgaySinhSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgaySinhSV.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgaySinhSV.Name = "dtpNgaySinhSV";
             this.dtpNgaySinhSV.Size = new System.Drawing.Size(261, 20);
             this.dtpNgaySinhSV.TabIndex = 26;
@@ -284,7 +294,7 @@
             // 
             this.rbNuSV.AutoSize = true;
             this.rbNuSV.Location = new System.Drawing.Point(327, 459);
-            this.rbNuSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbNuSV.Margin = new System.Windows.Forms.Padding(2);
             this.rbNuSV.Name = "rbNuSV";
             this.rbNuSV.Size = new System.Drawing.Size(39, 17);
             this.rbNuSV.TabIndex = 25;
@@ -296,7 +306,7 @@
             // 
             this.rbNamSV.AutoSize = true;
             this.rbNamSV.Location = new System.Drawing.Point(198, 459);
-            this.rbNamSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbNamSV.Margin = new System.Windows.Forms.Padding(2);
             this.rbNamSV.Name = "rbNamSV";
             this.rbNamSV.Size = new System.Drawing.Size(47, 17);
             this.rbNamSV.TabIndex = 24;
@@ -372,7 +382,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDiaChiSV.OnIdleState = stateProperties4;
-            this.txtDiaChiSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtDiaChiSV.Padding = new System.Windows.Forms.Padding(3);
             this.txtDiaChiSV.PasswordChar = '\0';
             this.txtDiaChiSV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtDiaChiSV.PlaceholderText = "Enter text";
@@ -867,7 +877,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtEmailSV.OnIdleState = stateProperties8;
-            this.txtEmailSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtEmailSV.Padding = new System.Windows.Forms.Padding(3);
             this.txtEmailSV.PasswordChar = '\0';
             this.txtEmailSV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtEmailSV.PlaceholderText = "Enter text";
@@ -941,7 +951,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtMaSV.OnIdleState = stateProperties12;
-            this.txtMaSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtMaSV.Padding = new System.Windows.Forms.Padding(3);
             this.txtMaSV.PasswordChar = '\0';
             this.txtMaSV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtMaSV.PlaceholderText = "Enter text";
@@ -1015,7 +1025,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtTenSV.OnIdleState = stateProperties16;
-            this.txtTenSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtTenSV.Padding = new System.Windows.Forms.Padding(3);
             this.txtTenSV.PasswordChar = '\0';
             this.txtTenSV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTenSV.PlaceholderText = "Enter text";
@@ -1099,8 +1109,8 @@
             this.QLGV.Controls.Add(this.txtHotenGV);
             this.QLGV.Location = new System.Drawing.Point(4, 4);
             this.QLGV.Name = "QLGV";
-            this.QLGV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.QLGV.Size = new System.Drawing.Size(1103, 700);
+            this.QLGV.Padding = new System.Windows.Forms.Padding(3);
+            this.QLGV.Size = new System.Drawing.Size(934, 700);
             this.QLGV.TabIndex = 1;
             this.QLGV.Text = "Quản lý giảng viên";
             this.QLGV.UseVisualStyleBackColor = true;
@@ -1109,7 +1119,7 @@
             // 
             this.dtpNgaySinhGV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinhGV.Location = new System.Drawing.Point(183, 341);
-            this.dtpNgaySinhGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgaySinhGV.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgaySinhGV.Name = "dtpNgaySinhGV";
             this.dtpNgaySinhGV.Size = new System.Drawing.Size(261, 20);
             this.dtpNgaySinhGV.TabIndex = 44;
@@ -1118,7 +1128,7 @@
             // 
             this.rbNuGV.AutoSize = true;
             this.rbNuGV.Location = new System.Drawing.Point(332, 471);
-            this.rbNuGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbNuGV.Margin = new System.Windows.Forms.Padding(2);
             this.rbNuGV.Name = "rbNuGV";
             this.rbNuGV.Size = new System.Drawing.Size(39, 17);
             this.rbNuGV.TabIndex = 43;
@@ -1130,7 +1140,7 @@
             // 
             this.rbNamGV.AutoSize = true;
             this.rbNamGV.Location = new System.Drawing.Point(202, 471);
-            this.rbNamGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbNamGV.Margin = new System.Windows.Forms.Padding(2);
             this.rbNamGV.Name = "rbNamGV";
             this.rbNamGV.Size = new System.Drawing.Size(47, 17);
             this.rbNamGV.TabIndex = 42;
@@ -1206,7 +1216,7 @@
             stateProperties20.ForeColor = System.Drawing.Color.Empty;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDiaChiGV.OnIdleState = stateProperties20;
-            this.txtDiaChiGV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtDiaChiGV.Padding = new System.Windows.Forms.Padding(3);
             this.txtDiaChiGV.PasswordChar = '\0';
             this.txtDiaChiGV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtDiaChiGV.PlaceholderText = "Enter text";
@@ -1682,7 +1692,7 @@
             stateProperties24.ForeColor = System.Drawing.Color.Empty;
             stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.btnEmailGV.OnIdleState = stateProperties24;
-            this.btnEmailGV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.btnEmailGV.Padding = new System.Windows.Forms.Padding(3);
             this.btnEmailGV.PasswordChar = '\0';
             this.btnEmailGV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.btnEmailGV.PlaceholderText = "Enter text";
@@ -1756,7 +1766,7 @@
             stateProperties28.ForeColor = System.Drawing.Color.Empty;
             stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.btnMaGV.OnIdleState = stateProperties28;
-            this.btnMaGV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.btnMaGV.Padding = new System.Windows.Forms.Padding(3);
             this.btnMaGV.PasswordChar = '\0';
             this.btnMaGV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.btnMaGV.PlaceholderText = "Enter text";
@@ -1830,7 +1840,7 @@
             stateProperties32.ForeColor = System.Drawing.Color.Empty;
             stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtHotenGV.OnIdleState = stateProperties32;
-            this.txtHotenGV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtHotenGV.Padding = new System.Windows.Forms.Padding(3);
             this.txtHotenGV.PasswordChar = '\0';
             this.txtHotenGV.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtHotenGV.PlaceholderText = "Enter text";
@@ -1858,8 +1868,8 @@
             this.chung.Controls.Add(this.groupBox5);
             this.chung.Location = new System.Drawing.Point(4, 4);
             this.chung.Name = "chung";
-            this.chung.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.chung.Size = new System.Drawing.Size(1103, 700);
+            this.chung.Padding = new System.Windows.Forms.Padding(3);
+            this.chung.Size = new System.Drawing.Size(934, 700);
             this.chung.TabIndex = 4;
             this.chung.Text = "Chung";
             this.chung.UseVisualStyleBackColor = true;
@@ -2172,7 +2182,7 @@
             stateProperties36.ForeColor = System.Drawing.Color.Empty;
             stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox24.OnIdleState = stateProperties36;
-            this.bunifuTextBox24.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.bunifuTextBox24.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox24.PasswordChar = '\0';
             this.bunifuTextBox24.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox24.PlaceholderText = "Enter text";
@@ -2365,7 +2375,7 @@
             stateProperties40.ForeColor = System.Drawing.Color.Empty;
             stateProperties40.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox25.OnIdleState = stateProperties40;
-            this.bunifuTextBox25.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.bunifuTextBox25.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox25.PasswordChar = '\0';
             this.bunifuTextBox25.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox25.PlaceholderText = "Enter text";
@@ -2664,7 +2674,7 @@
             stateProperties44.ForeColor = System.Drawing.Color.Empty;
             stateProperties44.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox11.OnIdleState = stateProperties44;
-            this.bunifuTextBox11.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.bunifuTextBox11.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox11.PasswordChar = '\0';
             this.bunifuTextBox11.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox11.PlaceholderText = "Enter text";
@@ -2827,7 +2837,7 @@
             stateProperties48.ForeColor = System.Drawing.Color.Empty;
             stateProperties48.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox12.OnIdleState = stateProperties48;
-            this.bunifuTextBox12.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.bunifuTextBox12.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox12.PasswordChar = '\0';
             this.bunifuTextBox12.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox12.PlaceholderText = "Enter text";
@@ -3379,7 +3389,7 @@
             stateProperties52.ForeColor = System.Drawing.Color.Empty;
             stateProperties52.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox10.OnIdleState = stateProperties52;
-            this.bunifuTextBox10.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.bunifuTextBox10.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox10.PasswordChar = '\0';
             this.bunifuTextBox10.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox10.PlaceholderText = "Enter text";
@@ -3469,7 +3479,7 @@
             stateProperties56.ForeColor = System.Drawing.Color.Empty;
             stateProperties56.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox9.OnIdleState = stateProperties56;
-            this.bunifuTextBox9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.bunifuTextBox9.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox9.PasswordChar = '\0';
             this.bunifuTextBox9.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox9.PlaceholderText = "Enter text";
@@ -3489,16 +3499,6 @@
             this.bunifuTextBox9.TextPlaceholder = "Enter text";
             this.bunifuTextBox9.UseSystemPasswordChar = false;
             this.bunifuTextBox9.WordWrap = true;
-            // 
-            // blank
-            // 
-            this.blank.Location = new System.Drawing.Point(4, 4);
-            this.blank.Name = "blank";
-            this.blank.Padding = new System.Windows.Forms.Padding(3);
-            this.blank.Size = new System.Drawing.Size(1103, 700);
-            this.blank.TabIndex = 5;
-            this.blank.Text = "blank";
-            this.blank.UseVisualStyleBackColor = true;
             // 
             // btnchung
             // 
@@ -3678,6 +3678,7 @@
             this.btnQLSV.TextMarginLeft = 0;
             this.btnQLSV.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnQLSV.UseDefaultRadiusAndThickness = true;
+            this.btnQLSV.Click += new System.EventHandler(this.btnQLSV_Click);
             // 
             // btnQLGV
             // 
@@ -3767,6 +3768,7 @@
             this.btnQLGV.TextMarginLeft = 0;
             this.btnQLGV.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnQLGV.UseDefaultRadiusAndThickness = true;
+            this.btnQLGV.Click += new System.EventHandler(this.btnQLGV_Click);
             // 
             // menuAdmin
             // 
