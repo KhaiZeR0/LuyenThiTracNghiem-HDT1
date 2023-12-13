@@ -160,6 +160,8 @@
     <Compile Include="BaiLam.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS\GetAllLopHocBUS.cs" />
+    <Compile Include="BUS\QuanLySvBUS.cs" />
     <Compile Include="BUS\resetPassBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="Cauhoi.cs">
@@ -168,6 +170,8 @@
     <Compile Include="Chuong.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\GetAllLopHocDAO.cs" />
+    <Compile Include="DAO\QuanLySvDAO.cs" />
     <Compile Include="DAO\resetPassDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DeThi.cs">

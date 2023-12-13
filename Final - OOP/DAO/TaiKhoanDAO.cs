@@ -19,7 +19,7 @@ namespace Final___OOP.DAO
             dbcontext = new ThiTracNghiemEntities();
         }
 
-        public bool KiemTraDangNhap(string email, string matKhau)
+        public bool LayThongTinDangNhap(string email, string matKhau)
         {
             return dbcontext.TaiKhoan.Any(r => r.Email == email && r.MatKhau == matKhau);
         }

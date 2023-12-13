@@ -21,7 +21,7 @@ namespace Final___OOP.BUS
 
         public bool KiemTraDangNhap(string email, string matKhau)
         {
-            return taiKhoanDAO.KiemTraDangNhap(email, matKhau);
+            return taiKhoanDAO.LayThongTinDangNhap(email, matKhau);
         }
 
         public bool KiemTraLoaiTaiKhoan(string email)
