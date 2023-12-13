@@ -51,6 +51,9 @@ namespace Final___OOP
 
         }
 
-       
+        private void btnchung_Click(object sender, EventArgs e)
+        {
+            ADpages.PageIndex = 3;
+        }
     }
 }
