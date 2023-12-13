@@ -45,7 +45,7 @@ namespace Final___OOP.DAO
             var sinhVien = db.ThongTinSV.Find(maSV);
             if (sinhVien != null)
             {
-                sinhVien.HoTenSV = hoTenSV;
+                //sinhVien.HoTenSV = hoTenSV;
                 sinhVien.NgaySinh = ngaySinhSV;
                 sinhVien.DiaChi = diaChi;
                 sinhVien.GioiTinh = gioiTinh;
