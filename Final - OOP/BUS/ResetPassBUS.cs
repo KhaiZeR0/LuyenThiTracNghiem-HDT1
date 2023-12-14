@@ -10,20 +10,38 @@ namespace Final___OOP
 {
     class ResetPassBUS
     {
-        private readonly ResetPassDAO resetPassDAO;
-        public ResetPassBUS()
+        public static bool VerifyCode(string inputCode, string generatedCode)
         {
-            resetPassDAO = new ResetPassDAO();
+            return inputCode == generatedCode;
         }
-
-        public bool KiemTraMatKhauHopLe(string matKhau, string xacNhanMatKhau)
+        public static bool SendEmail(string to, string randomCode)
         {
-            return matKhau == xacNhanMatKhau;
-        }
+            try
+            {
+                string from = "khai.sendmail@gmail.com";
+                string pass = "bfsjnqexelavxnhi";
 
-        public void CapNhatMatKhau(string email, string matKhau)
-        {
-            resetPassDAO.UpdateMatKhau(email, matKhau);
+                MailMessage message = new MailMessage();
+                message.To.Add(to);
+                message.From = new MailAddress(from);
+                message.Body = $"Mã của bạn là: {randomCode}";
+                message.Subject = "Mã lấy lại mật khẩu";
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.Port = 587;
+                smtp.EnableSsl = true;
+                smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(from, pass);
+
+                smtp.Send(message);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Handle exception or log it
+                return false;
+            }
         }
     }
 }

@@ -38,6 +38,10 @@ namespace Final___OOP.BUS
 
             return true;
         }
+        public void UpdateSinhVienBUS(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
+        {
+            sinhVienDAO.UpdateSinhVienDAO(maSV, hoTenSV, ngaySinhSV, maLop, diaChi, email, gioiTinh);
+        }
 
         private bool IsValidEmail(string email)
         {

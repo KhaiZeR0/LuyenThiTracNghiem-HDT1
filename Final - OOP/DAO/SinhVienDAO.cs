@@ -57,23 +57,33 @@ namespace Final___OOP.DAO
             db.DanhSachLops.Add(newDSLop);
             db.SaveChanges();
         }
-        public void UpdateSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string diaChi, string email, bool gioiTinh)
+        public void UpdateSinhVienDAO(string maSV, string hoTen, DateTime ngaySinh, string maLop, string diaChi, string email, bool gioiTinh)
         {
-            var sinhVien = db.ThongTinSVs.Find(maSV);
-            if (sinhVien != null)
-            {
-                //sinhVien.HoTenSV = hoTenSV;
-                sinhVien.NgaySinh = ngaySinhSV;
-                sinhVien.DiaChi = diaChi;
-                sinhVien.GioiTinh = gioiTinh;
+            
+            var svToUpdate = db.ThongTinSVs.Find(maSV);
 
-                db.SaveChanges();
-            }
-            else
+            if (svToUpdate != null)
             {
-                throw new Exception("Không tìm thấy sinh viên có mã " + maSV);
+                svToUpdate.HoTen = hoTen;
+                svToUpdate.NgaySinh = ngaySinh;
+                
+
+                var lopHoc = db.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
+                if (lopHoc != null)
+                {
+                    lopHoc.MaLop = maLop;
+                }
+
+                var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
+                if (taiKhoan != null)
+                {
+                    taiKhoan.Email = email;
+                }
+                    db.SaveChanges();
             }
+            
         }
+
         public void DeleteSinhVienDAO(string maSV)
         {
 

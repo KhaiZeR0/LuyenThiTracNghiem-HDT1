@@ -24,6 +24,8 @@ namespace Final___OOP
 
             GetAllSV();
             LoadDataCB();
+            dtgvSinhVien.SelectionChanged += dtgvSinhVien_SelectionChanged;
+
         }
         void LoadDataCB()
         {
@@ -59,7 +61,6 @@ namespace Final___OOP
                 string email = txtEmailSV.Text;
                 bool gioiTinh = rbNuSV.Checked;
 
-                // Gọi phương thức của BUS để thêm sinh viên
                 if (sinhVienBUS.IsValidSinhVienData(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh))
                 {
                     sinhVienBUS.AddSinhVienBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
@@ -78,8 +79,58 @@ namespace Final___OOP
         }
         private void btnSuaSV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string maSV = txtMaSV.Text;
+                string hoTenSV = txtHoTenSV.Text;
+                DateTime ngaySinhSV = dtpNgaySinhSV.Value;
+                string lop = cbLop.SelectedValue.ToString();
+                string diaChi = txtDiaChiSV.Text;
+                string email = txtEmailSV.Text;
+                bool gioiTinh = rbNuSV.Checked;
+
+                if (sinhVienBUS.IsValidSinhVienData(maSV, hoTenSV, ngaySinhSV, lop, diaChi, email, gioiTinh))
+                {
+                    sinhVienBUS.UpdateSinhVienBUS(maSV, hoTenSV, ngaySinhSV, lop, diaChi, email, gioiTinh);
+                    GetAllSV();
+                    MessageBox.Show("Sửa thông tin sinh viên thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu sinh viên không hợp lệ.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi sửa thông tin sinh viên: " + ex.Message);
+            }
 
         }
+        private void dtgvSinhVien_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvSinhVien.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dtgvSinhVien.SelectedRows[0];
+
+                string maSV = selectedRow.Cells["MaSV"].Value.ToString();
+                string hoTenSV = selectedRow.Cells["HoTen"].Value.ToString();
+                DateTime ngaySinhSV = Convert.ToDateTime(selectedRow.Cells["NgaySinh"].Value);
+                string lop = selectedRow.Cells["MaLop"].Value.ToString();
+                string diaChi = selectedRow.Cells["DiaChi"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
+                bool gioiTinh = Convert.ToBoolean(selectedRow.Cells["GioiTinh"].Value);
+
+                txtMaSV.Text = maSV;
+                txtHoTenSV.Text = hoTenSV;
+                dtpNgaySinhSV.Value = ngaySinhSV;
+                cbLop.SelectedValue = lop;
+                txtDiaChiSV.Text = diaChi;
+                txtEmailSV.Text = email;
+                rbNamSV.Checked = gioiTinh;
+                rbNuSV.Checked = !gioiTinh;
+            }
+        }
+
         private void btnQLSVpage_Click(object sender, EventArgs e)
         {
             AdminPages.PageIndex = 1;
@@ -94,7 +145,5 @@ namespace Final___OOP
         {
             AdminPages.PageIndex = 3;
         }
-
-        
     }
 }
