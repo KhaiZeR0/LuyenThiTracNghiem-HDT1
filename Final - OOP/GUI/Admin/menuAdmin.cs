@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Final___OOP.BUS.SinhVienBUS;
 
 namespace Final___OOP
 {
@@ -21,6 +22,7 @@ namespace Final___OOP
             lopHocBUS = new GetLopHocBUS();
             sinhVienBUS = new SinhVienBUS();
 
+            GetAllSV();
             LoadDataCB();
         }
         void LoadDataCB()
@@ -30,6 +32,20 @@ namespace Final___OOP
             cbLop.DataSource = lsLopHoc;
             cbLop.DisplayMember = "TenLop";
             cbLop.ValueMember = "MaLop";
+        }
+        private void GetAllSV()
+        {
+            try
+            {
+                List<SinhVienViewModel> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
+
+                dtgvSinhVien.DataSource = danhSachSinhVien;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
+            }
         }
         private void btnThemSV_Click(object sender, EventArgs e)
         {
@@ -41,18 +57,29 @@ namespace Final___OOP
                 string Lop = cbLop.SelectedValue.ToString();
                 string diaChi = txtDiaChiSV.Text;
                 string email = txtEmailSV.Text;
-                bool gioiTinh = true;
+                bool gioiTinh = rbNuSV.Checked;
 
-                sinhVienBUS.AddSinhVienBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
-                MessageBox.Show("Thêm sinh viên thành công!");
-
+                // Gọi phương thức của BUS để thêm sinh viên
+                if (sinhVienBUS.IsValidSinhVienData(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh))
+                {
+                    sinhVienBUS.AddSinhVienBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
+                    GetAllSV();
+                    MessageBox.Show("Thêm sinh viên thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu sinh viên không hợp lệ.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi thêm sinh viên: " + ex.Message);
             }
         }
+        private void btnSuaSV_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnQLSVpage_Click(object sender, EventArgs e)
         {
             AdminPages.PageIndex = 1;
@@ -68,5 +95,6 @@ namespace Final___OOP
             AdminPages.PageIndex = 3;
         }
 
+        
     }
 }

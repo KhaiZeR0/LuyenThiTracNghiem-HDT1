@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Final___OOP.BUS.SinhVienBUS;
 
 namespace Final___OOP.DAO
 {
@@ -22,7 +23,7 @@ namespace Final___OOP.DAO
             {
                 MaSV = maSV,
                 HoTen = hoTenSV,
-                GioiTinh = true,
+                GioiTinh = gioiTinh,
                 NgaySinh = ngaySinhSV,
                 DiaChi = diaChi,
             };
@@ -87,5 +88,31 @@ namespace Final___OOP.DAO
                 throw new Exception("Không tìm thấy sinh viên có mã " + maSV);
             }
         }
+        public List<SinhVienViewModel> LayDanhSachSinhVienDAO()
+        {
+            var query = from sv in db.ThongTinSVs
+                        join ds in db.DanhSachLops on sv.MaSV equals ds.MaSV into svds
+                        from ds in svds.DefaultIfEmpty()
+                        join tk in db.TaiKhoans on sv.MaSV equals tk.MaTK into svtks
+                        from tk in svtks.DefaultIfEmpty()
+                        join lop in db.Lophocs on ds.MaLop equals lop.MaLop into dslophoc
+                        from lop in dslophoc.DefaultIfEmpty()
+                        select new SinhVienViewModel
+                        {
+                            MaSV = sv.MaSV,
+                            HoTen = sv.HoTen,
+                            GioiTinh = sv.GioiTinh,
+                            NgaySinh = sv.NgaySinh,
+                            DiaChi = sv.DiaChi,
+                            Email = tk != null ? tk.Email : null,
+                            MaLop = ds != null ? ds.MaLop : null,
+                            TenLop = lop != null ? lop.TenLop : null,
+                            // ... thêm các thuộc tính khác nếu cần
+                        };
+
+
+            return query.ToList();
+        }
+
     }
 }
