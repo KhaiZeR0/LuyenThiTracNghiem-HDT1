@@ -36,7 +36,9 @@ namespace Final___OOP
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            this.StudentPages = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -79,7 +81,10 @@ namespace Final___OOP
             this.bunifuDropdown3 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuPages1.SuspendLayout();
+            this.blank = new System.Windows.Forms.TabPage();
+            this.btnthipage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnketquapage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.StudentPages.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -92,22 +97,23 @@ namespace Final___OOP
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuPages1
+            // StudentPages
             // 
-            this.bunifuPages1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.bunifuPages1.AllowTransitions = true;
-            this.bunifuPages1.Controls.Add(this.tabPage3);
-            this.bunifuPages1.Controls.Add(this.tabPage1);
-            this.bunifuPages1.Location = new System.Drawing.Point(141, 2);
-            this.bunifuPages1.Multiline = true;
-            this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage1;
-            this.bunifuPages1.PageIndex = 1;
-            this.bunifuPages1.PageName = "tabPage1";
-            this.bunifuPages1.PageTitle = "Thi";
-            this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(1111, 726);
-            this.bunifuPages1.TabIndex = 4;
+            this.StudentPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.StudentPages.AllowTransitions = true;
+            this.StudentPages.Controls.Add(this.blank);
+            this.StudentPages.Controls.Add(this.tabPage3);
+            this.StudentPages.Controls.Add(this.tabPage1);
+            this.StudentPages.Location = new System.Drawing.Point(141, 2);
+            this.StudentPages.Multiline = true;
+            this.StudentPages.Name = "StudentPages";
+            this.StudentPages.Page = this.tabPage1;
+            this.StudentPages.PageIndex = 2;
+            this.StudentPages.PageName = "tabPage1";
+            this.StudentPages.PageTitle = "Thi";
+            this.StudentPages.SelectedIndex = 0;
+            this.StudentPages.Size = new System.Drawing.Size(1111, 726);
+            this.StudentPages.TabIndex = 4;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 0F;
@@ -123,8 +129,8 @@ namespace Final___OOP
             animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
-            this.bunifuPages1.Transition = animation1;
-            this.bunifuPages1.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
+            this.StudentPages.Transition = animation1;
+            this.StudentPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
             // 
             // tabPage3
             // 
@@ -1194,16 +1200,208 @@ namespace Final___OOP
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // blank
+            // 
+            this.blank.Location = new System.Drawing.Point(4, 4);
+            this.blank.Name = "blank";
+            this.blank.Padding = new System.Windows.Forms.Padding(3);
+            this.blank.Size = new System.Drawing.Size(1103, 700);
+            this.blank.TabIndex = 7;
+            this.blank.Text = "blank";
+            this.blank.UseVisualStyleBackColor = true;
+            // 
+            // btnthipage
+            // 
+            this.btnthipage.AllowAnimations = true;
+            this.btnthipage.AllowMouseEffects = true;
+            this.btnthipage.AllowToggling = false;
+            this.btnthipage.AnimationSpeed = 200;
+            this.btnthipage.AutoGenerateColors = false;
+            this.btnthipage.AutoRoundBorders = false;
+            this.btnthipage.AutoSizeLeftIcon = true;
+            this.btnthipage.AutoSizeRightIcon = true;
+            this.btnthipage.BackColor = System.Drawing.Color.Transparent;
+            this.btnthipage.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnthipage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnthipage.BackgroundImage")));
+            this.btnthipage.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnthipage.ButtonText = "Thi cử";
+            this.btnthipage.ButtonTextMarginLeft = 0;
+            this.btnthipage.ColorContrastOnClick = 45;
+            this.btnthipage.ColorContrastOnHover = 45;
+            this.btnthipage.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnthipage.CustomizableEdges = borderEdges6;
+            this.btnthipage.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnthipage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnthipage.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnthipage.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnthipage.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnthipage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnthipage.ForeColor = System.Drawing.Color.White;
+            this.btnthipage.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthipage.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnthipage.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnthipage.IconMarginLeft = 11;
+            this.btnthipage.IconPadding = 10;
+            this.btnthipage.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthipage.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnthipage.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnthipage.IconSize = 25;
+            this.btnthipage.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnthipage.IdleBorderRadius = 1;
+            this.btnthipage.IdleBorderThickness = 1;
+            this.btnthipage.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnthipage.IdleIconLeftImage = null;
+            this.btnthipage.IdleIconRightImage = null;
+            this.btnthipage.IndicateFocus = false;
+            this.btnthipage.Location = new System.Drawing.Point(1, 2);
+            this.btnthipage.Name = "btnthipage";
+            this.btnthipage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnthipage.OnDisabledState.BorderRadius = 1;
+            this.btnthipage.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnthipage.OnDisabledState.BorderThickness = 1;
+            this.btnthipage.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnthipage.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnthipage.OnDisabledState.IconLeftImage = null;
+            this.btnthipage.OnDisabledState.IconRightImage = null;
+            this.btnthipage.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnthipage.onHoverState.BorderRadius = 1;
+            this.btnthipage.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnthipage.onHoverState.BorderThickness = 1;
+            this.btnthipage.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnthipage.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnthipage.onHoverState.IconLeftImage = null;
+            this.btnthipage.onHoverState.IconRightImage = null;
+            this.btnthipage.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnthipage.OnIdleState.BorderRadius = 1;
+            this.btnthipage.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnthipage.OnIdleState.BorderThickness = 1;
+            this.btnthipage.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnthipage.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnthipage.OnIdleState.IconLeftImage = null;
+            this.btnthipage.OnIdleState.IconRightImage = null;
+            this.btnthipage.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnthipage.OnPressedState.BorderRadius = 1;
+            this.btnthipage.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnthipage.OnPressedState.BorderThickness = 1;
+            this.btnthipage.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnthipage.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnthipage.OnPressedState.IconLeftImage = null;
+            this.btnthipage.OnPressedState.IconRightImage = null;
+            this.btnthipage.Size = new System.Drawing.Size(138, 39);
+            this.btnthipage.TabIndex = 5;
+            this.btnthipage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnthipage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnthipage.TextMarginLeft = 0;
+            this.btnthipage.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnthipage.UseDefaultRadiusAndThickness = true;
+            this.btnthipage.Click += new System.EventHandler(this.btnthipage_Click);
+            // 
+            // btnketquapage
+            // 
+            this.btnketquapage.AllowAnimations = true;
+            this.btnketquapage.AllowMouseEffects = true;
+            this.btnketquapage.AllowToggling = false;
+            this.btnketquapage.AnimationSpeed = 200;
+            this.btnketquapage.AutoGenerateColors = false;
+            this.btnketquapage.AutoRoundBorders = false;
+            this.btnketquapage.AutoSizeLeftIcon = true;
+            this.btnketquapage.AutoSizeRightIcon = true;
+            this.btnketquapage.BackColor = System.Drawing.Color.Transparent;
+            this.btnketquapage.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnketquapage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnketquapage.BackgroundImage")));
+            this.btnketquapage.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnketquapage.ButtonText = "Tra cứu kết quả";
+            this.btnketquapage.ButtonTextMarginLeft = 0;
+            this.btnketquapage.ColorContrastOnClick = 45;
+            this.btnketquapage.ColorContrastOnHover = 45;
+            this.btnketquapage.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnketquapage.CustomizableEdges = borderEdges7;
+            this.btnketquapage.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnketquapage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnketquapage.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnketquapage.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnketquapage.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnketquapage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnketquapage.ForeColor = System.Drawing.Color.White;
+            this.btnketquapage.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnketquapage.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnketquapage.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnketquapage.IconMarginLeft = 11;
+            this.btnketquapage.IconPadding = 10;
+            this.btnketquapage.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnketquapage.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnketquapage.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnketquapage.IconSize = 25;
+            this.btnketquapage.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnketquapage.IdleBorderRadius = 1;
+            this.btnketquapage.IdleBorderThickness = 1;
+            this.btnketquapage.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnketquapage.IdleIconLeftImage = null;
+            this.btnketquapage.IdleIconRightImage = null;
+            this.btnketquapage.IndicateFocus = false;
+            this.btnketquapage.Location = new System.Drawing.Point(1, 47);
+            this.btnketquapage.Name = "btnketquapage";
+            this.btnketquapage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnketquapage.OnDisabledState.BorderRadius = 1;
+            this.btnketquapage.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnketquapage.OnDisabledState.BorderThickness = 1;
+            this.btnketquapage.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnketquapage.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnketquapage.OnDisabledState.IconLeftImage = null;
+            this.btnketquapage.OnDisabledState.IconRightImage = null;
+            this.btnketquapage.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnketquapage.onHoverState.BorderRadius = 1;
+            this.btnketquapage.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnketquapage.onHoverState.BorderThickness = 1;
+            this.btnketquapage.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnketquapage.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnketquapage.onHoverState.IconLeftImage = null;
+            this.btnketquapage.onHoverState.IconRightImage = null;
+            this.btnketquapage.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnketquapage.OnIdleState.BorderRadius = 1;
+            this.btnketquapage.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnketquapage.OnIdleState.BorderThickness = 1;
+            this.btnketquapage.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnketquapage.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnketquapage.OnIdleState.IconLeftImage = null;
+            this.btnketquapage.OnIdleState.IconRightImage = null;
+            this.btnketquapage.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnketquapage.OnPressedState.BorderRadius = 1;
+            this.btnketquapage.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnketquapage.OnPressedState.BorderThickness = 1;
+            this.btnketquapage.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnketquapage.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnketquapage.OnPressedState.IconLeftImage = null;
+            this.btnketquapage.OnPressedState.IconRightImage = null;
+            this.btnketquapage.Size = new System.Drawing.Size(138, 39);
+            this.btnketquapage.TabIndex = 6;
+            this.btnketquapage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnketquapage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnketquapage.TextMarginLeft = 0;
+            this.btnketquapage.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnketquapage.UseDefaultRadiusAndThickness = true;
+            this.btnketquapage.Click += new System.EventHandler(this.btnketquapage_Click);
+            // 
             // MenuStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1251, 721);
-            this.Controls.Add(this.bunifuPages1);
+            this.Controls.Add(this.btnketquapage);
+            this.Controls.Add(this.btnthipage);
+            this.Controls.Add(this.StudentPages);
             this.Name = "MenuStudent";
             this.Text = "MenuStudent";
-            this.bunifuPages1.ResumeLayout(false);
+            this.StudentPages.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -1225,7 +1423,7 @@ namespace Final___OOP
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuPages bunifuPages1;
+        private Bunifu.UI.WinForms.BunifuPages StudentPages;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox6;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
@@ -1268,5 +1466,8 @@ namespace Final___OOP
         private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
+        private System.Windows.Forms.TabPage blank;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnthipage;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnketquapage;
     }
 }

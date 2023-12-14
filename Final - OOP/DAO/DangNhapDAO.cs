@@ -8,21 +8,21 @@ namespace Final___OOP
 {
     class DangNhapDAO
     {
-        private ThiTracNghiemEntities dbcontext;
+        private ThiTracNghiemModelEntities dbcontext;
 
         public DangNhapDAO()
         {
-            dbcontext = new ThiTracNghiemEntities();
+            dbcontext = new ThiTracNghiemModelEntities();
         }
 
         public bool LayThongTinDangNhap(string email, string matKhau)
         {
-            return dbcontext.TaiKhoan.Any(r => r.Email == email && r.MatKhau == matKhau);
+            return dbcontext.TaiKhoans.Any(r => r.Email == email && r.MatKhau == matKhau);
         }
 
         public int LayLoaiTaiKhoan(string email)
         {
-            TaiKhoan taiKhoan = dbcontext.TaiKhoan.FirstOrDefault(r => r.Email == email);
+            TaiKhoan taiKhoan = dbcontext.TaiKhoans.FirstOrDefault(r => r.Email == email);
 
             if (taiKhoan != null)
             {

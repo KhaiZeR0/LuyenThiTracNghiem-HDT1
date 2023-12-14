@@ -158,15 +158,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaiLam.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Cauhoi.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Chuong.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
     <Compile Include="BUS\DangNhapBUS.cs" />
+    <Compile Include="Cauhoi.cs">
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chuong.cs">
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachLop.cs">
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeThi.cs">
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
+    </Compile>
     <Compile Include="GUI\student\CourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,12 +180,6 @@
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\DangNhapDAO.cs" />
-    <Compile Include="DanhSachLop.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DeThi.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="GUI\login\FenterNewPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +191,6 @@
     </Compile>
     <Compile Include="GUI\login\Fforgotpass.Designer.cs">
       <DependentUpon>Fforgotpass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lophoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\Admin\menuAdmin.cs">
       <SubType>Form</SubType>
@@ -213,8 +210,11 @@
     <Compile Include="GUI\Teacher\MenuTeacher.Designer.cs">
       <DependentUpon>MenuTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lophoc.cs">
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
+    </Compile>
     <Compile Include="MonHoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,29 +224,31 @@
     <Compile Include="GUI\login\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="BUS\ResetPassBUS.cs" />
+    <Compile Include="DAO\ResetPassDAO.cs" />
     <Compile Include="TaiKhoan.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
-    <Compile Include="ThiTracNghiemModel.Context.cs">
+    <Compile Include="ThiTracNghiemModelETT.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.Context.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ThiTracNghiemModel.cs">
+    <Compile Include="ThiTracNghiemModelETT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
-    <Compile Include="ThiTracNghiemModel.Designer.cs">
+    <Compile Include="ThiTracNghiemModelETT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.edmx</DependentUpon>
     </Compile>
     <Compile Include="ThongTinCB.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
     <Compile Include="ThongTinSV.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+      <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\student\CourseScreen.resx">
       <DependentUpon>CourseScreen.cs</DependentUpon>
@@ -290,12 +292,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="ThiTracNghiemModel.edmx">
+    <EntityDeploy Include="ThiTracNghiemModelETT.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ThiTracNghiemModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ThiTracNghiemModelETT.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ThiTracNghiemModel.edmx.diagram">
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
+    <None Include="ThiTracNghiemModelETT.edmx.diagram">
+      <DependentUpon>ThiTracNghiemModelETT.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -310,17 +312,16 @@
   <ItemGroup>
     <None Include="Resources\007fff.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="ThiTracNghiemModel.Context.tt">
+    <Content Include="ThiTracNghiemModelETT.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-      <LastGenOutput>ThiTracNghiemModel.Context.cs</LastGenOutput>
+      <DependentUpon>ThiTracNghiemModelETT.edmx</DependentUpon>
+      <LastGenOutput>ThiTracNghiemModelETT.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ThiTracNghiemModel.tt">
+    <Content Include="ThiTracNghiemModelETT.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-      <LastGenOutput>ThiTracNghiemModel.cs</LastGenOutput>
+      <DependentUpon>ThiTracNghiemModelETT.edmx</DependentUpon>
+      <LastGenOutput>ThiTracNghiemModelETT.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

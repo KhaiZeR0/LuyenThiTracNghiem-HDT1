@@ -60,6 +60,7 @@ namespace Final___OOP
             this.btnconfirm.TabIndex = 16;
             this.btnconfirm.Text = "Xác nhận";
             this.btnconfirm.UseVisualStyleBackColor = true;
+            this.btnconfirm.Click += new System.EventHandler(this.btnconfirm_Click);
             // 
             // tbconfirm
             // 
@@ -77,6 +78,7 @@ namespace Final___OOP
             this.btnotp.TabIndex = 14;
             this.btnotp.Text = "lấy mã";
             this.btnotp.UseVisualStyleBackColor = true;
+            this.btnotp.Click += new System.EventHandler(this.btnotp_Click);
             // 
             // label3
             // 

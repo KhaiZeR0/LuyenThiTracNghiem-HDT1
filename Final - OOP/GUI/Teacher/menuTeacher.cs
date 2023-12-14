@@ -16,5 +16,20 @@ namespace Final___OOP
         {
             InitializeComponent();
         }
+
+        private void btnQLCHpage_Click(object sender, EventArgs e)
+        {
+            StudentPages.PageIndex = 2;
+        }
+
+        private void btntracuupage_Click(object sender, EventArgs e)
+        {
+            StudentPages.PageIndex = 1;
+        }
+
+        private void btntaopage_Click(object sender, EventArgs e)
+        {
+            StudentPages.PageIndex = 3;
+        }
     }
 }

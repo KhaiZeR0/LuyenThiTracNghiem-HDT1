@@ -544,7 +544,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ThiTracNghiemEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ThiTracNghiemModelEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BaiLams" EntityType="Self.BaiLam" />
           <EntitySet Name="Cauhois" EntityType="Self.Cauhoi" />
           <EntitySet Name="Chuongs" EntityType="Self.Chuong" />
@@ -605,7 +605,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ThiTracNghiemModelStoreContainer" CdmEntityContainer="ThiTracNghiemEntities">
+        <EntityContainerMapping StorageEntityContainer="ThiTracNghiemModelStoreContainer" CdmEntityContainer="ThiTracNghiemModelEntities">
           <EntitySetMapping Name="BaiLams">
             <EntityTypeMapping TypeName="ThiTracNghiemModel.BaiLam">
               <MappingFragment StoreEntitySet="BaiLam">
