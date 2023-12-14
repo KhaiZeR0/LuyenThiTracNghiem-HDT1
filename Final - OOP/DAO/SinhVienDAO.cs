@@ -107,7 +107,6 @@ namespace Final___OOP.DAO
                             Email = tk != null ? tk.Email : null,
                             MaLop = ds != null ? ds.MaLop : null,
                             TenLop = lop != null ? lop.TenLop : null,
-                            // ... thêm các thuộc tính khác nếu cần
                         };
 
 
