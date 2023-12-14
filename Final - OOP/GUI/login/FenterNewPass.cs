@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Final___OOP.winform.student
+namespace Final___OOP
 {
-    public partial class Menu_student : Form
+    public partial class FenterNewPass : Form
     {
-        public Menu_student()
+        public FenterNewPass()
         {
             InitializeComponent();
         }
-
     }
 }

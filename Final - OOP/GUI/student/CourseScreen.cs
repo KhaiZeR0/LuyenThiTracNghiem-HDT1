@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Final___OOP.winform.student
+namespace Final___OOP
 {
     public partial class CourseScreen : Form
     {

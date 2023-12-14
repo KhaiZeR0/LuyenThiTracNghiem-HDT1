@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Final___OOP
 {
-    public partial class Menu : Form
+    public partial class Fforgotpass : Form
     {
-        public Menu()
+        public Fforgotpass()
         {
             InitializeComponent();
         }

@@ -166,21 +166,34 @@
     <Compile Include="Chuong.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS\DangNhapBUS.cs" />
+    <Compile Include="GUI\student\CourseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\student\CourseScreen.Designer.cs">
+      <DependentUpon>CourseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DangNhapDAO.cs" />
     <Compile Include="DanhSachLop.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\login\forgot.cs" />
     <Compile Include="DeThi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Lophoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="GUI\login\FenterNewPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="GUI\login\FenterNewPass.Designer.cs">
+      <DependentUpon>FenterNewPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\login\Fforgotpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\login\Fforgotpass.Designer.cs">
+      <DependentUpon>Fforgotpass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lophoc.cs">
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GUI\Admin\menuAdmin.cs">
       <SubType>Form</SubType>
@@ -188,46 +201,28 @@
     <Compile Include="GUI\Admin\menuAdmin.Designer.cs">
       <DependentUpon>menuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\student\MenuStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\student\MenuStudent.Designer.cs">
+      <DependentUpon>MenuStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Teacher\MenuTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Teacher\MenuTeacher.Designer.cs">
+      <DependentUpon>MenuTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonHoc.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\login\forgotpass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\login\forgotpass.Designer.cs">
-      <DependentUpon>forgotpass.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\login\login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\login\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\login\passenter-reset.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\login\passenter-reset.Designer.cs">
-      <DependentUpon>passenter-reset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\student\CourseScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\student\CourseScreen.Designer.cs">
-      <DependentUpon>CourseScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\student\Menu-student.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\student\Menu-student.Designer.cs">
-      <DependentUpon>Menu-student.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Teacher\menuTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Teacher\menuTeacher.Designer.cs">
-      <DependentUpon>menuTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
@@ -253,6 +248,21 @@
     <Compile Include="ThongTinSV.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\student\CourseScreen.resx">
+      <DependentUpon>CourseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\login\FenterNewPass.resx">
+      <DependentUpon>FenterNewPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\login\Fforgotpass.resx">
+      <DependentUpon>Fforgotpass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\student\MenuStudent.resx">
+      <DependentUpon>MenuStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Teacher\MenuTeacher.resx">
+      <DependentUpon>MenuTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -267,23 +277,8 @@
     <EmbeddedResource Include="GUI\Admin\menuAdmin.resx">
       <DependentUpon>menuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\login\forgotpass.resx">
-      <DependentUpon>forgotpass.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\login\login.resx">
       <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\login\passenter-reset.resx">
-      <DependentUpon>passenter-reset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\student\CourseScreen.resx">
-      <DependentUpon>CourseScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\student\Menu-student.resx">
-      <DependentUpon>Menu-student.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Teacher\menuTeacher.resx">
-      <DependentUpon>menuTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -315,9 +310,7 @@
   <ItemGroup>
     <None Include="Resources\007fff.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BUS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ThiTracNghiemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

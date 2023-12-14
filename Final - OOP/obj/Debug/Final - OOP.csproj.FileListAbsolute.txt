@@ -8,8 +8,6 @@ C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CoreCompileInputs.cache
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.pdb
-C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.forgotpass.resources
-C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.passenter_reset.resources
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.Licensing.dll
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
@@ -78,10 +76,8 @@ C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\EntityFramework.xml
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.student.Menu_student.resources
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe.licenses
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CopyComplete
-C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.Admin.Menu.resources
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.menuAdmin.resources
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.exe.config
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.exe
@@ -170,3 +166,8 @@ C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Deb
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CopyComplete
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.pdb
+C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.CourseScreen.resources
+C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.FenterNewPass.resources
+C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.Fforgotpass.resources
+C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.MenuStudent.resources
+C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.MenuTeacher.resources

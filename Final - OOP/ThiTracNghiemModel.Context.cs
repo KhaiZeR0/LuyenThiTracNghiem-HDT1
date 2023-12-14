@@ -25,15 +25,15 @@ namespace Final___OOP
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BaiLam> BaiLams { get; set; }
-        public virtual DbSet<Cauhoi> Cauhois { get; set; }
-        public virtual DbSet<Chuong> Chuongs { get; set; }
-        public virtual DbSet<DanhSachLop> DanhSachLops { get; set; }
-        public virtual DbSet<DeThi> DeThis { get; set; }
-        public virtual DbSet<Lophoc> Lophocs { get; set; }
-        public virtual DbSet<MonHoc> MonHocs { get; set; }
-        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<ThongTinCB> ThongTinCBs { get; set; }
-        public virtual DbSet<ThongTinSV> ThongTinSVs { get; set; }
+        public virtual DbSet<BaiLam> BaiLam { get; set; }
+        public virtual DbSet<Cauhoi> Cauhoi { get; set; }
+        public virtual DbSet<Chuong> Chuong { get; set; }
+        public virtual DbSet<DanhSachLop> DanhSachLop { get; set; }
+        public virtual DbSet<DeThi> DeThi { get; set; }
+        public virtual DbSet<Lophoc> Lophoc { get; set; }
+        public virtual DbSet<MonHoc> MonHoc { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
+        public virtual DbSet<ThongTinCB> ThongTinCB { get; set; }
+        public virtual DbSet<ThongTinSV> ThongTinSV { get; set; }
     }
 }
