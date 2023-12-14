@@ -38,7 +38,7 @@ namespace Final___OOP
                 string maSV = txtMaSV.Text;
                 string hoTenSV = txtHoTenSV.Text;
                 DateTime ngaySinhSV = dtpNgaySinhSV.Value;
-                string Lop = cbLop.Text;
+                string Lop = cbLop.SelectedValue.ToString();
                 string diaChi = txtDiaChiSV.Text;
                 string email = txtEmailSV.Text;
                 bool gioiTinh = true;
