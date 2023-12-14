@@ -81,6 +81,7 @@ C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.student.Menu_student.resources
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe.licenses
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CopyComplete
+C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.Admin.Menu.resources
 C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.menuAdmin.resources
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.exe.config
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.exe
@@ -169,91 +170,3 @@ C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Deb
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CopyComplete
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe
 C:\Users\0392956804\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.pdb
-C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.student.CourseScreen.resources
-C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.Teacher.menuTeacher.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.exe.config
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.exe
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Final - OOP.pdb
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.Licensing.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuRating.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\EntityFramework.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuRating.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\EntityFramework.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.AssemblyReference.cache
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.Properties.Resources.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.menuAdmin.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.forgotpass.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.login.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.passenter_reset.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.student.CourseScreen.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.student.Menu_student.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final___OOP.winform.Teacher.menuTeacher.resources
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.GenerateResource.cache
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe.licenses
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CoreCompileInputs.cache
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.csproj.CopyComplete
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.exe
-C:\Users\khaizr0\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\obj\Debug\Final - OOP.pdb

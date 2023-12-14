@@ -144,8 +144,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -157,29 +155,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaiLam.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BUS\GetAllLopHocBUS.cs" />
-    <Compile Include="BUS\QuanLySvBUS.cs" />
-    <Compile Include="BUS\resetPassBUS.cs" />
-    <Compile Include="BUS\TaiKhoanBUS.cs" />
-    <Compile Include="Cauhoi.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Chuong.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\GetAllLopHocDAO.cs" />
-    <Compile Include="DAO\QuanLySvDAO.cs" />
-    <Compile Include="DAO\resetPassDAO.cs" />
-    <Compile Include="DAO\TaiKhoanDAO.cs" />
-    <Compile Include="DeThi.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Lophoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DAO\login\forgot.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +167,6 @@
     </Compile>
     <Compile Include="GUI\Admin\menuAdmin.Designer.cs">
       <DependentUpon>menuAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MonHoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,41 +194,17 @@
     <Compile Include="GUI\student\CourseScreen.Designer.cs">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\student\Menustudent.cs">
+    <Compile Include="GUI\student\Menu-student.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\student\Menustudent.Designer.cs">
-      <DependentUpon>Menustudent.cs</DependentUpon>
+    <Compile Include="GUI\student\Menu-student.Designer.cs">
+      <DependentUpon>Menu-student.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Teacher\menuTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Teacher\menuTeacher.Designer.cs">
       <DependentUpon>menuTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaiKhoan.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ThiTracNghiemModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ThiTracNghiemModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ThiTracNghiemModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ThongTinCB.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ThongTinSV.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -283,8 +232,8 @@
     <EmbeddedResource Include="GUI\student\CourseScreen.resx">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\student\Menustudent.resx">
-      <DependentUpon>Menustudent.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\student\Menu-student.resx">
+      <DependentUpon>Menu-student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Teacher\menuTeacher.resx">
       <DependentUpon>menuTeacher.cs</DependentUpon>
@@ -299,13 +248,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="ThiTracNghiemModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ThiTracNghiemModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ThiTracNghiemModel.edmx.diagram">
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -319,21 +261,8 @@
   <ItemGroup>
     <None Include="Resources\007fff.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ThiTracNghiemModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-      <LastGenOutput>ThiTracNghiemModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ThiTracNghiemModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-      <LastGenOutput>ThiTracNghiemModel.cs</LastGenOutput>
-    </Content>
+    <Folder Include="BUS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

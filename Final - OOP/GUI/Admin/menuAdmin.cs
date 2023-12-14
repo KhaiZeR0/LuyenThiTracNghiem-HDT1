@@ -1,5 +1,4 @@
-﻿using Final___OOP.BUS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,78 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Final___OOP
 {
     public partial class menuAdmin : Form
     {
-        private GetAllLopHocBUS listLopHoc;
-        private QuanLySvBUS SinhVienBus;
         public menuAdmin()
         {
             InitializeComponent();
-
-            listLopHoc = new GetAllLopHocBUS();
-            SinhVienBus = new QuanLySvBUS();
-
-
-            LoadDataCB();  
-        }
-        void LoadDataCB()
-        {
-            List<Lophoc> lsLopHoc = listLopHoc.GetAllLopHoc();
-
-            cbLopSV.DataSource = lsLopHoc;
-            cbLopSV.DisplayMember = "TenLop";
-            cbLopSV.ValueMember = "MaLop";
-        }
-        private void btnThemSV_Click(object sender, EventArgs e)
-        {
-           
-            try
-            {
-                string maSV = txtMaSV.Text;
-                string hoTenSV = txtTenSV.Text;
-                DateTime ngaySinhSV = dtpNgaySinhSV.Value;
-                string Lop = cbLopSV.Text;
-                string diaChi = txtDiaChiSV.Text;
-                string email = txtEmailSV.Text;
-                bool gioiTinh = true;
-
-                SinhVienBus.AddSinhVien(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
-                MessageBox.Show("Thêm sinh viên thành công!");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi thêm sinh viên: " + ex.Message);
-            }
         }
 
-        private void btnSuaSV_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnXoaSV_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnchung_Click(object sender, EventArgs e)
-        {
-            ADpages.PageIndex = 3;
-        }
-
-        private void btnQLSV_Click(object sender, EventArgs e)
-        {
-            ADpages.PageIndex = 1;
-        }
-
-        private void btnQLGV_Click(object sender, EventArgs e)
-        {
-            ADpages.PageIndex = 2;
-        }
     }
 }

@@ -80,6 +80,7 @@
             this.tbemail.Name = "tbemail";
             this.tbemail.Size = new System.Drawing.Size(218, 24);
             this.tbemail.TabIndex = 3;
+            this.tbemail.TextChanged += new System.EventHandler(this.tbemail_TextChanged);
             // 
             // label3
             // 
@@ -119,6 +120,7 @@
             this.tbconfirm.Name = "tbconfirm";
             this.tbconfirm.Size = new System.Drawing.Size(218, 24);
             this.tbconfirm.TabIndex = 6;
+            this.tbconfirm.TextChanged += new System.EventHandler(this.tbconfirm_TextChanged);
             // 
             // label4
             // 
