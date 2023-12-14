@@ -11,3 +11,5 @@ GO
 INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
 VALUES (01, N'1', 'a', 0);
 GO
+
+select * from TaiKhoan
