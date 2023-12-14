@@ -13,3 +13,6 @@ VALUES (01, N'1', 'a', 0);
 GO
 
 select * from TaiKhoan
+select * from DanhSachLop
+select * from ThongTinSV
+select * from Lophoc

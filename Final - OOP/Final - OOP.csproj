@@ -161,6 +161,8 @@
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
     <Compile Include="BUS\DangNhapBUS.cs" />
+    <Compile Include="BUS\GetLopHocBUS.cs" />
+    <Compile Include="BUS\SinhVienBUS.cs" />
     <Compile Include="Cauhoi.cs">
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
@@ -170,6 +172,8 @@
     <Compile Include="DanhSachLop.cs">
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\GetLopHocDAO.cs" />
+    <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DeThi.cs">
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
