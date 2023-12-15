@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,37 +17,59 @@ namespace Final___OOP
 {
     public partial class Fforgotpass : Form
     {
-        private string randomCode;
+        string randomcode;
+        public static string to;
+        private readonly ResetPassBUS resetPassBUS;
         public Fforgotpass()
         {
             InitializeComponent();
+            resetPassBUS = new ResetPassBUS();
         }
 
         private void btnotp_Click(object sender, EventArgs e)
         {
             // send code
+            string from, pass, messagebody;
             Random rand = new Random();
-            randomCode = rand.Next(999999).ToString();
+            randomcode = (rand.Next(999999)).ToString();
+            MailMessage message = new MailMessage();
+            to = (tbemail.Text).ToString();
+            from = "khai.sendmail@gmail.com";
+            pass = "bfsjnqexelavxnhi";
+            messagebody = $"Mã của bạn là: {randomcode}";
+            message.To.Add(to);
+            message.From = new MailAddress(from);
+            message.Body = messagebody;
+            message.Subject = "Mã lấy lại mật khẩu";
 
-            string to = tbemail.Text;
+            // Lưu địa chỉ email vào biến to
+            FenterNewPass.EmailGO = to;
 
-            if (ResetPassBUS.SendEmail(to, randomCode))
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential(from, pass);
+            try
             {
-                MessageBox.Show("Gửi mã thành công, vui lòng kiểm tra hòm thư của bạn.");
+                smtp.Send(message);
+                MessageBox.Show("Gửi mã thành công, vui lòng check hòm thư của bạn");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Gửi mã thất bại. Vui lòng thử lại sau.");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnconfirm_Click(object sender, EventArgs e)
         {
-            string inputCode = tbconfirm.Text;
-
-            if (ResetPassBUS.VerifyCode(inputCode, randomCode))
+            if (randomcode == (tbconfirm.Text).ToString())
             {
-                MessageBox.Show("oke");
+                to = tbemail.Text;
+                FenterNewPass fenterNewPass = new FenterNewPass();
+                fenterNewPass.Show();
+                this.Close();
             }
             else
             {

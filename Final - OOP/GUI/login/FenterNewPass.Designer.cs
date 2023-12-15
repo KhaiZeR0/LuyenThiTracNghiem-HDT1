@@ -49,6 +49,7 @@ namespace Final___OOP
             this.btnsavepass.TabIndex = 15;
             this.btnsavepass.Text = "Thay đổi ";
             this.btnsavepass.UseVisualStyleBackColor = true;
+            this.btnsavepass.Click += new System.EventHandler(this.btnsavepass_Click);
             // 
             // tbconfirmpass
             // 

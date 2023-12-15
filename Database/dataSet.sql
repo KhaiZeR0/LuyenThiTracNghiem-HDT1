@@ -11,7 +11,9 @@ GO
 INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
 VALUES (01, N'1', 'a', 0);
 GO
-
+INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
+VALUES (02, N'1', 'caophankhai123@gmail.com', 0);
+GO
 select * from TaiKhoan
 select * from DanhSachLop
 select * from ThongTinSV
