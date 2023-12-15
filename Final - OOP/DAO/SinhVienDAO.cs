@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,29 +60,43 @@ namespace Final___OOP.DAO
         }
         public void UpdateSinhVienDAO(string maSV, string hoTen, DateTime ngaySinh, string maLop, string diaChi, string email, bool gioiTinh)
         {
-            
-            var svToUpdate = db.ThongTinSVs.Find(maSV);
-
-            if (svToUpdate != null)
+            using (var transaction = db.Database.BeginTransaction())
             {
-                svToUpdate.HoTen = hoTen;
-                svToUpdate.NgaySinh = ngaySinh;
-                
-
-                var lopHoc = db.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
-                if (lopHoc != null)
+                try
                 {
-                    lopHoc.MaLop = maLop;
-                }
+                    var svToUpdate = db.ThongTinSVs.Find(maSV);
 
-                var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
-                if (taiKhoan != null)
-                {
-                    taiKhoan.Email = email;
+                    if (svToUpdate != null)
+                    {
+                        svToUpdate.HoTen = hoTen;
+                        svToUpdate.NgaySinh = ngaySinh;
+                        svToUpdate.DiaChi = diaChi;
+                        svToUpdate.GioiTinh = gioiTinh;
+
+                        var lopHoc = db.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
+                        if (lopHoc != null)
+                        {
+                            lopHoc.MaLop = maLop;
+                            db.Entry(lopHoc).State = EntityState.Modified; // Đánh dấu là đối tượng này đã bị thay đổi
+                        }
+
+                        var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
+                        if (taiKhoan != null)
+                        {
+                            taiKhoan.Email = email;
+                            db.Entry(taiKhoan).State = EntityState.Modified; // Đánh dấu là đối tượng này đã bị thay đổi
+                        }
+
+                        db.SaveChanges();
+                        transaction.Commit();
+                    }
                 }
-                    db.SaveChanges();
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi cập nhật sinh viên: " + ex.Message);
+                    transaction.Rollback();
+                }
             }
-            
         }
 
         public void DeleteSinhVienDAO(string maSV)

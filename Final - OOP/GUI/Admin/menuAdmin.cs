@@ -35,6 +35,7 @@ namespace Final___OOP
             cbLop.DisplayMember = "TenLop";
             cbLop.ValueMember = "MaLop";
         }
+
         private void GetAllSV()
         {
             try
@@ -42,7 +43,6 @@ namespace Final___OOP
                 List<SinhVienViewModel> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
 
                 dtgvSinhVien.DataSource = danhSachSinhVien;
-
             }
             catch (Exception ex)
             {
@@ -106,6 +106,10 @@ namespace Final___OOP
             }
 
         }
+        private void btnXoaSV_Click(object sender, EventArgs e)
+        {
+
+        }
         private void dtgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
             if (dtgvSinhVien.SelectedRows.Count > 0)
@@ -126,11 +130,11 @@ namespace Final___OOP
                 cbLop.SelectedValue = lop;
                 txtDiaChiSV.Text = diaChi;
                 txtEmailSV.Text = email;
-                rbNamSV.Checked = gioiTinh;
-                rbNuSV.Checked = !gioiTinh;
+                rbNamSV.Checked = !gioiTinh;
+                rbNuSV.Checked = gioiTinh;
             }
         }
-
+        
         private void btnQLSVpage_Click(object sender, EventArgs e)
         {
             AdminPages.PageIndex = 1;
@@ -145,5 +149,7 @@ namespace Final___OOP
         {
             AdminPages.PageIndex = 3;
         }
+
+        
     }
 }

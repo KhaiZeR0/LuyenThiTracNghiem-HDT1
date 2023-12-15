@@ -519,6 +519,7 @@
             this.btnXoaSV.TextMarginLeft = 0;
             this.btnXoaSV.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnXoaSV.UseDefaultRadiusAndThickness = true;
+            this.btnXoaSV.Click += new System.EventHandler(this.btnXoaSV_Click);
             // 
             // btnSuaSV
             // 
