@@ -157,6 +157,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AdminQLChungDAO.cs" />
+    <Compile Include="BUS\AdminQLChungBUS.cs" />
     <Compile Include="BaiLam.cs">
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
