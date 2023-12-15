@@ -1493,6 +1493,7 @@
             this.btnXoaGV.TextMarginLeft = 0;
             this.btnXoaGV.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnXoaGV.UseDefaultRadiusAndThickness = true;
+            this.btnXoaGV.Click += new System.EventHandler(this.btnXoaGV_Click);
             // 
             // btnSuaGV
             // 

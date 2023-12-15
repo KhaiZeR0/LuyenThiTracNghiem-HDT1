@@ -44,7 +44,12 @@ namespace Final___OOP.BUS
 
             return true;
         }
-        
+
+        public void DeleteGiangVienBUS(string maGV)
+        {
+            giangVienDAO.DeleteGiangVienDAO(maGV);
+        }
+
         public List<GiangVienView> GetGiangVienList()
         {
             return giangVienDAO.GetGiangVienViews();

@@ -31,8 +31,9 @@ namespace Final___OOP
             dtgvSinhVien.SelectionChanged += dtgvSinhVien_SelectionChanged;
 
             //QLGiangVien
-            dtgvGiangVien.SelectionChanged += dtgvGiangVien_SelectionChanged;
-
+            GetAllGV();
+/*            dtgvGiangVien.SelectionChanged += dtgvGiangVien_SelectionChanged;
+*/
             //QLChung
             adminQLChungBUS = new AdminQLChungBUS();
             LoadDataMonHoc();
@@ -119,7 +120,7 @@ namespace Final___OOP
                         sinhVienBUS.DeleteSinhVienBUS(maSV);
                         GetAllSV();
                         MessageBox.Show("Xóa sinh viên thành công!");
-                        ClearInputs(); // Thêm hàm này để xóa dữ liệu trong các controls
+                        SinhVienClearInputs(); // Thêm hàm này để xóa dữ liệu trong các controls
                     }
                 }
                 else
@@ -162,9 +163,9 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
             }
         }
-        
-        //clear dữ liệu đầu vào sau khi thực hiện xóa thông tin sinh viên
-        private void ClearInputs()
+
+        //clear input ở các textbox của sinh viên sau khi thực hiện xóa thông tin sinh viên
+        private void SinhVienClearInputs()
         {
             txtMaSV.Clear();
             txtHoTenSV.Clear();
@@ -175,6 +176,8 @@ namespace Final___OOP
             rbNamSV.Checked = true;
             rbNuSV.Checked = false;
         }
+
+        
 
 
         //Hiển thị thông tin của sinh viên lên bản thông tin input
@@ -339,7 +342,8 @@ namespace Final___OOP
                 if (giangVienBUS.IsValidGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV))
                 {
                     giangVienBUS.AddGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV);
-                    MessageBox.Show("Thêm giang viên thành công ");
+                    GetAllGV();
+                    MessageBox.Show("Thêm giảng viên thành công ");
                 }
                 else
                 {
@@ -365,7 +369,8 @@ namespace Final___OOP
                 if (giangVienBUS.IsValidGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV))
                 {
                     giangVienBUS.UpdateGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV);
-                    MessageBox.Show("Thêm giang viên thành công ");
+                    GetAllGV();
+                    MessageBox.Show("Sửa giảng viên thành công ");
                 }
                 else
                 {
@@ -379,14 +384,53 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi thêm giảng viên: " + ex.Message);
             }
         }
+        private void btnXoaGV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maGV = txtMaGV.Text;
+
+                if (!string.IsNullOrEmpty(maGV))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa giảng viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        giangVienBUS.DeleteGiangVienBUS(maGV);
+                        GetAllGV(); // Gọi phương thức để cập nhật danh sách giảng viên
+                        MessageBox.Show("Xóa giảng viên thành công!");
+                        GiangVienClearInputs(); // Thêm hàm này để xóa dữ liệu trong các controls
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một giảng viên để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa giảng viên: " + ex.Message);
+            }
+        }
+
+        private void GiangVienClearInputs()
+        {
+            txtMaGV.Clear();
+            txtHoTenGV.Clear();
+            dtpNgaySinhGV.Value = DateTime.Now;
+            txtDiaChiGV.Clear();
+            txtEmailGV.Clear();
+            rbNamGV.Checked = true;
+            rbNuGV.Checked = false;
+        }
 
         private void GetAllGV()
         {
             try
             {
-                List<SinhVienView> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
+                List<GiangVienView> DanhSachGV = giangVienBUS.GetGiangVienList();
 
-                dtgvSinhVien.DataSource = danhSachSinhVien;
+                dtgvGiangVien.DataSource = DanhSachGV;
 
             }
             catch (Exception ex)
@@ -400,20 +444,20 @@ namespace Final___OOP
             {
                 DataGridViewRow selectedRow = dtgvGiangVien.SelectedRows[0];
 
-                string maSV = selectedRow.Cells["MaSV"].Value.ToString();
-                string hoTenSV = selectedRow.Cells["HoTen"].Value.ToString();
-                DateTime ngaySinhSV = Convert.ToDateTime(selectedRow.Cells["NgaySinh"].Value);
-                string diaChi = selectedRow.Cells["DiaChi"].Value.ToString();
-                string email = selectedRow.Cells["Email"].Value.ToString();
-                bool gioiTinh = Convert.ToBoolean(selectedRow.Cells["GioiTinh"].Value);
+                string maGV = selectedRow.Cells["MaGV"].Value.ToString();
+                string hoTenGV = selectedRow.Cells["HoTen"].Value.ToString();
+                DateTime ngaySinhGV = Convert.ToDateTime(selectedRow.Cells["NgaySinh"].Value);
+                string diaChiGV = selectedRow.Cells["DiaChi"].Value.ToString(); ;
+                string emailGV = selectedRow.Cells["Email"].Value.ToString();
+                bool gioiTinhGV = Convert.ToBoolean(selectedRow.Cells["GioiTinh"].Value);
 
-                txtMaSV.Text = maSV;
-                txtHoTenSV.Text = hoTenSV;
-                dtpNgaySinhSV.Value = ngaySinhSV;
-                txtDiaChiSV.Text = diaChi;
-                txtEmailSV.Text = email;
-                rbNamSV.Checked = !gioiTinh;
-                rbNuSV.Checked = gioiTinh;
+                txtMaGV.Text = maGV;
+                txtHoTenGV.Text = hoTenGV;
+                dtpNgaySinhGV.Value = ngaySinhGV;
+                txtDiaChiGV.Text = diaChiGV;
+                txtEmailGV.Text = emailGV;
+                rbNamGV.Checked = !gioiTinhGV;
+                rbNuGV.Checked = gioiTinhGV;
             }
         }
         private void btnQLSVpage_Click(object sender, EventArgs e)

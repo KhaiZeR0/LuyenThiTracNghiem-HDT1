@@ -12,10 +12,8 @@ namespace Final___OOP.DAO
     internal class SinhVienDAO
     {
         private ThiTracNghiemModelEntities db;
-        private SinhVienView sinhVienView;
         public SinhVienDAO()
         {
-            sinhVienView = new SinhVienView();
             db = new ThiTracNghiemModelEntities();
         }
         public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
