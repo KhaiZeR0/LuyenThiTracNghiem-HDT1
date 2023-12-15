@@ -23,6 +23,7 @@ namespace Final___OOP
             lopHocBUS = new GetLopHocBUS();
             sinhVienBUS = new SinhVienBUS();
 
+            //QL sinh viên
             GetAllSV();
             LoadDataCB();
             dtgvSinhVien.SelectionChanged += dtgvSinhVien_SelectionChanged;
@@ -32,28 +33,11 @@ namespace Final___OOP
             LoadDataMonHoc();
             DGVMon.CellClick += new DataGridViewCellEventHandler(DGVMon_CellClick);
         }
-        void LoadDataCB()
-        {
-            List<Lophoc> lsLopHoc = lopHocBUS.GetAllLopHoc();
 
-            cbLop.DataSource = lsLopHoc;
-            cbLop.DisplayMember = "TenLop";
-            cbLop.ValueMember = "MaLop";
-        }
 
-        private void GetAllSV()
-        {
-            try
-            {
-                List<SinhVienViewModel> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
 
-                dtgvSinhVien.DataSource = danhSachSinhVien;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
-            }
-        }
+        //Quản lý sinh viên
+        //Chức năng thêm sinh viên mới
         private void btnThemSV_Click(object sender, EventArgs e)
         {
             try
@@ -82,6 +66,9 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi thêm sinh viên: " + ex.Message);
             }
         }
+        
+        
+        //Chức năng sửa thông tin sinh viên
         private void btnSuaSV_Click(object sender, EventArgs e)
         {
             try
@@ -111,6 +98,8 @@ namespace Final___OOP
             }
 
         }
+
+        //Chức năng xóa thông tin sinh viên
         private void btnXoaSV_Click(object sender, EventArgs e)
         {
             try
@@ -139,7 +128,35 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi xóa sinh viên: " + ex.Message);
             }
         }
+        
+        
+        //Load danh sách lớp vào combobox ở quản lý sinh  viên
+        void LoadDataCB()
+        {
+            List<Lophoc> lsLopHoc = lopHocBUS.GetAllLopHoc();
 
+            cbLop.DataSource = lsLopHoc;
+            cbLop.DisplayMember = "TenLop";
+            cbLop.ValueMember = "MaLop";
+        }
+
+
+        //Load danh sách sinh viên lên datagridview
+        private void GetAllSV()
+        {
+            try
+            {
+                List<SinhVienViewModel> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
+
+                dtgvSinhVien.DataSource = danhSachSinhVien;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
+            }
+        }
+        
+        //clear dữ liệu đầu vào sau khi thực hiện xóa thông tin sinh viên
         private void ClearInputs()
         {
             txtMaSV.Clear();
@@ -152,6 +169,9 @@ namespace Final___OOP
             rbNuSV.Checked = false;
         }
 
+
+        //Hiển thị thông tin của sinh viên lên bản thông tin input
+        //khi click vào datagridview 
         private void dtgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
             if (dtgvSinhVien.SelectedRows.Count > 0)
@@ -177,20 +197,7 @@ namespace Final___OOP
             }
         }
         
-        private void btnQLSVpage_Click(object sender, EventArgs e)
-        {
-            AdminPages.PageIndex = 1;
-        }
-
-        private void btnQLGVpage_Click(object sender, EventArgs e)
-        {
-            AdminPages.PageIndex = 2;
-        }
-
-        private void btnchungpage_Click(object sender, EventArgs e)
-        {
-            AdminPages.PageIndex = 3;
-        }
+        
 
 
         //Quản Lý Chung
@@ -310,6 +317,25 @@ namespace Final___OOP
         {
             tbMaMon.Clear();
             tbTenMon.Clear();
+        }
+
+        private void btnThemGV_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnQLSVpage_Click(object sender, EventArgs e)
+        {
+            AdminPages.PageIndex = 1;
+        }
+
+        private void btnQLGVpage_Click(object sender, EventArgs e)
+        {
+            AdminPages.PageIndex = 2;
+        }
+
+        private void btnchungpage_Click(object sender, EventArgs e)
+        {
+            AdminPages.PageIndex = 3;
         }
     }
 }
