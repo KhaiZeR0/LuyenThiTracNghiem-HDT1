@@ -23,6 +23,11 @@ namespace Final___OOP.BUS
             sinhVienDAO.UpdateSinhVienDAO(maSV, hoTenSV, ngaySinhSV, maLop, diaChi, email, gioiTinh);
         }
 
+        public void DeleteSinhVienBUS(string maSV)
+        {
+            sinhVienDAO.DeleteSinhVienDAO(maSV);
+        }
+
         public bool IsValidSinhVienData(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
         {
 

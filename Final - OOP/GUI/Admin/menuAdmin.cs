@@ -108,8 +108,45 @@ namespace Final___OOP
         }
         private void btnXoaSV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string maSV = txtMaSV.Text;
 
+                if (!string.IsNullOrEmpty(maSV))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sinh viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        sinhVienBUS.DeleteSinhVienBUS(maSV);
+                        GetAllSV();
+                        MessageBox.Show("Xóa sinh viên thành công!");
+                        ClearInputs(); // Thêm hàm này để xóa dữ liệu trong các controls
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một sinh viên để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa sinh viên: " + ex.Message);
+            }
         }
+
+        private void ClearInputs()
+        {
+            txtMaSV.Clear();
+            txtHoTenSV.Clear();
+            dtpNgaySinhSV.Value = DateTime.Now;
+            cbLop.SelectedIndex = -1;
+            txtDiaChiSV.Clear();
+            txtEmailSV.Clear();
+            rbNamSV.Checked = true;
+            rbNuSV.Checked = false;
+        }
+
         private void dtgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
             if (dtgvSinhVien.SelectedRows.Count > 0)

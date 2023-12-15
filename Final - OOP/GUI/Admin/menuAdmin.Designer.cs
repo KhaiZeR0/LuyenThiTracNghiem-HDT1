@@ -296,7 +296,7 @@
             this.dtpNgaySinhSV.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaySinhSV.Name = "dtpNgaySinhSV";
             this.dtpNgaySinhSV.Size = new System.Drawing.Size(344, 22);
-            this.dtpNgaySinhSV.TabIndex = 26;
+            this.dtpNgaySinhSV.TabIndex = 3;
             this.dtpNgaySinhSV.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
             // 
             // rbNuSV
@@ -306,7 +306,7 @@
             this.rbNuSV.Margin = new System.Windows.Forms.Padding(4);
             this.rbNuSV.Name = "rbNuSV";
             this.rbNuSV.Size = new System.Drawing.Size(45, 20);
-            this.rbNuSV.TabIndex = 25;
+            this.rbNuSV.TabIndex = 8;
             this.rbNuSV.TabStop = true;
             this.rbNuSV.Text = "Nữ";
             this.rbNuSV.UseVisualStyleBackColor = true;
@@ -318,7 +318,7 @@
             this.rbNamSV.Margin = new System.Windows.Forms.Padding(4);
             this.rbNamSV.Name = "rbNamSV";
             this.rbNamSV.Size = new System.Drawing.Size(57, 20);
-            this.rbNamSV.TabIndex = 24;
+            this.rbNamSV.TabIndex = 7;
             this.rbNamSV.TabStop = true;
             this.rbNamSV.Text = "Nam";
             this.rbNamSV.UseVisualStyleBackColor = true;
@@ -405,7 +405,7 @@
             this.txtDiaChiSV.ShortcutsEnabled = true;
             this.txtDiaChiSV.Size = new System.Drawing.Size(347, 46);
             this.txtDiaChiSV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtDiaChiSV.TabIndex = 23;
+            this.txtDiaChiSV.TabIndex = 5;
             this.txtDiaChiSV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDiaChiSV.TextMarginBottom = 0;
             this.txtDiaChiSV.TextMarginLeft = 3;
@@ -513,7 +513,7 @@
             this.btnXoaSV.OnPressedState.IconLeftImage = null;
             this.btnXoaSV.OnPressedState.IconRightImage = null;
             this.btnXoaSV.Size = new System.Drawing.Size(128, 48);
-            this.btnXoaSV.TabIndex = 18;
+            this.btnXoaSV.TabIndex = 11;
             this.btnXoaSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnXoaSV.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnXoaSV.TextMarginLeft = 0;
@@ -604,7 +604,7 @@
             this.btnSuaSV.OnPressedState.IconLeftImage = null;
             this.btnSuaSV.OnPressedState.IconRightImage = null;
             this.btnSuaSV.Size = new System.Drawing.Size(128, 48);
-            this.btnSuaSV.TabIndex = 17;
+            this.btnSuaSV.TabIndex = 10;
             this.btnSuaSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSuaSV.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSuaSV.TextMarginLeft = 0;
@@ -695,7 +695,7 @@
             this.btnThemSV.OnPressedState.IconLeftImage = null;
             this.btnThemSV.OnPressedState.IconRightImage = null;
             this.btnThemSV.Size = new System.Drawing.Size(128, 48);
-            this.btnThemSV.TabIndex = 16;
+            this.btnThemSV.TabIndex = 9;
             this.btnThemSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThemSV.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnThemSV.TextMarginLeft = 0;
@@ -912,7 +912,7 @@
             this.txtEmailSV.ShortcutsEnabled = true;
             this.txtEmailSV.Size = new System.Drawing.Size(347, 46);
             this.txtEmailSV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtEmailSV.TabIndex = 14;
+            this.txtEmailSV.TabIndex = 6;
             this.txtEmailSV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtEmailSV.TextMarginBottom = 0;
             this.txtEmailSV.TextMarginLeft = 3;
@@ -987,7 +987,7 @@
             this.txtMaSV.ShortcutsEnabled = true;
             this.txtMaSV.Size = new System.Drawing.Size(347, 46);
             this.txtMaSV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtMaSV.TabIndex = 8;
+            this.txtMaSV.TabIndex = 1;
             this.txtMaSV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMaSV.TextMarginBottom = 0;
             this.txtMaSV.TextMarginLeft = 3;
@@ -1062,7 +1062,7 @@
             this.txtHoTenSV.ShortcutsEnabled = true;
             this.txtHoTenSV.Size = new System.Drawing.Size(347, 46);
             this.txtHoTenSV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtHoTenSV.TabIndex = 5;
+            this.txtHoTenSV.TabIndex = 2;
             this.txtHoTenSV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtHoTenSV.TextMarginBottom = 0;
             this.txtHoTenSV.TextMarginLeft = 3;
@@ -1109,7 +1109,7 @@
             this.cbLop.Margin = new System.Windows.Forms.Padding(4);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(345, 32);
-            this.cbLop.TabIndex = 0;
+            this.cbLop.TabIndex = 4;
             this.cbLop.Text = null;
             this.cbLop.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cbLop.TextLeftMargin = 5;

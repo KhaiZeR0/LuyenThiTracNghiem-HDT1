@@ -101,18 +101,41 @@ namespace Final___OOP.DAO
 
         public void DeleteSinhVienDAO(string maSV)
         {
+            using (var transaction = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    var svToDelete = db.ThongTinSVs.Find(maSV);
 
-            var sinhVien = db.ThongTinSVs.Find(maSV);
-            if (sinhVien != null)
-            {
-                db.ThongTinSVs.Remove(sinhVien);
-                db.SaveChanges();
-            }
-            else
-            {
-                throw new Exception("Không tìm thấy sinh viên có mã " + maSV);
+                    if (svToDelete != null)
+                    {
+                        var lopHoc = db.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
+                        var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
+
+                        if (lopHoc != null)
+                        {
+                            db.DanhSachLops.Remove(lopHoc);
+                        }
+
+                        if (taiKhoan != null)
+                        {
+                            db.TaiKhoans.Remove(taiKhoan);
+                        }
+
+                        db.ThongTinSVs.Remove(svToDelete);
+                        db.SaveChanges();
+
+                        transaction.Commit();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi xóa sinh viên: " + ex.Message);
+                    transaction.Rollback();
+                }
             }
         }
+
         public List<SinhVienViewModel> LayDanhSachSinhVienDAO()
         {
             var query = from sv in db.ThongTinSVs
