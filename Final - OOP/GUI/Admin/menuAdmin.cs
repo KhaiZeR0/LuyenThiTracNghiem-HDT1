@@ -17,23 +17,27 @@ namespace Final___OOP
         private AdminQLChungBUS adminQLChungBUS;
         private GetLopHocBUS lopHocBUS;
         private SinhVienBUS sinhVienBUS;
+        private GiangVienBUS giangVienBUS;
         public menuAdmin()
         {
             InitializeComponent();
             lopHocBUS = new GetLopHocBUS();
             sinhVienBUS = new SinhVienBUS();
-
+            giangVienBUS = new GiangVienBUS();
+            
             //QL sinh viên
             GetAllSV();
             LoadDataCB();
             dtgvSinhVien.SelectionChanged += dtgvSinhVien_SelectionChanged;
+
+            //QLGiangVien
+            dtgvGiangVien.SelectionChanged += dtgvGiangVien_SelectionChanged;
 
             //QLChung
             adminQLChungBUS = new AdminQLChungBUS();
             LoadDataMonHoc();
             DGVMon.CellClick += new DataGridViewCellEventHandler(DGVMon_CellClick);
         }
-
 
 
         //Quản lý sinh viên
@@ -50,7 +54,7 @@ namespace Final___OOP
                 string email = txtEmailSV.Text;
                 bool gioiTinh = rbNuSV.Checked;
 
-                if (sinhVienBUS.IsValidSinhVienData(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh))
+                if (sinhVienBUS.IsValidSinhVienDataBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh))
                 {
                     sinhVienBUS.AddSinhVienBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
                     GetAllSV();
@@ -81,7 +85,7 @@ namespace Final___OOP
                 string email = txtEmailSV.Text;
                 bool gioiTinh = rbNuSV.Checked;
 
-                if (sinhVienBUS.IsValidSinhVienData(maSV, hoTenSV, ngaySinhSV, lop, diaChi, email, gioiTinh))
+                if (sinhVienBUS.IsValidSinhVienDataBUS(maSV, hoTenSV, ngaySinhSV, lop, diaChi, email, gioiTinh))
                 {
                     sinhVienBUS.UpdateSinhVienBUS(maSV, hoTenSV, ngaySinhSV, lop, diaChi, email, gioiTinh);
                     GetAllSV();
@@ -146,9 +150,12 @@ namespace Final___OOP
         {
             try
             {
-                List<SinhVienViewModel> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
+                List<SinhVienView> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
 
                 dtgvSinhVien.DataSource = danhSachSinhVien;
+
+                dtgvSinhVien.Columns["MaLop"].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -320,8 +327,94 @@ namespace Final___OOP
         }
 
         private void btnThemGV_Click(object sender, EventArgs e)
-        {
+        {            
+            try
+            {
+                string maGV = txtMaGV.Text;
+                string hoTenGV = txtHoTenGV.Text;
+                DateTime ngaySinhGV = dtpNgaySinhGV.Value;
+                string diaChiGV = txtDiaChiGV.Text;
+                string emailGV = txtEmailGV.Text;
+                bool gioiTinhGV = rbNuGV.Checked;
+                if (giangVienBUS.IsValidGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV))
+                {
+                    giangVienBUS.AddGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV);
+                    MessageBox.Show("Thêm giang viên thành công ");
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin chưa hợp lệ ");
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm giảng viên: " + ex.Message);
+            }
+        }
+        private void btnSuaGV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maGV = txtMaGV.Text;
+                string hoTenGV = txtHoTenGV.Text;
+                DateTime ngaySinhGV = dtpNgaySinhGV.Value;
+                string diaChiGV = txtDiaChiGV.Text;
+                string emailGV = txtEmailGV.Text;
+                bool gioiTinhGV = rbNuGV.Checked;
+                if (giangVienBUS.IsValidGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV))
+                {
+                    giangVienBUS.UpdateGiangVienBUS(maGV, hoTenGV, ngaySinhGV, diaChiGV, emailGV, gioiTinhGV);
+                    MessageBox.Show("Thêm giang viên thành công ");
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin chưa hợp lệ ");
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm giảng viên: " + ex.Message);
+            }
+        }
+
+        private void GetAllGV()
+        {
+            try
+            {
+                List<SinhVienView> danhSachSinhVien = sinhVienBUS.LayDanhSachSinhVien();
+
+                dtgvSinhVien.DataSource = danhSachSinhVien;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
+            }
+        }
+        private void dtgvGiangVien_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvGiangVien.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dtgvGiangVien.SelectedRows[0];
+
+                string maSV = selectedRow.Cells["MaSV"].Value.ToString();
+                string hoTenSV = selectedRow.Cells["HoTen"].Value.ToString();
+                DateTime ngaySinhSV = Convert.ToDateTime(selectedRow.Cells["NgaySinh"].Value);
+                string diaChi = selectedRow.Cells["DiaChi"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
+                bool gioiTinh = Convert.ToBoolean(selectedRow.Cells["GioiTinh"].Value);
+
+                txtMaSV.Text = maSV;
+                txtHoTenSV.Text = hoTenSV;
+                dtpNgaySinhSV.Value = ngaySinhSV;
+                txtDiaChiSV.Text = diaChi;
+                txtEmailSV.Text = email;
+                rbNamSV.Checked = !gioiTinh;
+                rbNuSV.Checked = gioiTinh;
+            }
         }
         private void btnQLSVpage_Click(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final___OOP.BUS;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -11,27 +12,13 @@ namespace Final___OOP.DAO
     internal class SinhVienDAO
     {
         private ThiTracNghiemModelEntities db;
-
+        private SinhVienView sinhVienView;
         public SinhVienDAO()
         {
+            sinhVienView = new SinhVienView();
             db = new ThiTracNghiemModelEntities();
         }
-
-        public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string diaChi, bool gioiTinh)
-        {
-
-            var newSinhVien = new ThongTinSV
-            {
-                MaSV = maSV,
-                HoTen = hoTenSV,
-                GioiTinh = gioiTinh,
-                NgaySinh = ngaySinhSV,
-                DiaChi = diaChi,
-            };
-            db.ThongTinSVs.Add(newSinhVien);
-            db.SaveChanges();
-        }
-        public void AddAccountvSVDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
+        public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
         {
             var newTaiKhoan = new TaiKhoan
             {
@@ -40,21 +27,25 @@ namespace Final___OOP.DAO
                 Email = email,
                 LoaiTK = "2"
             };
-
-            db.TaiKhoans.Add(newTaiKhoan);
-            db.SaveChanges();
-
-            AddSinhVienDAO(maSV,hoTenSV,ngaySinhSV,diaChi,gioiTinh);
-            DSLopSVDAO(maSV, maLop);
-        }
-        public void DSLopSVDAO(string maHS, string maLop)
-        {
+            var newSinhVien = new ThongTinSV
+            {
+                MaSV = maSV,
+                HoTen = hoTenSV,
+                GioiTinh = gioiTinh,
+                NgaySinh = ngaySinhSV,
+                DiaChi = diaChi,
+            };
             var newDSLop = new DanhSachLop
             {
-                MaSV = maHS,
+                MaSV = maSV,
                 MaLop = maLop,
                 Temp = null
             };
+            
+            db.TaiKhoans.Add(newTaiKhoan);
+            db.SaveChanges();
+            db.ThongTinSVs.Add(newSinhVien);
+            db.SaveChanges();
             db.DanhSachLops.Add(newDSLop);
             db.SaveChanges();
         }
@@ -136,7 +127,7 @@ namespace Final___OOP.DAO
             }
         }
 
-        public List<SinhVienViewModel> LayDanhSachSinhVienDAO()
+        public List<SinhVienView> LayDanhSachSinhVienDAO()
         {
             var query = from sv in db.ThongTinSVs
                         join ds in db.DanhSachLops on sv.MaSV equals ds.MaSV into svds
@@ -145,7 +136,7 @@ namespace Final___OOP.DAO
                         from tk in svtks.DefaultIfEmpty()
                         join lop in db.Lophocs on ds.MaLop equals lop.MaLop into dslophoc
                         from lop in dslophoc.DefaultIfEmpty()
-                        select new SinhVienViewModel
+                        select new SinhVienView
                         {
                             MaSV = sv.MaSV,
                             HoTen = sv.HoTen,

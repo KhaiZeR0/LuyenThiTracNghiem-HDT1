@@ -15,7 +15,7 @@ namespace Final___OOP.BUS
         
         public void AddSinhVienBUS(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
         {
-            sinhVienDAO.AddAccountvSVDAO(maSV, hoTenSV, ngaySinhSV, maLop, diaChi, email, gioiTinh);
+            sinhVienDAO.AddSinhVienDAO(maSV, hoTenSV, ngaySinhSV, maLop, diaChi, email, gioiTinh);
         }
 
         public void UpdateSinhVienBUS(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
@@ -28,7 +28,7 @@ namespace Final___OOP.BUS
             sinhVienDAO.DeleteSinhVienDAO(maSV);
         }
 
-        public bool IsValidSinhVienData(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
+        public bool IsValidSinhVienDataBUS(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
         {
 
             if (string.IsNullOrWhiteSpace(maSV) || string.IsNullOrWhiteSpace(hoTenSV) || string.IsNullOrWhiteSpace(maLop) ||string.IsNullOrWhiteSpace(diaChi) || string.IsNullOrWhiteSpace(email))
@@ -50,7 +50,7 @@ namespace Final___OOP.BUS
         }
         
 
-        private bool IsValidEmail(string email)
+        public bool IsValidEmail(string email)
         {
             try
             {
@@ -62,20 +62,8 @@ namespace Final___OOP.BUS
                 return false;
             }
         }
-        internal class SinhVienViewModel
-        {
-            public string MaSV { get; set; }
-            public string HoTen { get; set; }
-            public bool GioiTinh { get; set; }
-            public DateTime NgaySinh { get; set; }
-            public string DiaChi { get; set; }
-            public string Email { get; set; }
-            public string MaLop { get; set; }
-            public string TenLop { get; set; }
-
-            public SinhVienViewModel() { }
-        }
-        public List<SinhVienViewModel> LayDanhSachSinhVien()
+        
+        public List<SinhVienView> LayDanhSachSinhVien()
         {
             return sinhVienDAO.LayDanhSachSinhVienDAO();
         }

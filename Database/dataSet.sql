@@ -17,4 +17,5 @@ GO
 select * from TaiKhoan
 select * from DanhSachLop
 select * from ThongTinSV
+select * from ThongTinCB
 select * from Lophoc

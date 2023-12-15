@@ -157,6 +157,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\GiangVienBUS.cs" />
+    <Compile Include="BUS\GiangVienView.cs" />
+    <Compile Include="BUS\SinhVienView.cs" />
     <Compile Include="DAO\AdminQLChungDAO.cs" />
     <Compile Include="BUS\AdminQLChungBUS.cs" />
     <Compile Include="BaiLam.cs">
@@ -175,6 +178,7 @@
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\GetLopHocDAO.cs" />
+    <Compile Include="DAO\GiangVienDAO.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DeThi.cs">
       <DependentUpon>ThiTracNghiemModelETT.tt</DependentUpon>
