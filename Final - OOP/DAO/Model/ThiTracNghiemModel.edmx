@@ -10,82 +10,82 @@
             <PropertyRef Name="MaBaiLam" />
             <PropertyRef Name="MaSV" />
           </Key>
-          <Property Name="MaBaiLam" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="MaSV" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="DapanDaChon" Type="nvarchar(max)" />
+          <Property Name="MaBaiLam" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaSV" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DapAnDaChon" Type="nvarchar(max)" />
           <Property Name="TrangThai" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="Cauhoi">
+        <EntityType Name="CauHoi">
           <Key>
             <PropertyRef Name="MaCauHoi" />
           </Key>
-          <Property Name="MaCauHoi" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaCauHoi" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NoiDungCauHoi" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="DapanA" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="DapanB" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="DapanC" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="DapanD" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="DapanDung" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MaChuong" Type="char" MaxLength="10" />
+          <Property Name="DapAnA" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="DapAnB" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="DapAnC" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="DapAnD" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="DapAnDung" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="MaChuong" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Chuong">
           <Key>
             <PropertyRef Name="MaChuong" />
           </Key>
-          <Property Name="MaChuong" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaChuong" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenChuong" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="MaMH" Type="char" MaxLength="10" />
+          <Property Name="MaMH" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="DanhSachLop">
           <Key>
             <PropertyRef Name="MaSV" />
             <PropertyRef Name="MaLop" />
           </Key>
-          <Property Name="MaSV" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="MaLop" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="Temp" Type="char" MaxLength="1" />
+          <Property Name="MaSV" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Temp" Type="varchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="DeThi">
           <Key>
             <PropertyRef Name="MaDeThi" />
           </Key>
-          <Property Name="MaDeThi" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaDeThi" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenDeThi" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="TGlambai" Type="time" Precision="7" Nullable="false" />
+          <Property Name="TGLamBai" Type="time" Precision="7" Nullable="false" />
           <Property Name="SoLuongCau" Type="int" Nullable="false" />
           <Property Name="NoiDungDeThi" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="MaCB" Type="char" MaxLength="10" />
-          <Property Name="MaLop" Type="char" MaxLength="10" />
-          <Property Name="MaMH" Type="char" MaxLength="10" />
+          <Property Name="MaCB" Type="varchar" MaxLength="10" />
+          <Property Name="MaLop" Type="varchar" MaxLength="10" />
+          <Property Name="MaMH" Type="varchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="Lophoc">
+        <EntityType Name="LopHoc">
           <Key>
             <PropertyRef Name="MaLop" />
           </Key>
-          <Property Name="MaLop" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenLop" Type="nvarchar" MaxLength="256" />
         </EntityType>
         <EntityType Name="MonHoc">
           <Key>
             <PropertyRef Name="MaMH" />
           </Key>
-          <Property Name="MaMH" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaMH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TenMH" Type="nvarchar" MaxLength="256" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
             <PropertyRef Name="MaTK" />
           </Key>
-          <Property Name="MaTK" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaTK" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="MatKhau" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="LoaiTK" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="LoaiTK" Type="varchar" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="ThongTinCB">
           <Key>
             <PropertyRef Name="MaCB" />
           </Key>
-          <Property Name="MaCB" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaCB" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="GioiTinh" Type="bit" Nullable="false" />
           <Property Name="NgaySinh" Type="date" Nullable="false" />
@@ -95,7 +95,7 @@
           <Key>
             <PropertyRef Name="MaSV" />
           </Key>
-          <Property Name="MaSV" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaSV" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="GioiTinh" Type="bit" Nullable="false" />
           <Property Name="NgaySinh" Type="date" Nullable="false" />
@@ -127,12 +127,12 @@
         </Association>
         <Association Name="FK_CauHoi_Chuong">
           <End Role="Chuong" Type="Self.Chuong" Multiplicity="0..1" />
-          <End Role="Cauhoi" Type="Self.Cauhoi" Multiplicity="*" />
+          <End Role="CauHoi" Type="Self.CauHoi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Chuong">
               <PropertyRef Name="MaChuong" />
             </Principal>
-            <Dependent Role="Cauhoi">
+            <Dependent Role="CauHoi">
               <PropertyRef Name="MaChuong" />
             </Dependent>
           </ReferentialConstraint>
@@ -150,10 +150,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DanhSachLop_LopHoc">
-          <End Role="Lophoc" Type="Self.Lophoc" Multiplicity="1" />
+          <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="1" />
           <End Role="DanhSachLop" Type="Self.DanhSachLop" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lophoc">
+            <Principal Role="LopHoc">
               <PropertyRef Name="MaLop" />
             </Principal>
             <Dependent Role="DanhSachLop">
@@ -174,10 +174,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeThi_LopHoc">
-          <End Role="Lophoc" Type="Self.Lophoc" Multiplicity="0..1" />
+          <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
           <End Role="DeThi" Type="Self.DeThi" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lophoc">
+            <Principal Role="LopHoc">
               <PropertyRef Name="MaLop" />
             </Principal>
             <Dependent Role="DeThi">
@@ -235,11 +235,11 @@
         </Association>
         <EntityContainer Name="ThiTracNghiemModelStoreContainer">
           <EntitySet Name="BaiLam" EntityType="Self.BaiLam" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Cauhoi" EntityType="Self.Cauhoi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CauHoi" EntityType="Self.CauHoi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Chuong" EntityType="Self.Chuong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhSachLop" EntityType="Self.DanhSachLop" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DeThi" EntityType="Self.DeThi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Lophoc" EntityType="Self.Lophoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LopHoc" EntityType="Self.LopHoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongTinCB" EntityType="Self.ThongTinCB" Schema="dbo" store:Type="Tables" />
@@ -254,14 +254,14 @@
           </AssociationSet>
           <AssociationSet Name="FK_CauHoi_Chuong" Association="Self.FK_CauHoi_Chuong">
             <End Role="Chuong" EntitySet="Chuong" />
-            <End Role="Cauhoi" EntitySet="Cauhoi" />
+            <End Role="CauHoi" EntitySet="CauHoi" />
           </AssociationSet>
           <AssociationSet Name="FK_Chuong_MonHoc" Association="Self.FK_Chuong_MonHoc">
             <End Role="MonHoc" EntitySet="MonHoc" />
             <End Role="Chuong" EntitySet="Chuong" />
           </AssociationSet>
           <AssociationSet Name="FK_DanhSachLop_LopHoc" Association="Self.FK_DanhSachLop_LopHoc">
-            <End Role="Lophoc" EntitySet="Lophoc" />
+            <End Role="LopHoc" EntitySet="LopHoc" />
             <End Role="DanhSachLop" EntitySet="DanhSachLop" />
           </AssociationSet>
           <AssociationSet Name="FK_DanhSachLop_ThongTinSV" Association="Self.FK_DanhSachLop_ThongTinSV">
@@ -269,7 +269,7 @@
             <End Role="DanhSachLop" EntitySet="DanhSachLop" />
           </AssociationSet>
           <AssociationSet Name="FK_DeThi_LopHoc" Association="Self.FK_DeThi_LopHoc">
-            <End Role="Lophoc" EntitySet="Lophoc" />
+            <End Role="LopHoc" EntitySet="LopHoc" />
             <End Role="DeThi" EntitySet="DeThi" />
           </AssociationSet>
           <AssociationSet Name="FK_DeThi_MonHoc" Association="Self.FK_DeThi_MonHoc">
@@ -299,35 +299,35 @@
             <PropertyRef Name="MaBaiLam" />
             <PropertyRef Name="MaSV" />
           </Key>
-          <Property Name="MaBaiLam" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DapanDaChon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaBaiLam" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DapAnDaChon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="DeThi" Relationship="Self.FK_BaiLam_DeThi" FromRole="BaiLam" ToRole="DeThi" />
           <NavigationProperty Name="ThongTinSV" Relationship="Self.FK_BaiLam_ThongTinSV" FromRole="BaiLam" ToRole="ThongTinSV" />
         </EntityType>
-        <EntityType Name="Cauhoi">
+        <EntityType Name="CauHoi">
           <Key>
             <PropertyRef Name="MaCauHoi" />
           </Key>
-          <Property Name="MaCauHoi" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaCauHoi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NoiDungCauHoi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DapanA" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DapanB" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DapanC" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DapanD" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DapanDung" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MaChuong" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Chuong" Relationship="Self.FK_CauHoi_Chuong" FromRole="Cauhoi" ToRole="Chuong" />
+          <Property Name="DapAnA" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DapAnB" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DapAnC" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DapAnD" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DapAnDung" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaChuong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Chuong" Relationship="Self.FK_CauHoi_Chuong" FromRole="CauHoi" ToRole="Chuong" />
         </EntityType>
         <EntityType Name="Chuong">
           <Key>
             <PropertyRef Name="MaChuong" />
           </Key>
-          <Property Name="MaChuong" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaChuong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenChuong" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Cauhois" Relationship="Self.FK_CauHoi_Chuong" FromRole="Chuong" ToRole="Cauhoi" />
+          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CauHois" Relationship="Self.FK_CauHoi_Chuong" FromRole="Chuong" ToRole="CauHoi" />
           <NavigationProperty Name="MonHoc" Relationship="Self.FK_Chuong_MonHoc" FromRole="Chuong" ToRole="MonHoc" />
         </EntityType>
         <EntityType Name="DanhSachLop">
@@ -335,43 +335,43 @@
             <PropertyRef Name="MaSV" />
             <PropertyRef Name="MaLop" />
           </Key>
-          <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Temp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Lophoc" Relationship="Self.FK_DanhSachLop_LopHoc" FromRole="DanhSachLop" ToRole="Lophoc" />
+          <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Temp" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LopHoc" Relationship="Self.FK_DanhSachLop_LopHoc" FromRole="DanhSachLop" ToRole="LopHoc" />
           <NavigationProperty Name="ThongTinSV" Relationship="Self.FK_DanhSachLop_ThongTinSV" FromRole="DanhSachLop" ToRole="ThongTinSV" />
         </EntityType>
         <EntityType Name="DeThi">
           <Key>
             <PropertyRef Name="MaDeThi" />
           </Key>
-          <Property Name="MaDeThi" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaDeThi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenDeThi" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TGlambai" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TGLamBai" Type="Time" Nullable="false" Precision="7" />
           <Property Name="SoLuongCau" Type="Int32" Nullable="false" />
           <Property Name="NoiDungDeThi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MaCB" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MaCB" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="BaiLams" Relationship="Self.FK_BaiLam_DeThi" FromRole="DeThi" ToRole="BaiLam" />
-          <NavigationProperty Name="Lophoc" Relationship="Self.FK_DeThi_LopHoc" FromRole="DeThi" ToRole="Lophoc" />
+          <NavigationProperty Name="LopHoc" Relationship="Self.FK_DeThi_LopHoc" FromRole="DeThi" ToRole="LopHoc" />
           <NavigationProperty Name="MonHoc" Relationship="Self.FK_DeThi_MonHoc" FromRole="DeThi" ToRole="MonHoc" />
           <NavigationProperty Name="ThongTinCB" Relationship="Self.FK_DeThi_ThongTinCB" FromRole="DeThi" ToRole="ThongTinCB" />
         </EntityType>
-        <EntityType Name="Lophoc">
+        <EntityType Name="LopHoc">
           <Key>
             <PropertyRef Name="MaLop" />
           </Key>
-          <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenLop" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DanhSachLops" Relationship="Self.FK_DanhSachLop_LopHoc" FromRole="Lophoc" ToRole="DanhSachLop" />
-          <NavigationProperty Name="DeThis" Relationship="Self.FK_DeThi_LopHoc" FromRole="Lophoc" ToRole="DeThi" />
+          <NavigationProperty Name="DanhSachLops" Relationship="Self.FK_DanhSachLop_LopHoc" FromRole="LopHoc" ToRole="DanhSachLop" />
+          <NavigationProperty Name="DeThis" Relationship="Self.FK_DeThi_LopHoc" FromRole="LopHoc" ToRole="DeThi" />
         </EntityType>
         <EntityType Name="MonHoc">
           <Key>
             <PropertyRef Name="MaMH" />
           </Key>
-          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenMH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Chuongs" Relationship="Self.FK_Chuong_MonHoc" FromRole="MonHoc" ToRole="Chuong" />
           <NavigationProperty Name="DeThis" Relationship="Self.FK_DeThi_MonHoc" FromRole="MonHoc" ToRole="DeThi" />
@@ -380,10 +380,10 @@
           <Key>
             <PropertyRef Name="MaTK" />
           </Key>
-          <Property Name="MaTK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaTK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MatKhau" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LoaiTK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LoaiTK" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="ThongTinCB" Relationship="Self.FK_ThongTinCB_TaiKhoan" FromRole="TaiKhoan" ToRole="ThongTinCB" />
           <NavigationProperty Name="ThongTinSV" Relationship="Self.FK_ThongTinSV_TaiKhoan" FromRole="TaiKhoan" ToRole="ThongTinSV" />
         </EntityType>
@@ -391,7 +391,7 @@
           <Key>
             <PropertyRef Name="MaCB" />
           </Key>
-          <Property Name="MaCB" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaCB" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HoTen" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
           <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
@@ -403,7 +403,7 @@
           <Key>
             <PropertyRef Name="MaSV" />
           </Key>
-          <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaSV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HoTen" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
           <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
@@ -438,12 +438,12 @@
         </Association>
         <Association Name="FK_CauHoi_Chuong">
           <End Role="Chuong" Type="Self.Chuong" Multiplicity="0..1" />
-          <End Role="Cauhoi" Type="Self.Cauhoi" Multiplicity="*" />
+          <End Role="CauHoi" Type="Self.CauHoi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Chuong">
               <PropertyRef Name="MaChuong" />
             </Principal>
-            <Dependent Role="Cauhoi">
+            <Dependent Role="CauHoi">
               <PropertyRef Name="MaChuong" />
             </Dependent>
           </ReferentialConstraint>
@@ -461,10 +461,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DanhSachLop_LopHoc">
-          <End Role="Lophoc" Type="Self.Lophoc" Multiplicity="1" />
+          <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="1" />
           <End Role="DanhSachLop" Type="Self.DanhSachLop" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lophoc">
+            <Principal Role="LopHoc">
               <PropertyRef Name="MaLop" />
             </Principal>
             <Dependent Role="DanhSachLop">
@@ -485,10 +485,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DeThi_LopHoc">
-          <End Role="Lophoc" Type="Self.Lophoc" Multiplicity="0..1" />
+          <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
           <End Role="DeThi" Type="Self.DeThi" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lophoc">
+            <Principal Role="LopHoc">
               <PropertyRef Name="MaLop" />
             </Principal>
             <Dependent Role="DeThi">
@@ -544,13 +544,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ThiTracNghiemModelEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ThiTracNghiemEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BaiLams" EntityType="Self.BaiLam" />
-          <EntitySet Name="Cauhois" EntityType="Self.Cauhoi" />
+          <EntitySet Name="CauHois" EntityType="Self.CauHoi" />
           <EntitySet Name="Chuongs" EntityType="Self.Chuong" />
           <EntitySet Name="DanhSachLops" EntityType="Self.DanhSachLop" />
           <EntitySet Name="DeThis" EntityType="Self.DeThi" />
-          <EntitySet Name="Lophocs" EntityType="Self.Lophoc" />
+          <EntitySet Name="LopHocs" EntityType="Self.LopHoc" />
           <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
           <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
           <EntitySet Name="ThongTinCBs" EntityType="Self.ThongTinCB" />
@@ -565,14 +565,14 @@
           </AssociationSet>
           <AssociationSet Name="FK_CauHoi_Chuong" Association="Self.FK_CauHoi_Chuong">
             <End Role="Chuong" EntitySet="Chuongs" />
-            <End Role="Cauhoi" EntitySet="Cauhois" />
+            <End Role="CauHoi" EntitySet="CauHois" />
           </AssociationSet>
           <AssociationSet Name="FK_Chuong_MonHoc" Association="Self.FK_Chuong_MonHoc">
             <End Role="MonHoc" EntitySet="MonHocs" />
             <End Role="Chuong" EntitySet="Chuongs" />
           </AssociationSet>
           <AssociationSet Name="FK_DanhSachLop_LopHoc" Association="Self.FK_DanhSachLop_LopHoc">
-            <End Role="Lophoc" EntitySet="Lophocs" />
+            <End Role="LopHoc" EntitySet="LopHocs" />
             <End Role="DanhSachLop" EntitySet="DanhSachLops" />
           </AssociationSet>
           <AssociationSet Name="FK_DanhSachLop_ThongTinSV" Association="Self.FK_DanhSachLop_ThongTinSV">
@@ -580,7 +580,7 @@
             <End Role="DanhSachLop" EntitySet="DanhSachLops" />
           </AssociationSet>
           <AssociationSet Name="FK_DeThi_LopHoc" Association="Self.FK_DeThi_LopHoc">
-            <End Role="Lophoc" EntitySet="Lophocs" />
+            <End Role="LopHoc" EntitySet="LopHocs" />
             <End Role="DeThi" EntitySet="DeThis" />
           </AssociationSet>
           <AssociationSet Name="FK_DeThi_MonHoc" Association="Self.FK_DeThi_MonHoc">
@@ -605,27 +605,27 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ThiTracNghiemModelStoreContainer" CdmEntityContainer="ThiTracNghiemModelEntities">
+        <EntityContainerMapping StorageEntityContainer="ThiTracNghiemModelStoreContainer" CdmEntityContainer="ThiTracNghiemEntities">
           <EntitySetMapping Name="BaiLams">
             <EntityTypeMapping TypeName="ThiTracNghiemModel.BaiLam">
               <MappingFragment StoreEntitySet="BaiLam">
                 <ScalarProperty Name="MaBaiLam" ColumnName="MaBaiLam" />
                 <ScalarProperty Name="MaSV" ColumnName="MaSV" />
-                <ScalarProperty Name="DapanDaChon" ColumnName="DapanDaChon" />
+                <ScalarProperty Name="DapAnDaChon" ColumnName="DapAnDaChon" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Cauhois">
-            <EntityTypeMapping TypeName="ThiTracNghiemModel.Cauhoi">
-              <MappingFragment StoreEntitySet="Cauhoi">
+          <EntitySetMapping Name="CauHois">
+            <EntityTypeMapping TypeName="ThiTracNghiemModel.CauHoi">
+              <MappingFragment StoreEntitySet="CauHoi">
                 <ScalarProperty Name="MaCauHoi" ColumnName="MaCauHoi" />
                 <ScalarProperty Name="NoiDungCauHoi" ColumnName="NoiDungCauHoi" />
-                <ScalarProperty Name="DapanA" ColumnName="DapanA" />
-                <ScalarProperty Name="DapanB" ColumnName="DapanB" />
-                <ScalarProperty Name="DapanC" ColumnName="DapanC" />
-                <ScalarProperty Name="DapanD" ColumnName="DapanD" />
-                <ScalarProperty Name="DapanDung" ColumnName="DapanDung" />
+                <ScalarProperty Name="DapAnA" ColumnName="DapAnA" />
+                <ScalarProperty Name="DapAnB" ColumnName="DapAnB" />
+                <ScalarProperty Name="DapAnC" ColumnName="DapAnC" />
+                <ScalarProperty Name="DapAnD" ColumnName="DapAnD" />
+                <ScalarProperty Name="DapAnDung" ColumnName="DapAnDung" />
                 <ScalarProperty Name="MaChuong" ColumnName="MaChuong" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -653,7 +653,7 @@
               <MappingFragment StoreEntitySet="DeThi">
                 <ScalarProperty Name="MaDeThi" ColumnName="MaDeThi" />
                 <ScalarProperty Name="TenDeThi" ColumnName="TenDeThi" />
-                <ScalarProperty Name="TGlambai" ColumnName="TGlambai" />
+                <ScalarProperty Name="TGLamBai" ColumnName="TGLamBai" />
                 <ScalarProperty Name="SoLuongCau" ColumnName="SoLuongCau" />
                 <ScalarProperty Name="NoiDungDeThi" ColumnName="NoiDungDeThi" />
                 <ScalarProperty Name="MaCB" ColumnName="MaCB" />
@@ -662,9 +662,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Lophocs">
-            <EntityTypeMapping TypeName="ThiTracNghiemModel.Lophoc">
-              <MappingFragment StoreEntitySet="Lophoc">
+          <EntitySetMapping Name="LopHocs">
+            <EntityTypeMapping TypeName="ThiTracNghiemModel.LopHoc">
+              <MappingFragment StoreEntitySet="LopHoc">
                 <ScalarProperty Name="MaLop" ColumnName="MaLop" />
                 <ScalarProperty Name="TenLop" ColumnName="TenLop" />
               </MappingFragment>

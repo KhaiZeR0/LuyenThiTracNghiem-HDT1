@@ -1,22 +1,26 @@
 ﻿using Final___OOP.DAO;
+using Final___OOP.DAO.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class GetLopHocBUS
+    internal class GetLopHocBUS : IDisposable
     {
-        private GetLopHocDAO LopHocDao;
+        private GetLopHocDAO lopHocDao;
         public GetLopHocBUS() 
         {
-            LopHocDao = new GetLopHocDAO();
+            lopHocDao = new GetLopHocDAO();
         }
-        public List<Lophoc> GetAllLopHoc()
+
+        public List<LopHoc> GetAllLopHoc()
         {
-            return LopHocDao.GetLopHoc();
+            return lopHocDao.GetLopHoc();
+        }
+
+        public void Dispose()
+        {
+            if (lopHocDao != null) { lopHocDao.Dispose(); }
         }
     }
 }

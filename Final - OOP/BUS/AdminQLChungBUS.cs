@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Final___OOP.DAO.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP
 {
-    class AdminQLChungBUS
+    public class AdminQLChungBUS : IDisposable
     {
         private AdminQLChungDAO adminQLChungDAO;
 
@@ -33,6 +31,11 @@ namespace Final___OOP
         public List<MonHoc> LayDanhSachMonHocBUS()
         {
             return adminQLChungDAO.LayDanhSachMonHocDAO();
+        }
+
+        public void Dispose()
+        {
+            if(adminQLChungDAO != null) {  adminQLChungDAO.Dispose(); }
         }
     }
 }

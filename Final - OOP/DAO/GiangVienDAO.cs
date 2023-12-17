@@ -1,21 +1,15 @@
 ﻿using Final___OOP.BUS;
+using Final___OOP.DAO.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Final___OOP.DAO
 {
-    internal class GiangVienDAO
+    public class GiangVienDAO : ThiTracNghiemDAO
     {
-        private ThiTracNghiemModelEntities db;
-        public GiangVienDAO() 
-        {
-            db = new ThiTracNghiemModelEntities();
-        }
+        private GiangVienView giangVienView;
         public void AddGiangVienDAO(string maGV, string hoTenGV, DateTime ngaySinhGV, string diaChi, string email, bool gioiTinh)
         {
             var newAccGV = new TaiKhoan
@@ -33,16 +27,16 @@ namespace Final___OOP.DAO
                 DiaChi = diaChi,
                 GioiTinh = gioiTinh
             };
-            db.TaiKhoans.Add(newAccGV);
-            db.SaveChanges();
-            db.ThongTinCBs.Add(newThongTinGV);
-            db.SaveChanges();
+            DbContext.TaiKhoans.Add(newAccGV);
+            DbContext.SaveChanges();
+            DbContext.ThongTinCBs.Add(newThongTinGV);
+            DbContext.SaveChanges();
         }
         public void UpdateGiangVienDAO(string maGV, string hoTenGV, DateTime ngaySinhGV, string diaChi, string email, bool gioiTinh)
         {
             try
             {
-                var giangVienToUpdate = db.ThongTinCBs.Find(maGV);
+                var giangVienToUpdate = DbContext.ThongTinCBs.Find(maGV);
 
                 if (giangVienToUpdate != null)
                 {
@@ -52,14 +46,14 @@ namespace Final___OOP.DAO
                     giangVienToUpdate.GioiTinh = gioiTinh;
 
                     // Cập nhật thông tin trong bảng TaiKhoan (nếu có)
-                    var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maGV);
+                    var taiKhoan = DbContext.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maGV);
                     if (taiKhoan != null)
                     {
                         taiKhoan.Email = email;
-                        db.Entry(taiKhoan).State = EntityState.Modified;
+                        DbContext.Entry(taiKhoan).State = EntityState.Modified;
                     }
 
-                    db.SaveChanges();
+                    DbContext.SaveChanges();
                 }
                 else
                 {
@@ -76,19 +70,19 @@ namespace Final___OOP.DAO
         {
             try
             {
-                var giangVienToDelete = db.ThongTinCBs.Find(maGV);
+                var giangVienToDelete = DbContext.ThongTinCBs.Find(maGV);
 
                 if (giangVienToDelete != null)
                 {
-                    db.ThongTinCBs.Remove(giangVienToDelete);
+                    DbContext.ThongTinCBs.Remove(giangVienToDelete);
 
-                    var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maGV);
+                    var taiKhoan = DbContext.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maGV);
                     if (taiKhoan != null)
                     {
-                        db.TaiKhoans.Remove(taiKhoan);
+                        DbContext.TaiKhoans.Remove(taiKhoan);
                     }
 
-                    db.SaveChanges();
+                    DbContext.SaveChanges();
                 }
                 else
                 {
@@ -103,8 +97,8 @@ namespace Final___OOP.DAO
 
         public List<GiangVienView> GetGiangVienViews()
         {
-            var query = from gv in db.ThongTinCBs
-                        join tk in db.TaiKhoans on gv.MaCB equals tk.MaTK
+            var query = from gv in DbContext.ThongTinCBs
+                        join tk in DbContext.TaiKhoans on gv.MaCB equals tk.MaTK
                         select new GiangVienView
                         {
                             MaGV = gv.MaCB,
@@ -117,6 +111,5 @@ namespace Final___OOP.DAO
 
             return query.ToList();
         }
-
     }
 }

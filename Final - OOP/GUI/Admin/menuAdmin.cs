@@ -1,14 +1,8 @@
 ﻿using Final___OOP.BUS;
+using Final___OOP.DAO.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Final___OOP.BUS.SinhVienBUS;
 
 namespace Final___OOP
 {
@@ -32,8 +26,8 @@ namespace Final___OOP
 
             //QLGiangVien
             GetAllGV();
-/*            dtgvGiangVien.SelectionChanged += dtgvGiangVien_SelectionChanged;
-*/
+            dtgvGiangVien.SelectionChanged += dtgvGiangVien_SelectionChanged;
+
             //QLChung
             adminQLChungBUS = new AdminQLChungBUS();
             LoadDataMonHoc();
@@ -120,7 +114,7 @@ namespace Final___OOP
                         sinhVienBUS.DeleteSinhVienBUS(maSV);
                         GetAllSV();
                         MessageBox.Show("Xóa sinh viên thành công!");
-                        SinhVienClearInputs(); // Thêm hàm này để xóa dữ liệu trong các controls
+                        ClearInputs(); // Thêm hàm này để xóa dữ liệu trong các controls
                     }
                 }
                 else
@@ -138,7 +132,7 @@ namespace Final___OOP
         //Load danh sách lớp vào combobox ở quản lý sinh  viên
         void LoadDataCB()
         {
-            List<Lophoc> lsLopHoc = lopHocBUS.GetAllLopHoc();
+            var lsLopHoc = lopHocBUS.GetAllLopHoc();
 
             cbLop.DataSource = lsLopHoc;
             cbLop.DisplayMember = "TenLop";
@@ -163,9 +157,9 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
             }
         }
-
-        //clear input ở các textbox của sinh viên sau khi thực hiện xóa thông tin sinh viên
-        private void SinhVienClearInputs()
+        
+        //clear dữ liệu đầu vào sau khi thực hiện xóa thông tin sinh viên
+        private void ClearInputs()
         {
             txtMaSV.Clear();
             txtHoTenSV.Clear();
@@ -176,8 +170,6 @@ namespace Final___OOP
             rbNamSV.Checked = true;
             rbNuSV.Checked = false;
         }
-
-        
 
 
         //Hiển thị thông tin của sinh viên lên bản thông tin input
@@ -330,7 +322,7 @@ namespace Final___OOP
         }
 
         private void btnThemGV_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
                 string maGV = txtMaGV.Text;
@@ -384,6 +376,7 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi thêm giảng viên: " + ex.Message);
             }
         }
+
         private void btnXoaGV_Click(object sender, EventArgs e)
         {
             try
@@ -412,7 +405,6 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi xóa giảng viên: " + ex.Message);
             }
         }
-
         private void GiangVienClearInputs()
         {
             txtMaGV.Clear();
@@ -473,6 +465,18 @@ namespace Final___OOP
         private void btnchungpage_Click(object sender, EventArgs e)
         {
             AdminPages.PageIndex = 3;
+        }
+
+        private void menuAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (adminQLChungBUS != null)
+                adminQLChungBUS.Dispose();
+            if (lopHocBUS != null)
+                lopHocBUS.Dispose();
+            if (sinhVienBUS != null)
+                sinhVienBUS.Dispose();
+            if (giangVienBUS != null)
+                giangVienBUS.Dispose();
         }
     }
 }

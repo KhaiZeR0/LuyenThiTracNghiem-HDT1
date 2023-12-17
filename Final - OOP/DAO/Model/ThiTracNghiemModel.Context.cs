@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Final___OOP
+namespace Final___OOP.DAO.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ThiTracNghiemModelEntities : DbContext
+    public partial class ThiTracNghiemEntities : DbContext
     {
-        public ThiTracNghiemModelEntities()
-            : base("name=ThiTracNghiemModelEntities")
+        public ThiTracNghiemEntities()
+            : base("name=ThiTracNghiemEntities")
         {
         }
     
@@ -26,11 +26,11 @@ namespace Final___OOP
         }
     
         public virtual DbSet<BaiLam> BaiLams { get; set; }
-        public virtual DbSet<Cauhoi> Cauhois { get; set; }
+        public virtual DbSet<CauHoi> CauHois { get; set; }
         public virtual DbSet<Chuong> Chuongs { get; set; }
         public virtual DbSet<DanhSachLop> DanhSachLops { get; set; }
         public virtual DbSet<DeThi> DeThis { get; set; }
-        public virtual DbSet<Lophoc> Lophocs { get; set; }
+        public virtual DbSet<LopHoc> LopHocs { get; set; }
         public virtual DbSet<MonHoc> MonHocs { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<ThongTinCB> ThongTinCBs { get; set; }

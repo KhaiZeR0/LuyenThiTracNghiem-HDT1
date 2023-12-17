@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a3eb9bff11f740198e5323c60fbde1b1" Name="Diagram1">
+      <Diagram DiagramId="16d8064b59de4b2b88f08c10a7b12664" Name="Diagram1">
         <EntityTypeShape EntityType="ThiTracNghiemModel.BaiLam" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThiTracNghiemModel.Cauhoi" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiTracNghiemModel.CauHoi" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ThiTracNghiemModel.Chuong" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ThiTracNghiemModel.DanhSachLop" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ThiTracNghiemModel.DeThi" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThiTracNghiemModel.Lophoc" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThiTracNghiemModel.LopHoc" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ThiTracNghiemModel.MonHoc" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ThiTracNghiemModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ThiTracNghiemModel.ThongTinCB" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />

@@ -1,15 +1,12 @@
 ﻿using Final___OOP.DAO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class GiangVienBUS
+    internal class GiangVienBUS : IDisposable
     {
-        private SinhVienBUS IsValid = new SinhVienBUS();
+        private SinhVienBUS isValid = new SinhVienBUS();
         private GiangVienDAO giangVienDAO;
         public GiangVienBUS()
         {
@@ -37,7 +34,7 @@ namespace Final___OOP.BUS
                 return false;
             }
 
-            if (!IsValid.IsValidEmail(email))
+            if (!isValid.IsValidEmail(email))
             {
                 return false;
             }
@@ -53,6 +50,11 @@ namespace Final___OOP.BUS
         public List<GiangVienView> GetGiangVienList()
         {
             return giangVienDAO.GetGiangVienViews();
+        }
+
+        public void Dispose()
+        {
+            if(giangVienDAO != null) { giangVienDAO.Dispose(); }
         }
     }
 }

@@ -7,11 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Final___OOP.ResetPassBUS;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Final___OOP
 {
@@ -20,6 +16,7 @@ namespace Final___OOP
         string randomcode;
         public static string to;
         private readonly ResetPassBUS resetPassBUS;
+
         public Fforgotpass()
         {
             InitializeComponent();
@@ -75,6 +72,12 @@ namespace Final___OOP
             {
                 MessageBox.Show("Sai mã, vui lòng nhập lại.");
             }
+        }
+
+        private void Fforgotpass_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (resetPassBUS != null)
+                resetPassBUS.Dispose();
         }
     }
 }

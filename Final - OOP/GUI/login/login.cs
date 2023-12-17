@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Final___OOP.winform
 {
-    public partial class login : Form
+    public partial class Login : Form
     {
         private DangNhapBUS dangnhapBUS;
-        public login()
+        public Login()
         {
             InitializeComponent();
             dangnhapBUS = new DangNhapBUS();
@@ -51,6 +45,12 @@ namespace Final___OOP.winform
         {
             Fforgotpass fforgotpass = new Fforgotpass();
             fforgotpass.ShowDialog();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (dangnhapBUS != null)
+                dangnhapBUS.Dispose();
         }
     }
 }

@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Final___OOP.DAO;
+using Final___OOP.DAO.Model;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP
 {
-    class ResetPassDAO
+    public class ResetPassDAO : ThiTracNghiemDAO
     {
-        private readonly ThiTracNghiemModelEntities context;
-        public ResetPassDAO()
-        {
-            context = new ThiTracNghiemModelEntities();
-        }
-
         public void UpdateMatKhau(string email, string newMatKhau)
         {
             var taiKhoan = GetTaiKhoanByEmail(email);
@@ -21,13 +13,13 @@ namespace Final___OOP
             if (taiKhoan != null)
             {
                 taiKhoan.MatKhau = newMatKhau;
-                context.SaveChanges();
+                DbContext.SaveChanges();
             }
         }
 
         private TaiKhoan GetTaiKhoanByEmail(string email)
         {
-            return context.TaiKhoans.FirstOrDefault(tk => tk.Email == email);
+            return DbContext.TaiKhoans.FirstOrDefault(tk => tk.Email == email);
         }
     }
 }

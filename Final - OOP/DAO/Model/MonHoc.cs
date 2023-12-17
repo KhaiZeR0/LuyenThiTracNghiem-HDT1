@@ -7,25 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Final___OOP
+namespace Final___OOP.DAO.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Chuong
+    public partial class MonHoc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Chuong()
+        public MonHoc()
         {
-            this.Cauhois = new HashSet<Cauhoi>();
+            this.Chuongs = new HashSet<Chuong>();
+            this.DeThis = new HashSet<DeThi>();
         }
     
-        public string MaChuong { get; set; }
-        public string TenChuong { get; set; }
         public string MaMH { get; set; }
+        public string TenMH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cauhoi> Cauhois { get; set; }
-        public virtual MonHoc MonHoc { get; set; }
+        public virtual ICollection<Chuong> Chuongs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeThi> DeThis { get; set; }
     }
 }

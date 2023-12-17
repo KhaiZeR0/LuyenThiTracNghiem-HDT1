@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class GiangVienView
+    public class GiangVienView
     {
         private string maGV;
         private string hoTen;

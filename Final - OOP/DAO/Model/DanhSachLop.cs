@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Final___OOP
+namespace Final___OOP.DAO.Model
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace Final___OOP
         public string MaLop { get; set; }
         public string Temp { get; set; }
     
-        public virtual Lophoc Lophoc { get; set; }
+        public virtual LopHoc LopHoc { get; set; }
         public virtual ThongTinSV ThongTinSV { get; set; }
     }
 }

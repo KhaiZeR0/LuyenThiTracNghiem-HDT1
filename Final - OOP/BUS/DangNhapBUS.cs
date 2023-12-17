@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final___OOP
 {
-    class DangNhapBUS
+    public class DangNhapBUS : IDisposable
     {
         private DangNhapDAO dangnhapDAO;
 
@@ -42,6 +42,11 @@ namespace Final___OOP
                 menuStudent.ShowDialog();
                 return false;
             }
+        }
+
+        public void Dispose()
+        {
+            if (dangnhapDAO != null) {  dangnhapDAO.Dispose(); }
         }
     }
 }

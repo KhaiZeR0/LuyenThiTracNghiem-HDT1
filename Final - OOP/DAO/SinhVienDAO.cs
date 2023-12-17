@@ -1,20 +1,18 @@
 ﻿using Final___OOP.BUS;
+using Final___OOP.DAO.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Final___OOP.BUS.SinhVienBUS;
 
 namespace Final___OOP.DAO
 {
-    internal class SinhVienDAO
+    internal class SinhVienDAO : ThiTracNghiemDAO
     {
-        private ThiTracNghiemModelEntities db;
+        private SinhVienView sinhVienView;
         public SinhVienDAO()
         {
-            db = new ThiTracNghiemModelEntities();
+            sinhVienView = new SinhVienView();
         }
         public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
         {
@@ -40,20 +38,20 @@ namespace Final___OOP.DAO
                 Temp = null
             };
             
-            db.TaiKhoans.Add(newTaiKhoan);
-            db.SaveChanges();
-            db.ThongTinSVs.Add(newSinhVien);
-            db.SaveChanges();
-            db.DanhSachLops.Add(newDSLop);
-            db.SaveChanges();
+            DbContext.TaiKhoans.Add(newTaiKhoan);
+            DbContext.SaveChanges();
+            DbContext.ThongTinSVs.Add(newSinhVien);
+            DbContext.SaveChanges();
+            DbContext.DanhSachLops.Add(newDSLop);
+            DbContext.SaveChanges();
         }
         public void UpdateSinhVienDAO(string maSV, string hoTen, DateTime ngaySinh, string maLop, string diaChi, string email, bool gioiTinh)
         {
-            using (var transaction = db.Database.BeginTransaction())
+            using (var transaction = DbContext.Database.BeginTransaction())
             {
                 try
                 {
-                    var svToUpdate = db.ThongTinSVs.Find(maSV);
+                    var svToUpdate = DbContext.ThongTinSVs.Find(maSV);
 
                     if (svToUpdate != null)
                     {
@@ -62,21 +60,21 @@ namespace Final___OOP.DAO
                         svToUpdate.DiaChi = diaChi;
                         svToUpdate.GioiTinh = gioiTinh;
 
-                        var lopHoc = db.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
+                        var lopHoc = DbContext.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
                         if (lopHoc != null)
                         {
                             lopHoc.MaLop = maLop;
-                            db.Entry(lopHoc).State = EntityState.Modified; // Đánh dấu là đối tượng này đã bị thay đổi
+                            DbContext.Entry(lopHoc).State = EntityState.Modified; // Đánh dấu là đối tượng này đã bị thay đổi
                         }
 
-                        var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
+                        var taiKhoan = DbContext.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
                         if (taiKhoan != null)
                         {
                             taiKhoan.Email = email;
-                            db.Entry(taiKhoan).State = EntityState.Modified; // Đánh dấu là đối tượng này đã bị thay đổi
+                            DbContext.Entry(taiKhoan).State = EntityState.Modified; // Đánh dấu là đối tượng này đã bị thay đổi
                         }
 
-                        db.SaveChanges();
+                        DbContext.SaveChanges();
                         transaction.Commit();
                     }
                 }
@@ -90,29 +88,29 @@ namespace Final___OOP.DAO
 
         public void DeleteSinhVienDAO(string maSV)
         {
-            using (var transaction = db.Database.BeginTransaction())
+            using (var transaction = DbContext.Database.BeginTransaction())
             {
                 try
                 {
-                    var svToDelete = db.ThongTinSVs.Find(maSV);
+                    var svToDelete = DbContext.ThongTinSVs.Find(maSV);
 
                     if (svToDelete != null)
                     {
-                        var lopHoc = db.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
-                        var taiKhoan = db.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
+                        var lopHoc = DbContext.DanhSachLops.SingleOrDefault(l => l.MaSV == maSV);
+                        var taiKhoan = DbContext.TaiKhoans.SingleOrDefault(tk => tk.MaTK == maSV);
 
                         if (lopHoc != null)
                         {
-                            db.DanhSachLops.Remove(lopHoc);
+                            DbContext.DanhSachLops.Remove(lopHoc);
                         }
 
                         if (taiKhoan != null)
                         {
-                            db.TaiKhoans.Remove(taiKhoan);
+                            DbContext.TaiKhoans.Remove(taiKhoan);
                         }
 
-                        db.ThongTinSVs.Remove(svToDelete);
-                        db.SaveChanges();
+                        DbContext.ThongTinSVs.Remove(svToDelete);
+                        DbContext.SaveChanges();
 
                         transaction.Commit();
                     }
@@ -127,12 +125,12 @@ namespace Final___OOP.DAO
 
         public List<SinhVienView> LayDanhSachSinhVienDAO()
         {
-            var query = from sv in db.ThongTinSVs
-                        join ds in db.DanhSachLops on sv.MaSV equals ds.MaSV into svds
+            var query = from sv in DbContext.ThongTinSVs
+                        join ds in DbContext.DanhSachLops on sv.MaSV equals ds.MaSV into svds
                         from ds in svds.DefaultIfEmpty()
-                        join tk in db.TaiKhoans on sv.MaSV equals tk.MaTK into svtks
+                        join tk in DbContext.TaiKhoans on sv.MaSV equals tk.MaTK into svtks
                         from tk in svtks.DefaultIfEmpty()
-                        join lop in db.Lophocs on ds.MaLop equals lop.MaLop into dslophoc
+                        join lop in DbContext.LopHocs on ds.MaLop equals lop.MaLop into dslophoc
                         from lop in dslophoc.DefaultIfEmpty()
                         select new SinhVienView
                         {

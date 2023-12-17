@@ -3854,7 +3854,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1676, 896);
+            this.ClientSize = new System.Drawing.Size(1676, 840);
             this.Controls.Add(this.btnchungpage);
             this.Controls.Add(this.btnQLGVpage);
             this.Controls.Add(this.btnQLSVpage);
@@ -3862,6 +3862,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "menuAdmin";
             this.Text = "Quản trị viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menuAdmin_FormClosing);
             this.AdminPages.ResumeLayout(false);
             this.page1.ResumeLayout(false);
             this.page1.PerformLayout();

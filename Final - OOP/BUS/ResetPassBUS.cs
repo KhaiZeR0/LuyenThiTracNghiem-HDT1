@@ -8,7 +8,7 @@ using System.Net;
 
 namespace Final___OOP
 {
-    class ResetPassBUS
+    public class ResetPassBUS : IDisposable
     {
         private readonly ResetPassDAO resetPassDAO;
         public ResetPassBUS()
@@ -24,6 +24,11 @@ namespace Final___OOP
         public void CapNhatMatKhau(string email, string matKhau)
         {
             resetPassDAO.UpdateMatKhau(email, matKhau);
+        }
+
+        public void Dispose()
+        {
+            if (resetPassDAO != null) { resetPassDAO.Dispose(); }
         }
     }
 }

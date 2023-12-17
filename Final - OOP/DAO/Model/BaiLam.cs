@@ -7,22 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Final___OOP
+namespace Final___OOP.DAO.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Cauhoi
+    public partial class BaiLam
     {
-        public string MaCauHoi { get; set; }
-        public string NoiDungCauHoi { get; set; }
-        public string DapanA { get; set; }
-        public string DapanB { get; set; }
-        public string DapanC { get; set; }
-        public string DapanD { get; set; }
-        public string DapanDung { get; set; }
-        public string MaChuong { get; set; }
+        public string MaBaiLam { get; set; }
+        public string MaSV { get; set; }
+        public string DapAnDaChon { get; set; }
+        public bool TrangThai { get; set; }
     
-        public virtual Chuong Chuong { get; set; }
+        public virtual DeThi DeThi { get; set; }
+        public virtual ThongTinSV ThongTinSV { get; set; }
     }
 }

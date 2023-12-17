@@ -1,20 +1,12 @@
-﻿using System;
+﻿using Final___OOP.DAO;
+using Final___OOP.DAO.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP
 {
-    class AdminQLChungDAO
+    class AdminQLChungDAO : ThiTracNghiemDAO
     {
-        private ThiTracNghiemModelEntities db;
-
-        public AdminQLChungDAO()
-        {
-            db = new ThiTracNghiemModelEntities();
-        }
-
         public void AddMonHocDAO(string maMon, string tenMon)
         {
             var newMonHoc = new MonHoc
@@ -22,35 +14,35 @@ namespace Final___OOP
                 MaMH = maMon,
                 TenMH = tenMon
             };
-            db.MonHocs.Add(newMonHoc);
-            db.SaveChanges();
+            DbContext.MonHocs.Add(newMonHoc);
+            DbContext.SaveChanges();
         }
 
         public void UpdateMonHocDAO(string maMon, string tenMon)
         {
-            var monHocToUpdate = db.MonHocs.Find(maMon);
+            var monHocToUpdate = DbContext.MonHocs.Find(maMon);
 
             if (monHocToUpdate != null)
             {
                 monHocToUpdate.TenMH = tenMon;
-                db.SaveChanges();
+                DbContext.SaveChanges();
             }
         }
 
         public void DeleteMonHocDAO(string maMon)
         {
-            var monHocToDelete = db.MonHocs.Find(maMon);
+            var monHocToDelete = DbContext.MonHocs.Find(maMon);
 
             if (monHocToDelete != null)
             {
-                db.MonHocs.Remove(monHocToDelete);
-                db.SaveChanges();
+                DbContext.MonHocs.Remove(monHocToDelete);
+                DbContext.SaveChanges();
             }
         }
 
         public List<MonHoc> LayDanhSachMonHocDAO()
         {
-            return db.MonHocs.ToList();
+            return DbContext.MonHocs.ToList();
         }
     }
 }

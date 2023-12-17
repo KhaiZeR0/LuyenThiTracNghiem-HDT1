@@ -16,5 +16,10 @@ namespace Final___OOP
         {
             InitializeComponent();
         }
+
+        private void CourseScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

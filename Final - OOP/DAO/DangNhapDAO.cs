@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Final___OOP.DAO;
+using Final___OOP.DAO.Model;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP
 {
-    class DangNhapDAO
+    class DangNhapDAO : ThiTracNghiemDAO
     {
-        private ThiTracNghiemModelEntities dbcontext;
-
-        public DangNhapDAO()
-        {
-            dbcontext = new ThiTracNghiemModelEntities();
-        }
-
         public bool LayThongTinDangNhap(string email, string matKhau)
         {
-            return dbcontext.TaiKhoans.Any(r => r.Email == email && r.MatKhau == matKhau);
+            return DbContext.TaiKhoans.Any(r => r.Email == email && r.MatKhau == matKhau);
         }
 
         public int LayLoaiTaiKhoan(string email)
         {
-            TaiKhoan taiKhoan = dbcontext.TaiKhoans.FirstOrDefault(r => r.Email == email);
+            TaiKhoan taiKhoan = DbContext.TaiKhoans.FirstOrDefault(r => r.Email == email);
 
             if (taiKhoan != null)
             {

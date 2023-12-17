@@ -7,30 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Final___OOP
+namespace Final___OOP.DAO.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ThongTinSV
+    public partial class Chuong
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ThongTinSV()
+        public Chuong()
         {
-            this.BaiLams = new HashSet<BaiLam>();
-            this.DanhSachLops = new HashSet<DanhSachLop>();
+            this.CauHois = new HashSet<CauHoi>();
         }
     
-        public string MaSV { get; set; }
-        public string HoTen { get; set; }
-        public bool GioiTinh { get; set; }
-        public System.DateTime NgaySinh { get; set; }
-        public string DiaChi { get; set; }
+        public string MaChuong { get; set; }
+        public string TenChuong { get; set; }
+        public string MaMH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BaiLam> BaiLams { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DanhSachLop> DanhSachLops { get; set; }
-        public virtual TaiKhoan TaiKhoan { get; set; }
+        public virtual ICollection<CauHoi> CauHois { get; set; }
+        public virtual MonHoc MonHoc { get; set; }
     }
 }

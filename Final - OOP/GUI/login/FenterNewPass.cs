@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Final___OOP.BUS;
+using System;
 using System.Windows.Forms;
 
 namespace Final___OOP
@@ -36,6 +30,12 @@ namespace Final___OOP
             {
                 MessageBox.Show("Xác nhận mật khẩu không trùng khớp!");
             }
+        }
+
+        private void FenterNewPass_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(resetPassBUS != null)
+                resetPassBUS.Dispose();
         }
     }
 }

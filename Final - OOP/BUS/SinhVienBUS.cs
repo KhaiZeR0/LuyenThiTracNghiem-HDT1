@@ -1,13 +1,10 @@
 ﻿using Final___OOP.DAO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class SinhVienBUS
+    public class SinhVienBUS : IDisposable
     {
         private SinhVienDAO sinhVienDAO;
 
@@ -66,6 +63,11 @@ namespace Final___OOP.BUS
         public List<SinhVienView> LayDanhSachSinhVien()
         {
             return sinhVienDAO.LayDanhSachSinhVienDAO();
+        }
+
+        public void Dispose()
+        {
+            if(sinhVienDAO != null) { sinhVienDAO.Dispose(); }
         }
     }
 

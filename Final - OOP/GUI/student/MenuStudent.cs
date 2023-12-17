@@ -26,5 +26,10 @@ namespace Final___OOP
         {
             StudentPages.PageIndex = 1;
         }
+
+        private void MenuStudent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }

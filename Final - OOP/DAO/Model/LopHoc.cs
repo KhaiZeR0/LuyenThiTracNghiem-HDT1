@@ -7,32 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Final___OOP
+namespace Final___OOP.DAO.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DeThi
+    public partial class LopHoc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DeThi()
+        public LopHoc()
         {
-            this.BaiLams = new HashSet<BaiLam>();
+            this.DanhSachLops = new HashSet<DanhSachLop>();
+            this.DeThis = new HashSet<DeThi>();
         }
     
-        public string MaDeThi { get; set; }
-        public string TenDeThi { get; set; }
-        public System.TimeSpan TGlambai { get; set; }
-        public int SoLuongCau { get; set; }
-        public string NoiDungDeThi { get; set; }
-        public string MaCB { get; set; }
         public string MaLop { get; set; }
-        public string MaMH { get; set; }
+        public string TenLop { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BaiLam> BaiLams { get; set; }
-        public virtual Lophoc Lophoc { get; set; }
-        public virtual MonHoc MonHoc { get; set; }
-        public virtual ThongTinCB ThongTinCB { get; set; }
+        public virtual ICollection<DanhSachLop> DanhSachLops { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeThi> DeThis { get; set; }
     }
 }

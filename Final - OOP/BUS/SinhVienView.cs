@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class SinhVienView
+    public class SinhVienView
     {
         private string maSV;
         private string hoTen;
@@ -27,7 +27,6 @@ namespace Final___OOP.BUS
         public string TenLop { get => tenLop; set => tenLop = value; }
 
         public SinhVienView() { }
-
         
     }
 }
