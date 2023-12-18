@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Mime\Code\CShape\Exercise\QuanLyNhanVien\thitracnghiem\Final - OOP\DAO\Model\ThiTracNghiemModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\caoph\OneDrive\Documents\GitHub\LuyenThiTracNghiem-HDT1\Final - OOP\DAO\Model\ThiTracNghiemModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

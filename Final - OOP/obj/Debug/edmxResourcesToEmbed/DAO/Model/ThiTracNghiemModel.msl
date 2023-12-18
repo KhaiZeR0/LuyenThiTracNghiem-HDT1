@@ -21,6 +21,7 @@
           <ScalarProperty Name="DapAnC" ColumnName="DapAnC" />
           <ScalarProperty Name="DapAnD" ColumnName="DapAnD" />
           <ScalarProperty Name="DapAnDung" ColumnName="DapAnDung" />
+          <ScalarProperty Name="MaMH" ColumnName="MaMH" />
           <ScalarProperty Name="MaChuong" ColumnName="MaChuong" />
         </MappingFragment>
       </EntityTypeMapping>

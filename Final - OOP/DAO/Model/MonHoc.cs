@@ -17,6 +17,7 @@ namespace Final___OOP.DAO.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MonHoc()
         {
+            this.CauHois = new HashSet<CauHoi>();
             this.Chuongs = new HashSet<Chuong>();
             this.DeThis = new HashSet<DeThi>();
         }
@@ -24,6 +25,8 @@ namespace Final___OOP.DAO.Model
         public string MaMH { get; set; }
         public string TenMH { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CauHoi> CauHois { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chuong> Chuongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

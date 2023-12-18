@@ -21,8 +21,10 @@ namespace Final___OOP.DAO.Model
         public string DapAnC { get; set; }
         public string DapAnD { get; set; }
         public string DapAnDung { get; set; }
+        public string MaMH { get; set; }
         public string MaChuong { get; set; }
     
         public virtual Chuong Chuong { get; set; }
+        public virtual MonHoc MonHoc { get; set; }
     }
 }

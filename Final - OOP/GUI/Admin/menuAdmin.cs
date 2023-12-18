@@ -2,7 +2,9 @@
 using Final___OOP.DAO.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using static Final___OOP.AdminQLChungBUS;
 
 namespace Final___OOP
 {
@@ -32,7 +34,54 @@ namespace Final___OOP
             adminQLChungBUS = new AdminQLChungBUS();
             LoadDataMonHoc();
             DGVMon.CellClick += new DataGridViewCellEventHandler(DGVMon_CellClick);
+
+            LoadDataLopHoc();
+            DGVLop.CellClick += new DataGridViewCellEventHandler(DGVLop_CellClick);
+
+            LoadDataMonHocChoChuong();
+            cbMonHoc.SelectedIndexChanged += cbMonHoc_SelectedIndexChanged;
+            LoadDataChuong();
+            DGVChuong.CellClick += DGVChuong_CellClick;
+
+
+            //format:
+            doitenDGV();
+
+
         }
+
+        // Format
+
+
+        private void doitenDGV()
+        {
+            //Khu vực Quản lý SV
+            dtgvSinhVien.Columns["MaSV"].HeaderText = "Mã sinh viên";
+            dtgvSinhVien.Columns["HoTen"].HeaderText = "Họ và tên";
+            dtgvSinhVien.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dtgvSinhVien.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dtgvSinhVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dtgvSinhVien.Columns["TenLop"].HeaderText = "Lớp";
+
+
+            //Khu vực Quản lý GV
+            dtgvGiangVien.Columns["MaGV"].HeaderText = "Mã giảng viên";
+            dtgvGiangVien.Columns["HoTen"].HeaderText = "Họ và tên";
+            dtgvGiangVien.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dtgvGiangVien.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dtgvGiangVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
+
+
+            //Khu vực QLChung
+            DGVMon.Columns["MaMH"].HeaderText = "Mã Môn Học";
+            DGVMon.Columns["TenMH"].HeaderText = "Tên Môn Học";
+            DGVLop.Columns["MaLop"].HeaderText = "Mã Lớp";
+            DGVLop.Columns["TenLop"].HeaderText = "Tên Lớp";
+            DGVChuong.Columns["MaChuong"].HeaderText = "Mã Chương";
+            DGVChuong.Columns["TenChuong"].HeaderText = "Tên Chương";
+            DGVChuong.Columns["MaMonHoc"].HeaderText = "Mã Môn Học";
+        }
+
 
 
         //Quản lý sinh viên
@@ -203,7 +252,7 @@ namespace Final___OOP
 
 
         //Quản Lý Chung
-        //Chức năng thêm Môn Học
+        ////Chức năng Môn Học
         private void DGVMon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -231,6 +280,7 @@ namespace Final___OOP
                     LoadDataMonHoc();
                     MessageBox.Show("Thêm Môn Học thành công!");
                     ClearMonHocInputs();
+                    LoadDataMonHocChoChuong();
                 }
                 else
                 {
@@ -256,6 +306,7 @@ namespace Final___OOP
                     LoadDataMonHoc();
                     MessageBox.Show("Cập nhật Môn Học thành công!");
                     ClearMonHocInputs();
+                    LoadDataMonHocChoChuong();
                 }
                 else
                 {
@@ -284,6 +335,7 @@ namespace Final___OOP
                         LoadDataMonHoc();
                         MessageBox.Show("Xóa Môn Học thành công!");
                         ClearMonHocInputs();
+                        LoadDataMonHocChoChuong();
                     }
                 }
                 else
@@ -300,7 +352,7 @@ namespace Final___OOP
         {
             try
             {
-                List<MonHoc> danhSachMonHoc = adminQLChungBUS.LayDanhSachMonHocBUS();
+                List<MonHocViewModel> danhSachMonHoc = adminQLChungBUS.LayDanhSachMonHocBUS();
                 DGVMon.DataSource = danhSachMonHoc;
 
                 // Kiểm tra nếu không có dòng nào được chọn
@@ -348,6 +400,252 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi thêm giảng viên: " + ex.Message);
             }
         }
+
+        ////Chức năng Chương:
+        private void DGVChuong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = DGVChuong.Rows[e.RowIndex];
+
+                string maChuong = selectedRow.Cells["MaChuong"].Value.ToString();
+                string tenChuong = selectedRow.Cells["TenChuong"].Value.ToString();
+                string maMonHoc = selectedRow.Cells["MaMonHoc"].Value.ToString();
+
+
+                tbMaChuong.Text = maChuong;
+                tbTenChuong.Text = tenChuong;
+
+
+                if (cbMonHoc.Items.Cast<MonHocViewModel>().Any(item => item.MaMH == maMonHoc))
+                {
+                    cbMonHoc.SelectedValue = maMonHoc;
+                }
+                else
+                {
+                    cbMonHoc.SelectedIndex = -1;
+                }
+            }
+        }
+        private void LoadDataMonHocChoChuong()
+        {
+            List<MonHocViewModel> danhSachMonHoc = adminQLChungBUS.LayDanhSachMonHocBUS();
+            cbMonHoc.DataSource = danhSachMonHoc;
+            cbMonHoc.DisplayMember = "TenMH";
+            cbMonHoc.ValueMember = "MaMH";
+        }
+        private void LoadDataChuong()
+        {
+            List<ChuongViewModel> danhSachChuong = adminQLChungBUS.LayDanhSachChuongBUS();
+            DGVChuong.DataSource = danhSachChuong;
+        }
+        private void cbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataChuong();
+        }
+        private void ClearChuongInputs()
+        {
+            tbMaChuong.Clear();
+            tbTenChuong.Clear();
+            cbMonHoc.SelectedIndex = -1;
+        }
+
+        private void btnDelChuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maChuong = tbMaChuong.Text;
+
+                if (!string.IsNullOrEmpty(maChuong))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa Chương này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        adminQLChungBUS.DeleteChuongBUS(maChuong);
+                        LoadDataChuong();
+                        MessageBox.Show("Xóa Chương thành công!");
+                        ClearChuongInputs();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một Chương để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa Chương: " + ex.Message);
+            }
+        }
+
+        private void btnChangeChuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maChuong = tbMaChuong.Text;
+                string tenChuong = tbTenChuong.Text;
+                string maMonHoc = cbMonHoc.SelectedValue.ToString();
+
+                if (!string.IsNullOrEmpty(maChuong) && !string.IsNullOrEmpty(tenChuong) && !string.IsNullOrEmpty(maMonHoc))
+                {
+                    adminQLChungBUS.UpdateChuongBUS(maChuong, tenChuong, maMonHoc);
+                    LoadDataChuong();
+                    MessageBox.Show("Cập nhật Chương thành công!");
+                    ClearChuongInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một Chương và nhập thông tin cần cập nhật.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật Chương: " + ex.Message);
+            }
+        }
+
+        private void btnAddChuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maChuong = tbMaChuong.Text;
+                string tenChuong = tbTenChuong.Text;
+                // Kiểm tra giá trị MaMH trước khi lưu
+                object selectedValue = cbMonHoc.SelectedValue;
+                string maMonHoc = (selectedValue != null) ? selectedValue.ToString() : string.Empty;
+
+                if (!string.IsNullOrEmpty(maChuong) && !string.IsNullOrEmpty(tenChuong) && !string.IsNullOrEmpty(maMonHoc))
+                {
+                    adminQLChungBUS.AddChuongBUS(maChuong, tenChuong, maMonHoc);
+                    LoadDataChuong();
+                    MessageBox.Show("Thêm Chương thành công!");
+                    ClearChuongInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin Chương.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm Chương: " + ex.Message);
+            }
+        }
+
+        ////Chức năng Lớp Học:
+        private void DGVLop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = DGVLop.Rows[e.RowIndex];
+
+                string maLop = selectedRow.Cells["MaLop"].Value.ToString();
+                string tenLop = selectedRow.Cells["TenLop"].Value.ToString();
+
+                // Hiển thị thông tin trong TextBox
+                tbMaLop.Text = maLop;
+                tbTenLop.Text = tenLop;
+            }
+        }
+        private void LoadDataLopHoc()
+        {
+            try
+            {
+                List<LopHocViewModel> danhSachLopHoc = adminQLChungBUS.LayDanhSachLopHocBUS();
+                DGVLop.DataSource = danhSachLopHoc;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách môn học: " + ex.Message);
+            }
+        }
+        private void ClearLopHocInputs()
+        {
+            tbMaLop.Clear();
+            tbTenLop.Clear();
+        }
+        private void btnDelLop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maLop = tbMaLop.Text;
+
+                if (!string.IsNullOrEmpty(maLop))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa Lớp Học này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        adminQLChungBUS.DeleteLopHocBUS(maLop);
+                        LoadDataLopHoc();
+                        MessageBox.Show("Xóa Lớp Học thành công!");
+                        ClearLopHocInputs();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một Lớp Học để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa Lớp Học: " + ex.Message);
+            }
+        }
+
+        private void btnChangeLop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maLop = tbMaLop.Text;
+                string tenLop = tbTenLop.Text;
+
+                if (!string.IsNullOrEmpty(maLop) && !string.IsNullOrEmpty(tenLop))
+                {
+                    adminQLChungBUS.UpdateLopHocBUS(maLop, tenLop);
+                    LoadDataLopHoc();
+                    MessageBox.Show("Cập nhật Lớp Học thành công!");
+                    ClearLopHocInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một Lớp Học và nhập thông tin cần cập nhật.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật Lớp Học: " + ex.Message);
+            }
+        }
+
+        private void btnAddLop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maLop = tbMaLop.Text;
+                string tenLop = tbTenLop.Text;
+
+                if (!string.IsNullOrEmpty(maLop) && !string.IsNullOrEmpty(tenLop))
+                {
+                    adminQLChungBUS.AddLopHocBUS(maLop, tenLop);
+                    LoadDataLopHoc();
+                    MessageBox.Show("Thêm Lớp Học thành công!");
+                    ClearLopHocInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin Lớp Học.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm Lớp Học: " + ex.Message);
+            }
+        }
+
+
+        //Other
         private void btnSuaGV_Click(object sender, EventArgs e)
         {
             try
@@ -478,5 +776,7 @@ namespace Final___OOP
             if (giangVienBUS != null)
                 giangVienBUS.Dispose();
         }
+
+
     }
 }

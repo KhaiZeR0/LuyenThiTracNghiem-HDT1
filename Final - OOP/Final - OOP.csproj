@@ -157,19 +157,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\GiangVienBUS.cs" />
-    <Compile Include="BUS\GiangVienView.cs" />
-    <Compile Include="BUS\SinhVienView.cs" />
-    <Compile Include="DAO\AdminQLChungDAO.cs" />
-    <Compile Include="BUS\AdminQLChungBUS.cs" />
-    <Compile Include="BUS\DangNhapBUS.cs" />
-    <Compile Include="BUS\GetLopHocBUS.cs" />
-    <Compile Include="BUS\SinhVienBUS.cs" />
-    <Compile Include="DAO\GetLopHocDAO.cs" />
-    <Compile Include="DAO\GiangVienDAO.cs" />
     <Compile Include="DAO\Model\BaiLam.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS\GiangVienBUS.cs" />
+    <Compile Include="BUS\GiangVienView.cs" />
+    <Compile Include="BUS\SinhVienView.cs" />
     <Compile Include="DAO\Model\CauHoi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
@@ -179,41 +172,18 @@
     <Compile Include="DAO\Model\DanhSachLop.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AdminQLChungDAO.cs" />
+    <Compile Include="BUS\AdminQLChungBUS.cs" />
+    <Compile Include="BUS\DangNhapBUS.cs" />
+    <Compile Include="BUS\GetLopHocBUS.cs" />
+    <Compile Include="BUS\SinhVienBUS.cs" />
+    <Compile Include="DAO\GetLopHocDAO.cs" />
+    <Compile Include="DAO\GiangVienDAO.cs" />
+    <Compile Include="DAO\SinhVienDAO.cs" />
+    <Compile Include="DAO\ThiTracNghiemDAO.cs" />
     <Compile Include="DAO\Model\DeThi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\Model\LopHoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\MonHoc.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\TaiKhoan.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\ThiTracNghiemModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\ThiTracNghiemModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\ThiTracNghiemModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\ThongTinCB.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\Model\ThongTinSV.cs">
-      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\SinhVienDAO.cs" />
-    <Compile Include="DAO\ThiTracNghiemDAO.cs" />
     <Compile Include="GUI\Student\CourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +221,12 @@
     <Compile Include="GUI\Teacher\MenuTeacher.Designer.cs">
       <DependentUpon>MenuTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Model\LopHoc.cs">
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model\MonHoc.cs">
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Login\Login.cs">
@@ -261,6 +237,30 @@
     </Compile>
     <Compile Include="BUS\ResetPassBUS.cs" />
     <Compile Include="DAO\ResetPassDAO.cs" />
+    <Compile Include="DAO\Model\TaiKhoan.cs">
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model\ThiTracNghiemModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThiTracNghiemModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model\ThiTracNghiemModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model\ThiTracNghiemModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model\ThongTinCB.cs">
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Model\ThongTinSV.cs">
+      <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\Student\CourseScreen.resx">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,13 +293,6 @@
     <EmbeddedResource Include="GUI\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DAO\Model\ThiTracNghiemModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ThiTracNghiemModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DAO\Model\ThiTracNghiemModel.edmx.diagram">
-      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -310,6 +303,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="DAO\Model\ThiTracNghiemModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ThiTracNghiemModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAO\Model\ThiTracNghiemModel.edmx.diagram">
+      <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -334,6 +334,13 @@
       <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
       <LastGenOutput>ThiTracNghiemModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\9403541.jpg" />
+    <None Include="Resources\9586010.jpg" />
+    <None Include="Resources\13450335_OrgCoral_Ofc-02_Concept-08.jpg" />
+    <None Include="Resources\4167281_18776.jpg" />
+    <None Include="Resources\wordpress_banner.png" />
+    <None Include="Resources\Hello-cuate.png" />
+    <None Include="Resources\Sign up-cuate.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

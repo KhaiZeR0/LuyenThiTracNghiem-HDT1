@@ -24,7 +24,7 @@ namespace Final___OOP.winform
                 {
                     if (dangnhapBUS.KiemTraLoaiTaiKhoan(email))
                     {
-                        MessageBox.Show("oke");
+                        
                     }
                     else
                     {

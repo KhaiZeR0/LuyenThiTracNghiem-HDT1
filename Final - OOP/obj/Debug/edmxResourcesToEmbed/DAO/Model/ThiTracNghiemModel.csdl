@@ -23,8 +23,10 @@
     <Property Name="DapAnC" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DapAnD" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DapAnDung" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="MaChuong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Chuong" Relationship="Self.FK_CauHoi_Chuong" FromRole="CauHoi" ToRole="Chuong" />
+    <NavigationProperty Name="MonHoc" Relationship="Self.FK_CauHoi_MonHoc" FromRole="CauHoi" ToRole="MonHoc" />
   </EntityType>
   <EntityType Name="Chuong">
     <Key>
@@ -79,6 +81,7 @@
     </Key>
     <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenMH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CauHois" Relationship="Self.FK_CauHoi_MonHoc" FromRole="MonHoc" ToRole="CauHoi" />
     <NavigationProperty Name="Chuongs" Relationship="Self.FK_Chuong_MonHoc" FromRole="MonHoc" ToRole="Chuong" />
     <NavigationProperty Name="DeThis" Relationship="Self.FK_DeThi_MonHoc" FromRole="MonHoc" ToRole="DeThi" />
   </EntityType>
@@ -151,6 +154,18 @@
       </Principal>
       <Dependent Role="CauHoi">
         <PropertyRef Name="MaChuong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CauHoi_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+    <End Role="CauHoi" Type="Self.CauHoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="MaMH" />
+      </Principal>
+      <Dependent Role="CauHoi">
+        <PropertyRef Name="MaMH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -271,6 +286,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_CauHoi_Chuong" Association="Self.FK_CauHoi_Chuong">
       <End Role="Chuong" EntitySet="Chuongs" />
+      <End Role="CauHoi" EntitySet="CauHois" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CauHoi_MonHoc" Association="Self.FK_CauHoi_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHocs" />
       <End Role="CauHoi" EntitySet="CauHois" />
     </AssociationSet>
     <AssociationSet Name="FK_Chuong_MonHoc" Association="Self.FK_Chuong_MonHoc">

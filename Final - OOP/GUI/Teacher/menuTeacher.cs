@@ -24,24 +24,22 @@ namespace Final___OOP
 
         private void btnQLCHpage_Click(object sender, EventArgs e)
         {
-            StudentPages.PageIndex = 2;
+            TeacherPages.PageIndex = 2;
         }
 
         private void btntracuupage_Click(object sender, EventArgs e)
         {
-            StudentPages.PageIndex = 1;
+            TeacherPages.PageIndex = 1;
         }
 
         private void btntaopage_Click(object sender, EventArgs e)
         {
-            StudentPages.PageIndex = 3;
+            TeacherPages.PageIndex = 3;
         }
 
-        private void MenuTeacher_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnQLDeThiPage_Click(object sender, EventArgs e)
         {
-
+            TeacherPages.PageIndex = 4;
         }
-
-        
     }
 }

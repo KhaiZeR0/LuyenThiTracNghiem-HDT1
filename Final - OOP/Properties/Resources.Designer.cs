@@ -73,6 +73,46 @@ namespace Final___OOP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _13450335_OrgCoral_Ofc_02_Concept_08 {
+            get {
+                object obj = ResourceManager.GetObject("13450335_OrgCoral_Ofc-02_Concept-08", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4167281_18776 {
+            get {
+                object obj = ResourceManager.GetObject("4167281_18776", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9403541 {
+            get {
+                object obj = ResourceManager.GetObject("9403541", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9586010 {
+            get {
+                object obj = ResourceManager.GetObject("9586010", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap enterpass {
             get {
                 object obj = ResourceManager.GetObject("enterpass", resourceCulture);
@@ -86,6 +126,36 @@ namespace Final___OOP.Properties {
         internal static System.Drawing.Bitmap forgot {
             get {
                 object obj = ResourceManager.GetObject("forgot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hello_cuate {
+            get {
+                object obj = ResourceManager.GetObject("Hello-cuate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sign_up_cuate {
+            get {
+                object obj = ResourceManager.GetObject("Sign up-cuate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wordpress_banner {
+            get {
+                object obj = ResourceManager.GetObject("wordpress_banner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
