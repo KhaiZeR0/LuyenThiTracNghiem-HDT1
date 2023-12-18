@@ -17,6 +17,11 @@ namespace Final___OOP
             InitializeComponent();
         }
 
+        private void btnFindQuestion_DeThi_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnQLCHpage_Click(object sender, EventArgs e)
         {
             StudentPages.PageIndex = 2;
