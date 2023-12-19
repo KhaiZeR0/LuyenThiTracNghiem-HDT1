@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Final___OOP.DAO
 {
@@ -14,12 +16,29 @@ namespace Final___OOP.DAO
         {
             sinhVienView = new SinhVienView();
         }
-        public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
+
+        private string GetSha256Hash(string input)
         {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder builder = new StringBuilder();
+
+                for (int i = 0; i < hashedBytes.Length; i++)
+                {
+                    builder.Append(hashedBytes[i].ToString("x2"));
+                }
+
+                return builder.ToString();
+            }
+        }
+            public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
+        {
+            var hashedPassword = GetSha256Hash(maSV);
             var newTaiKhoan = new TaiKhoan
             {
                 MaTK = maSV,
-                MatKhau = maSV,
+                MatKhau = hashedPassword,
                 Email = email,
                 LoaiTK = "2"
             };

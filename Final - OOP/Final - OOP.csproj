@@ -273,6 +273,7 @@
     </Compile>
     <Compile Include="BUS\TraCuuSinhVienBUS.cs" />
     <Compile Include="DAO\TraCuuSinhVienDAO.cs" />
+    <Compile Include="DAO\Session.cs" />
     <EmbeddedResource Include="GUI\Student\CourseScreen.resx">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,6 +347,7 @@
       <DependentUpon>ThiTracNghiemModel.edmx</DependentUpon>
       <LastGenOutput>ThiTracNghiemModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\3629600_761.jpg" />
     <None Include="Resources\9403541.jpg" />
     <None Include="Resources\9586010.jpg" />
     <None Include="Resources\13450335_OrgCoral_Ofc-02_Concept-08.jpg" />

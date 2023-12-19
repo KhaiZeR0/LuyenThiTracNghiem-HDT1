@@ -4,18 +4,36 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Final___OOP.DAO
 {
     public class GiangVienDAO : ThiTracNghiemDAO
     {
         private GiangVienView giangVienView;
+        private string GetSha256Hash(string input)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder builder = new StringBuilder();
+
+                for (int i = 0; i < hashedBytes.Length; i++)
+                {
+                    builder.Append(hashedBytes[i].ToString("x2"));
+                }
+
+                return builder.ToString();
+            }
+        }
         public void AddGiangVienDAO(string maGV, string hoTenGV, DateTime ngaySinhGV, string diaChi, string email, bool gioiTinh)
         {
+            var hashedPassword = GetSha256Hash(maGV);
             var newAccGV = new TaiKhoan
             {
                 MaTK = maGV,
-                MatKhau = maGV,
+                MatKhau = hashedPassword,
                 Email = email,
                 LoaiTK = "1",
             };

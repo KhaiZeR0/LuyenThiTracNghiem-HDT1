@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
+using System.Security.Cryptography;
 
 namespace Final___OOP
 {
@@ -18,7 +19,10 @@ namespace Final___OOP
 
         public bool KiemTraMatKhauHopLe(string matKhau, string xacNhanMatKhau)
         {
-            return matKhau == xacNhanMatKhau;
+            string hashedMatKhau = resetPassDAO.GetSHA256Hash(matKhau);
+            string hashedXacNhanMatKhau = resetPassDAO.GetSHA256Hash(xacNhanMatKhau);
+
+            return hashedMatKhau == hashedXacNhanMatKhau;
         }
 
         public void CapNhatMatKhau(string email, string matKhau)
@@ -30,5 +34,6 @@ namespace Final___OOP
         {
             if (resetPassDAO != null) { resetPassDAO.Dispose(); }
         }
+
     }
 }

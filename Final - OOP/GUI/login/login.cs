@@ -17,29 +17,21 @@ namespace Final___OOP.winform
         {
             try
             {
-                string email = txtemail.Text;
+                string maTK = txtemail.Text;
                 string matKhau = txtpass.Text;
 
-                if (dangnhapBUS.KiemTraDangNhap(email, matKhau))
+                if (dangnhapBUS.KiemTraDangNhap(maTK, matKhau))
                 {
-                    if (dangnhapBUS.KiemTraLoaiTaiKhoan(email))
-                    {
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không giòn");
-                    }
+                    dangnhapBUS.KiemTraLoaiTaiKhoan(maTK);
                 }
                 else
                 {
-                    MessageBox.Show("Không giòn");
+                    MessageBox.Show("Đăng nhập không thành công");
                 }
             }
-            catch (Exception ex)
-            {
-            }
+            catch (Exception ex) {}
         }
+
 
         private void linkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

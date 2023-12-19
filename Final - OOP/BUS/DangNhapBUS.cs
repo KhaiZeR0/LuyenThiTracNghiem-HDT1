@@ -15,14 +15,21 @@ namespace Final___OOP
             dangnhapDAO = new DangNhapDAO();
         }
 
-        public bool KiemTraDangNhap(string email, string matKhau)
+        public bool KiemTraDangNhap(string maTK, string matKhau)
         {
-            return dangnhapDAO.LayThongTinDangNhap(email, matKhau);
+            bool result = dangnhapDAO.LayThongTinDangNhap(maTK, matKhau);
+
+            if (result)
+            {
+                Session.Instance.SetMaTK(maTK);
+            }
+
+            return result;
         }
 
-        public bool KiemTraLoaiTaiKhoan(string email)
+        public bool KiemTraLoaiTaiKhoan(string maTK)
         {
-            int loaiTK = dangnhapDAO.LayLoaiTaiKhoan(email);
+            int loaiTK = dangnhapDAO.LayLoaiTaiKhoan(maTK);
 
             if (loaiTK == 0) //admin
             {
