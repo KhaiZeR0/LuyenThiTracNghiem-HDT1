@@ -59,7 +59,12 @@ namespace Final___OOP.BUS
                 return false;
             }
         }
-        
+        public bool IsDuplicateEmail(string email)
+        {
+            return sinhVienDAO.IsDuplicateEmailDAO(email);
+        }
+
+
         public List<SinhVienView> LayDanhSachSinhVien()
         {
             return sinhVienDAO.LayDanhSachSinhVienDAO();

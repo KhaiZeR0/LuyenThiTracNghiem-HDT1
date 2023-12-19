@@ -29,6 +29,11 @@ namespace Final___OOP.DAO
         }
         public void AddGiangVienDAO(string maGV, string hoTenGV, DateTime ngaySinhGV, string diaChi, string email, bool gioiTinh)
         {
+            if (IsDuplicateEmail(email, ""))
+            {
+                throw new Exception("Email đã tồn tại. Vui lòng chọn một email khác.");
+            }
+
             var hashedPassword = GetSha256Hash(maGV);
             var newAccGV = new TaiKhoan
             {
@@ -128,6 +133,16 @@ namespace Final___OOP.DAO
                         };
 
             return query.ToList();
+        }
+        public bool IsDuplicateEmail(string email, string maGV)
+        {
+            // Kiểm tra xem có giảng viên nào khác có cùng email không (trừ giảng viên đang cập nhật)
+            var existingGiangVien = DbContext.ThongTinCBs
+                .Where(gv => gv.MaCB != maGV && gv.TaiKhoan.Email == email)
+                .FirstOrDefault();
+
+            // Nếu tồn tại giảng viên khác có cùng email, trả về true
+            return existingGiangVien != null;
         }
     }
 }

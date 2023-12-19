@@ -22,8 +22,7 @@ namespace Final___OOP
             InitializeComponent();
             resetPassBUS = new ResetPassBUS();
         }
-
-        private void btnotp_Click(object sender, EventArgs e)
+        private void SendOTP(string email)
         {
             // send code
             string from, pass, messagebody;
@@ -56,6 +55,20 @@ namespace Final___OOP
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnotp_Click(object sender, EventArgs e)
+        {
+            string email = tbemail.Text;
+
+            if (resetPassBUS.IsEmailExists(email))
+            {
+                // Gửi mã OTP
+                SendOTP(email);
+            }
+            else
+            {
+                MessageBox.Show("Email không tồn tại trong hệ thống. Vui lòng kiểm tra lại.");
             }
         }
 

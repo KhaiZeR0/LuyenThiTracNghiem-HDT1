@@ -19,7 +19,10 @@ namespace Final___OOP
                 DbContext.SaveChanges();
             }
         }
-
+        public bool IsEmailExists(string email)
+        {
+            return DbContext.TaiKhoans.Any(tk => tk.Email == email);
+        }
         private TaiKhoan GetTaiKhoanByEmail(string email)
         {
             return DbContext.TaiKhoans.FirstOrDefault(tk => tk.Email == email);

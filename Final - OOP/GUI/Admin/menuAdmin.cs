@@ -100,9 +100,16 @@ namespace Final___OOP
 
                 if (sinhVienBUS.IsValidSinhVienDataBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh))
                 {
-                    sinhVienBUS.AddSinhVienBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
-                    GetAllSV();
-                    MessageBox.Show("Thêm sinh viên thành công!");
+                    if (sinhVienBUS.IsDuplicateEmail(email))
+                    {
+                        MessageBox.Show("Địa chỉ email đã tồn tại. Vui lòng chọn một địa chỉ email khác.");
+                    }
+                    else
+                    {
+                        sinhVienBUS.AddSinhVienBUS(maSV, hoTenSV, ngaySinhSV, Lop, diaChi, email, gioiTinh);
+                        GetAllSV();
+                        MessageBox.Show("Thêm sinh viên thành công!");
+                    }
                 }
                 else
                 {

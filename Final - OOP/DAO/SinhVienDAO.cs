@@ -166,6 +166,10 @@ namespace Final___OOP.DAO
 
             return query.ToList();
         }
+        public bool IsDuplicateEmailDAO(string email)
+        {
+            return DbContext.TaiKhoans.Any(tk => tk.Email == email);
+        }
 
     }
 }

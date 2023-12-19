@@ -16,7 +16,10 @@ namespace Final___OOP
         {
             resetPassDAO = new ResetPassDAO();
         }
-
+        public bool IsEmailExists(string email)
+        {
+            return resetPassDAO.IsEmailExists(email);
+        }
         public bool KiemTraMatKhauHopLe(string matKhau, string xacNhanMatKhau)
         {
             string hashedMatKhau = resetPassDAO.GetSHA256Hash(matKhau);
