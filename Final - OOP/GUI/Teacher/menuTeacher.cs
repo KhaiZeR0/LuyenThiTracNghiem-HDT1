@@ -22,6 +22,8 @@ namespace Final___OOP
         private GetLopHocBUS lopHocBUS;
         private GetDeThiBUS dethiBUS;
         private TraCuuSinhVienBUS traCuuSinhVienBUS;
+        private GetChungBUS getChungBUS;
+
         public MenuTeacher()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace Final___OOP
             lopHocBUS = new GetLopHocBUS();
             dethiBUS = new GetDeThiBUS();
             traCuuSinhVienBUS = new TraCuuSinhVienBUS();
+            getChungBUS = new GetChungBUS();
 
             LoadDataCB();
             GetAllCauHoi();
@@ -39,20 +42,18 @@ namespace Final___OOP
         //Load danh sách lớp vào combobox ở quản lý sinh  viên
         void LoadDataCB()
         {
-            var lsMonHoc = monHocBUS.GetAllLopHoc();
+            var lsMonHoc = getChungBUS.GetAllMonHoc();
 
             cbMonHoc.DataSource = lsMonHoc;
             cbMonHoc.DisplayMember = "TenMH";
             cbMonHoc.ValueMember = "MaMH";
+            cbMonHoc.SelectedIndexChanged += cbMonHoc_SelectedIndexChanged;
+            cbMonHoc_SelectedIndexChanged(null, EventArgs.Empty);
+
             cbMonHocTraCuu.DataSource = lsMonHoc;
             cbMonHocTraCuu.DisplayMember = "TenMH";
             cbMonHocTraCuu.ValueMember = "MaMH";
 
-            var lsChuong = chuongBUS.GetAllChuong();
-
-            cbChuong.DataSource = lsChuong;
-            cbChuong.DisplayMember = "TenChuong";
-            cbChuong.ValueMember = "MaChuong";
 
             var lsLop = lopHocBUS.GetAllLopHoc();
             cbLopHoc.DataSource = lsLop;
@@ -64,7 +65,16 @@ namespace Final___OOP
             cbDeThi.DisplayMember = "TenDeThi";
             cbDeThi.ValueMember = "MaDeThi";
         }
+        private void cbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maMonHoc = cbMonHoc.SelectedValue.ToString();
 
+            var lsChuong = getChungBUS.GetAllChuong(maMonHoc);
+
+            cbChuong.DataSource = lsChuong;
+            cbChuong.DisplayMember = "TenChuong";
+            cbChuong.ValueMember = "MaChuong";
+        }
         private void btnThemCauHoi_Click(object sender, EventArgs e)
         {
             try
@@ -232,8 +242,7 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi sửa thông tin câu hỏi: " + ex.Message);
             }
         }
-
-        private void gvCauHoi_SelectionChanged(object sender, EventArgs e)
+        private void gvCauHoi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (gvCauHoi.SelectedRows.Count > 0)
             {
@@ -319,5 +328,7 @@ namespace Final___OOP
         {
             TeacherPages.PageIndex = 4;
         }
+
+
     }
 }

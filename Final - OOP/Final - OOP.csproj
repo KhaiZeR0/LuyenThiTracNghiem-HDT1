@@ -192,6 +192,8 @@
     <Compile Include="DAO\GetDeThiDAO.cs" />
     <Compile Include="BUS\GetMonHocBUS.cs" />
     <Compile Include="DAO\GetMonHocDAO.cs" />
+    <Compile Include="DAO\GetChungDAO.cs" />
+    <Compile Include="BUS\GetChungBUS.cs" />
     <Compile Include="GUI\Student\CourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>

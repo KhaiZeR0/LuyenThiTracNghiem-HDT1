@@ -196,10 +196,10 @@ namespace Final___OOP
             this.TeacherPages.Location = new System.Drawing.Point(145, 0);
             this.TeacherPages.Multiline = true;
             this.TeacherPages.Name = "TeacherPages";
-            this.TeacherPages.Page = this.tabPage3;
-            this.TeacherPages.PageIndex = 1;
-            this.TeacherPages.PageName = "tabPage3";
-            this.TeacherPages.PageTitle = "Tra cứu điểm";
+            this.TeacherPages.Page = this.tabPage5;
+            this.TeacherPages.PageIndex = 2;
+            this.TeacherPages.PageName = "tabPage5";
+            this.TeacherPages.PageTitle = "Quản lý câu hỏi";
             this.TeacherPages.SelectedIndex = 0;
             this.TeacherPages.Size = new System.Drawing.Size(1111, 713);
             this.TeacherPages.TabIndex = 3;
@@ -1786,6 +1786,7 @@ namespace Final___OOP
             this.gvCauHoi.Size = new System.Drawing.Size(1091, 256);
             this.gvCauHoi.TabIndex = 1;
             this.gvCauHoi.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.gvCauHoi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCauHoi_CellContentClick);
             // 
             // groupBox7
             // 
@@ -2116,7 +2117,7 @@ namespace Final___OOP
             this.dataGridView2.Location = new System.Drawing.Point(14, 333);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(1083, 364);
+            this.dataGridView2.Size = new System.Drawing.Size(1083, 348);
             this.dataGridView2.TabIndex = 37;
             // 
             // groupBox11
