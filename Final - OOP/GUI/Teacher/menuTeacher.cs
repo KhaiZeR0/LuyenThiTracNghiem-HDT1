@@ -16,10 +16,7 @@ namespace Final___OOP
 {
     public partial class MenuTeacher : Form
     {
-        private GetMonHocBUS monHocBUS;
-        private GetChuongBUS chuongBUS;
         private CauHoiBUS cauHoiBUS;
-        private GetLopHocBUS lopHocBUS;
         private GetDeThiBUS dethiBUS;
         private TraCuuSinhVienBUS traCuuSinhVienBUS;
         private GetChungBUS getChungBUS;
@@ -28,10 +25,8 @@ namespace Final___OOP
         public MenuTeacher()
         {
             InitializeComponent();
-            monHocBUS = new GetMonHocBUS();
-            chuongBUS = new GetChuongBUS();
+            
             cauHoiBUS = new CauHoiBUS();
-            lopHocBUS = new GetLopHocBUS();
             dethiBUS = new GetDeThiBUS();
             traCuuSinhVienBUS = new TraCuuSinhVienBUS();
             getChungBUS = new GetChungBUS();
@@ -61,7 +56,7 @@ namespace Final___OOP
             cbMonHocTraCuu.ValueMember = "MaMH";
 
 
-            var lsLop = lopHocBUS.GetAllLopHoc();
+            var lsLop = getChungBUS.GetAllLopHoc();
             cbLopHoc.DataSource = lsLop;
             cbLopHoc.DisplayMember = "TenLop";
             cbLopHoc.ValueMember = "MaLop";

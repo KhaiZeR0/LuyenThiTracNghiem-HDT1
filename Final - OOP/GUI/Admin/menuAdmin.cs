@@ -11,24 +11,22 @@ namespace Final___OOP
     public partial class menuAdmin : Form
     {
         private AdminQLChungBUS adminQLChungBUS;
-        private GetLopHocBUS lopHocBUS;
         private SinhVienBUS sinhVienBUS;
         private GiangVienBUS giangVienBUS;
+        private GetChungBUS getChungBUS;
         public menuAdmin()
         {
             InitializeComponent();
-            lopHocBUS = new GetLopHocBUS();
             sinhVienBUS = new SinhVienBUS();
             giangVienBUS = new GiangVienBUS();
+            getChungBUS = new GetChungBUS();
             
             //QL sinh viên
             GetAllSV();
             LoadDataCB();
-            dtgvSinhVien.SelectionChanged += dtgvSinhVien_SelectionChanged;
 
             //QLGiangVien
             GetAllGV();
-            dtgvGiangVien.SelectionChanged += dtgvGiangVien_SelectionChanged;
 
             //QLChung
             adminQLChungBUS = new AdminQLChungBUS();
@@ -188,7 +186,7 @@ namespace Final___OOP
         //Load danh sách lớp vào combobox ở quản lý sinh  viên
         void LoadDataCB()
         {
-            var lsLopHoc = lopHocBUS.GetAllLopHoc();
+            var lsLopHoc = getChungBUS.GetAllLopHoc();
 
             cbLop.DataSource = lsLopHoc;
             cbLop.DisplayMember = "TenLop";
@@ -639,6 +637,7 @@ namespace Final___OOP
                     LoadDataLopHoc();
                     MessageBox.Show("Thêm Lớp Học thành công!");
                     ClearLopHocInputs();
+                    LoadDataCB();
                 }
                 else
                 {
@@ -776,8 +775,8 @@ namespace Final___OOP
         {
             if (adminQLChungBUS != null)
                 adminQLChungBUS.Dispose();
-            if (lopHocBUS != null)
-                lopHocBUS.Dispose();
+            if (getChungBUS != null)
+                getChungBUS.Dispose();
             if (sinhVienBUS != null)
                 sinhVienBUS.Dispose();
             if (giangVienBUS != null)

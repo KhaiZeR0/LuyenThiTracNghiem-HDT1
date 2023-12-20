@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\CauHoiBUS.cs" />
+    <Compile Include="BUS\ThongTinThiCuBUS.cs" />
     <Compile Include="BUS\Views\CauHoi_View.cs" />
     <Compile Include="BUS\QLDeThiBUS.cs" />
     <Compile Include="DAO\CauHoiDAO.cs" />
@@ -179,9 +180,7 @@
     <Compile Include="DAO\AdminQLChungDAO.cs" />
     <Compile Include="BUS\AdminQLChungBUS.cs" />
     <Compile Include="BUS\DangNhapBUS.cs" />
-    <Compile Include="BUS\GetLopHocBUS.cs" />
     <Compile Include="BUS\SinhVienBUS.cs" />
-    <Compile Include="DAO\GetLopHocDAO.cs" />
     <Compile Include="DAO\GiangVienDAO.cs" />
     <Compile Include="DAO\QLDeThiDAO.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
@@ -189,14 +188,11 @@
     <Compile Include="DAO\Model\DeThi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BUS\GetChuongBUS.cs" />
-    <Compile Include="DAO\GetChuongDAO.cs" />
     <Compile Include="BUS\GetDeThiBUS.cs" />
     <Compile Include="DAO\GetDeThiDAO.cs" />
-    <Compile Include="BUS\GetMonHocBUS.cs" />
-    <Compile Include="DAO\GetMonHocDAO.cs" />
     <Compile Include="DAO\GetChungDAO.cs" />
     <Compile Include="BUS\GetChungBUS.cs" />
+    <Compile Include="DAO\ThongTinThiCuDAO.cs" />
     <Compile Include="GUI\Student\CourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
