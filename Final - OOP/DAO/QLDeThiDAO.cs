@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Final___OOP.BUS.QLDeThiBUS;
 
 namespace Final___OOP.DAO
 {
@@ -71,6 +72,41 @@ namespace Final___OOP.DAO
                             DapAn_C = cauHoi.DapAnC,
                             DapAn_D = cauHoi.DapAnD,
                             DapAnDung = cauHoi.DapAnDung,
+                        };
+
+            return query.ToList();
+        }
+
+        public void XoaDeThiDAO(string maDeThi)
+        {
+            try
+            {
+                var deThi = DbContext.DeThis.SingleOrDefault(dt => dt.MaDeThi == maDeThi);
+                if (deThi != null)
+                {
+                    DbContext.DeThis.Remove(deThi);
+                    DbContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi" + ex);
+            }
+        }
+        public List<DeThiViewModel> LayDanhSachDeThiDAO()
+        {
+            var query = from dt in DbContext.DeThis
+                        join lop in DbContext.LopHocs on dt.MaLop equals lop.MaLop
+                        join monhoc in DbContext.MonHocs on dt.MaMH equals monhoc.MaMH
+                        select new DeThiViewModel
+                        {
+                            MaDeThi = dt.MaDeThi,
+                            TenDeThi = dt.TenDeThi,
+                            TGLamBai = dt.TGLamBai,
+                            SoLuongCau = dt.SoLuongCau,
+                            MaCB = dt.MaCB,
+                            TenLop = lop.TenLop, // Change from MaLop
+                            TenMH = monhoc.TenMH // Change from MaMH
                         };
 
             return query.ToList();

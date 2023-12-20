@@ -12,8 +12,13 @@ namespace Final___OOP
         {
             InitializeComponent();
             resetPassBUS = new ResetPassBUS();
+            PasswordChar();
         }
-
+        public void PasswordChar()
+        {
+            tbnewpass.PasswordChar = '*';
+            tbconfirmpass.PasswordChar = '*';
+        }
         private void btnsavepass_Click(object sender, EventArgs e)
         {
             string matKhau = tbnewpass.Text;

@@ -11,6 +11,7 @@ using TheArtOfDev.HtmlRenderer.Adapters;
 using Final___OOP.BUS;
 using Final___OOP.DAO;
 using Final___OOP.DAO.Model;
+using static Final___OOP.BUS.QLDeThiBUS;
 
 namespace Final___OOP
 {
@@ -38,10 +39,44 @@ namespace Final___OOP
 
             //Tạo đề thi
             LoadDataCB_TaoDeThi();
-        }
+            LoadDanhSachDeThi();
 
-        //Load danh sách lớp vào combobox ở quản lý sinh  viên
-        void LoadDataCB()
+            doitenDGV();
+        }
+        private void doitenDGV()
+        {
+            /*gvDiem.Columns["MaSV"].HeaderText = "Mã sinh viên";*//*
+            gvDiem.Columns["HoTen"].HeaderText = "Họ và tên";
+            gvDiem.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            gvDiem.Columns["Lop"].HeaderText = "Lớp";
+            gvDiem.Columns["Diem"].HeaderText = "Điểm";*/
+
+            gvCauHoi.Columns["NoiDungCauHoi"].HeaderText = "Nội dung";
+            gvCauHoi.Columns["DapAnA"].HeaderText = "Đáp án A";
+            gvCauHoi.Columns["DapAnB"].HeaderText = "Đáp án B";
+            gvCauHoi.Columns["DapAnC"].HeaderText = "Đáp án C";
+            gvCauHoi.Columns["DapAnD"].HeaderText = "Đáp án D";
+            gvCauHoi.Columns["DapAnDung"].HeaderText = "Đáo án đúng";
+            gvCauHoi.Columns["MaMH"].HeaderText = "Mã môn";
+            gvCauHoi.Columns["MaChuong"].HeaderText = "Mã chương";
+
+/*            dtgvCauHoiDeThi.Columns["MaCauHoi"].HeaderText = "Mã câu hỏi";
+            dtgvCauHoiDeThi.Columns["NoiDungCauHoi"].HeaderText = "Nội dung câu";
+            dtgvCauHoiDeThi.Columns["DapAn_A"].HeaderText = "Đáp án A";
+            dtgvCauHoiDeThi.Columns["DapAn_B"].HeaderText = "Đáp án B";
+            dtgvCauHoiDeThi.Columns["DapAn_C"].HeaderText = "Đáp án C";
+            dtgvCauHoiDeThi.Columns["DapAn_D"].HeaderText = "Đáp án D";
+            dtgvCauHoiDeThi.Columns["DapAnDung"].HeaderText = "Đáo án đúng";*/
+
+            DGVQLDeThi.Columns["MaDeThi"].HeaderText = "Mã đề thi";
+            DGVQLDeThi.Columns["TenDeThi"].HeaderText = "Tên đề thi";
+            DGVQLDeThi.Columns["TGLamBai"].HeaderText = "Thời gian";
+            DGVQLDeThi.Columns["SoLuongCau"].HeaderText = "Số lượng câu";
+            DGVQLDeThi.Columns["MaCB"].HeaderText = "Mã cán bộ";
+            DGVQLDeThi.Columns["TenLop"].HeaderText = "Tên lớp";
+            DGVQLDeThi.Columns["TenMH"].HeaderText = "Tên môn học";
+        }
+            void LoadDataCB()
         {
             var lsMonHoc = getChungBUS.GetAllMonHoc();
 
@@ -339,6 +374,7 @@ namespace Final___OOP
                 qLDeThiBUS.ThemDeThiBUS(maDeTHi, tenDeThi, TGLamBai, maMH, maLop, maCauHoiString, soLuongCauHoi);
 
                 MessageBox.Show("Thêm đề thi thành công!");
+                LoadDanhSachDeThi();
             }
             catch (Exception ex)
             {
@@ -450,8 +486,42 @@ namespace Final___OOP
                 }
             }
         }
+        //QL De Thi
 
+        private void LoadDanhSachDeThi()
+        {
+            try
+            {
+                List<DeThiViewModel> danhSachDeThi = qLDeThiBUS.LayDanhSachDeThiBUS();
+                DGVQLDeThi.DataSource = danhSachDeThi;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách đề thi: " + ex.Message);
+            }
+        }
+        private void delDeThi_Click(object sender, EventArgs e)
+        {
+            if (DGVQLDeThi.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = DGVQLDeThi.SelectedRows[0];
+                string maDeThi = selectedRow.Cells["MaDeThi"].Value.ToString();
+
+                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa đề thi này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    qLDeThiBUS.XoaDeThiBUS(maDeThi);
+                    MessageBox.Show("Xóa đề thi thành công!");
+                    LoadDanhSachDeThi();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đề thi để xóa.");
+            }
+        }
 
         //Chuyển pages
         private void btnQLCHpage_Click(object sender, EventArgs e)
@@ -474,6 +544,6 @@ namespace Final___OOP
             TeacherPages.PageIndex = 4;
         }
 
-        
+
     }
 }

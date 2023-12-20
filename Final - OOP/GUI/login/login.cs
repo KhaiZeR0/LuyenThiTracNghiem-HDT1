@@ -11,6 +11,7 @@ namespace Final___OOP.winform
         {
             InitializeComponent();
             dangnhapBUS = new DangNhapBUS();
+            txtpass.PasswordChar = '*';
         }
 
         private void btnlogin_Click(object sender, EventArgs e)

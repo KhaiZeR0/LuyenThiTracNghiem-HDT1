@@ -36,8 +36,12 @@ namespace Final___OOP
 
         public class MonHocViewModel
         {
-            public string MaMH { get; set; }
-            public string TenMH { get; set; }
+            private string maMH;
+            private string tenMH;
+
+            public string MaMH { get => maMH; set => maMH = value; }
+            public string TenMH { get => tenMH; set => tenMH = value; }
+
             public MonHocViewModel() { }
         }
         public List<MonHocViewModel> LayDanhSachMonHocBUS()
@@ -48,9 +52,13 @@ namespace Final___OOP
         //CHương:
         public class ChuongViewModel
         {
-            public string MaChuong { get; set; }
-            public string TenChuong { get; set; }
-            public string MaMonHoc { get; set; }
+            private string maChuong;
+            private string tenChuong;
+            private string maMonHoc;
+
+            public string MaChuong { get => maChuong; set => maChuong = value; }
+            public string TenChuong { get => tenChuong; set => tenChuong = value; }
+            public string MaMonHoc { get => maMonHoc; set => maMonHoc = value; }
 
             public ChuongViewModel() { }
         }
@@ -92,8 +100,12 @@ namespace Final___OOP
         }
         public class LopHocViewModel
         {
-            public string MaLop { get; set; }
-            public string TenLop { get; set; }
+            private string maLop;
+            private string tenLop;
+
+            public string MaLop { get => maLop; set => maLop = value; }
+            public string TenLop { get => tenLop; set => tenLop = value; }
+
             public LopHocViewModel() { }
         }
         public List<LopHocViewModel> LayDanhSachLopHocBUS()
