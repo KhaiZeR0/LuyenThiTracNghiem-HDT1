@@ -10,9 +10,16 @@ namespace Final___OOP.DAO
 {
     internal class ThongTinThiCuDAO : ThiTracNghiemDAO
     {
-        public List<DeThi> GetDeThiTheoMonHocDAO(string MaMH)
+        public List<DeThi> GetDeThiTheoMH_MaLopDAO(string MaMH, string maLop = null)
         {
-            return DbContext.DeThis.Where(c => c.MaMH == MaMH ).ToList();
+            var query = DbContext.DeThis.Where(c => c.MaMH == MaMH);
+
+            if (!string.IsNullOrEmpty(maLop))
+            {
+                query = query.Where(c => c.MaLop == maLop);
+            }
+
+            return query.ToList();
         }
     }
 }

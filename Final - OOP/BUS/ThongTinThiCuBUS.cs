@@ -15,9 +15,9 @@ namespace Final___OOP.BUS
         {
             thongTinThiCuDAO = new ThongTinThiCuDAO();
         }
-        public List<DeThi> GetDeThiTheoMonHocBUS(string MaMH)
+        public List<DeThi> GetDeThiTheoMH_MaLopBUS(string MaMH, string maLop)
         {
-            return thongTinThiCuDAO.GetDeThiTheoMonHocDAO(MaMH);
+            return thongTinThiCuDAO.GetDeThiTheoMH_MaLopDAO(MaMH, maLop);
         }
     }
 }

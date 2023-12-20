@@ -1,5 +1,6 @@
 ﻿using Final___OOP.BUS;
 using Final___OOP.DAO.Model;
+using Final___OOP.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,13 @@ namespace Final___OOP
     {
         private GetChungBUS getChungBUS;
         private ThongTinThiCuBUS thongTinThiCuBUS;
+        private GetDSLopTuMaHSBUS getDSLopBUS;
         public MenuStudent()
         {
             InitializeComponent();
             getChungBUS = new GetChungBUS();
             thongTinThiCuBUS = new ThongTinThiCuBUS();
+            getDSLopBUS = new GetDSLopTuMaHSBUS();
 
             //Trang thông tin thi cử
             loadCBMonHoc_DeThi();
@@ -29,14 +32,12 @@ namespace Final___OOP
         {
             string maMH = cbMH_THI.SelectedValue.ToString();
 
-            var lsDeThi = thongTinThiCuBUS.GetDeThiTheoMonHocBUS(maMH);
+            var lsDeThi = thongTinThiCuBUS.GetDeThiTheoMH_MaLopBUS(maMH, null);
 
             if (lsDeThi.Any())
             {
-                // Chọn phần tử đầu tiên từ danh sách
                 DeThi firstDeThi = lsDeThi.First();
 
-                // Hiển thị thông tin từ phần tử đầu tiên vào các Label
                 lbDeThi_THI.Text = $"Bài thi: {firstDeThi.TenDeThi}";
                 lbSLCauHoi_THI.Text = $"Số lượng câu hỏi: {firstDeThi.SoLuongCau} câu";
                 lbThoiGianLamBai_THi.Text = $"Thời gian làm bài: {firstDeThi.TGLamBai} ";
@@ -49,13 +50,33 @@ namespace Final___OOP
         }
         private void btnThi_THI_Click(object sender, EventArgs e)
         {
-            string maDeThi = cbDeThi_THI.SelectedValue.ToString();
+            if (cbDeThi_THI.SelectedItem != null)
+            {
+                string maDeThi = cbDeThi_THI.SelectedValue.ToString();
 
+                BaiThiInfoDTO baiThiInfo = new BaiThiInfoDTO();
+                DeThi selectedDeThi = (DeThi)cbDeThi_THI.SelectedItem;
+                baiThiInfo.MaDeThi = selectedDeThi.MaDeThi;
+                baiThiInfo.TGLamBai = selectedDeThi.TGLamBai;
+                baiThiInfo.SoLuongCau = selectedDeThi.SoLuongCau;
+                baiThiInfo.MaCauHoi = selectedDeThi.NoiDungDeThi;
 
+                CourseScreen courseScreen = new CourseScreen(baiThiInfo);
+                courseScreen.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đề thi trước khi bắt đầu thi.");
+            }
         }
+
 
         void loadCBMonHoc_DeThi()
         {
+            string maHS = Session.Instance.MaTK;
+            var lsLop = getDSLopBUS.getDSLopBUS(maHS);
+            var FirtDSLop = lsLop.FirstOrDefault();
+
             //List môn học
             var lsMon = getChungBUS.GetAllMonHoc();
             
@@ -65,11 +86,16 @@ namespace Final___OOP
 
             //list đề thi thuộc môn học
             string MaMH = cbMH_THI.SelectedValue.ToString();
-            var lsDeThi = thongTinThiCuBUS.GetDeThiTheoMonHocBUS(MaMH);
+            
+            if( FirtDSLop != null )
+            {
+                string maLop = FirtDSLop.MaLop;
+                var lsDeThi = thongTinThiCuBUS.GetDeThiTheoMH_MaLopBUS(MaMH, maLop);
 
-            cbDeThi_THI.DataSource = lsDeThi;
-            cbDeThi_THI.DisplayMember = "TenDeThi";
-            cbDeThi_THI.ValueMember = "MaDeThi";
+                cbDeThi_THI.DataSource = lsDeThi;
+                cbDeThi_THI.DisplayMember = "TenDeThi";
+                cbDeThi_THI.ValueMember = "MaDeThi";
+            }
         }
         private void btnketquapage_Click(object sender, EventArgs e)
         {

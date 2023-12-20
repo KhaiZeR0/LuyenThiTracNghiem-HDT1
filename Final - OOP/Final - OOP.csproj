@@ -157,11 +157,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BaiThiBUS.cs" />
     <Compile Include="BUS\CauHoiBUS.cs" />
+    <Compile Include="BUS\GetDSLopTuMaHSBUS.cs" />
     <Compile Include="BUS\ThongTinThiCuBUS.cs" />
     <Compile Include="BUS\Views\CauHoi_View.cs" />
     <Compile Include="BUS\QLDeThiBUS.cs" />
+    <Compile Include="DAO\BaiThiDAO.cs" />
     <Compile Include="DAO\CauHoiDAO.cs" />
+    <Compile Include="DAO\GetDSLopTuMaHSDAO.cs" />
     <Compile Include="DAO\Model\BaiLam.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
@@ -193,6 +197,7 @@
     <Compile Include="DAO\GetChungDAO.cs" />
     <Compile Include="BUS\GetChungBUS.cs" />
     <Compile Include="DAO\ThongTinThiCuDAO.cs" />
+    <Compile Include="DTO\BaiThiInfoDTO.cs" />
     <Compile Include="GUI\Student\CourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
