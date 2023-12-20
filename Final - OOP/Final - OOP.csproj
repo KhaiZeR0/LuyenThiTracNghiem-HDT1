@@ -158,13 +158,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\CauHoiBUS.cs" />
+    <Compile Include="BUS\Views\CauHoi_View.cs" />
+    <Compile Include="BUS\QLDeThiBUS.cs" />
     <Compile Include="DAO\CauHoiDAO.cs" />
     <Compile Include="DAO\Model\BaiLam.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="BUS\GiangVienBUS.cs" />
-    <Compile Include="BUS\GiangVienView.cs" />
-    <Compile Include="BUS\SinhVienView.cs" />
+    <Compile Include="BUS\Views\GiangVienView.cs" />
+    <Compile Include="BUS\Views\SinhVienView.cs" />
     <Compile Include="DAO\Model\CauHoi.cs">
       <DependentUpon>ThiTracNghiemModel.tt</DependentUpon>
     </Compile>
@@ -181,6 +183,7 @@
     <Compile Include="BUS\SinhVienBUS.cs" />
     <Compile Include="DAO\GetLopHocDAO.cs" />
     <Compile Include="DAO\GiangVienDAO.cs" />
+    <Compile Include="DAO\QLDeThiDAO.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DAO\ThiTracNghiemDAO.cs" />
     <Compile Include="DAO\Model\DeThi.cs">

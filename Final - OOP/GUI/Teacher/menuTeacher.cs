@@ -23,6 +23,7 @@ namespace Final___OOP
         private GetDeThiBUS dethiBUS;
         private TraCuuSinhVienBUS traCuuSinhVienBUS;
         private GetChungBUS getChungBUS;
+        private QLDeThiBUS qLDeThiBUS;
 
         public MenuTeacher()
         {
@@ -34,9 +35,14 @@ namespace Final___OOP
             dethiBUS = new GetDeThiBUS();
             traCuuSinhVienBUS = new TraCuuSinhVienBUS();
             getChungBUS = new GetChungBUS();
+            qLDeThiBUS = new QLDeThiBUS();
 
             LoadDataCB();
             GetAllCauHoi();
+
+
+            //Tạo đề thi
+            LoadDataCB_TaoDeThi();
         }
 
         //Load danh sách lớp vào combobox ở quản lý sinh  viên
@@ -306,6 +312,150 @@ namespace Final___OOP
 
 
 
+        //Tạo đề thi
+        private void btnThemDETHI_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maDeTHi = txtMDT_DeThi.Text;
+                string tenDeThi = txtTen_DeThi.Text;
+
+                int thoiGianLamBai = Convert.ToInt32(txtThoiGianLamBai.Text);
+
+                TimeSpan TGLamBai = TimeSpan.FromMinutes(thoiGianLamBai);
+
+                string maMH = CBMH_DeThi.SelectedValue.ToString();
+                string maLop = CbLop_DeThi.SelectedValue.ToString();
+                int soLuongCauHoi = 0;
+                List<string> maCauHoiList = new List<string>();
+                foreach (DataGridViewRow row in dtgvCauHoiDeThi.Rows)
+                {
+                    if (row.Cells["MaCauHoi"].Value != null)
+                    {
+                        string maCauHoi = row.Cells["MaCauHoi"].Value.ToString();
+                        maCauHoiList.Add(maCauHoi);
+                        soLuongCauHoi++;
+                    }
+                }
+
+                string maCauHoiString = string.Join("|", maCauHoiList);
+
+                // Thêm đề thi mới vào cơ sở dữ liệu
+                qLDeThiBUS.ThemDeThiBUS(maDeTHi, tenDeThi, TGLamBai, maMH, maLop, maCauHoiString, soLuongCauHoi);
+
+                MessageBox.Show("Thêm đề thi thành công!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in btnThemDETHI_Click: {ex.Message}");
+                MessageBox.Show($"Error in btnThemDETHI_Click: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnFindQuestion_DeThi_Click(object sender, EventArgs e)
+        {
+            string maChuong = CBChuong_DeThi.SelectedValue.ToString();
+
+            var dsCauHoi = qLDeThiBUS.GetCauHoiByChuongBUS(maChuong);
+
+            dtgvCauHoi_DETHI.DataSource = dsCauHoi;
+        }
+
+        void LoadDataCB_TaoDeThi()
+        {
+            var lsLop = getChungBUS.GetAllLopHoc();
+            CbLop_DeThi.DataSource = lsLop;
+            CbLop_DeThi.DisplayMember = "TenLop";
+            CbLop_DeThi.ValueMember = "MaLop";
+
+            var lsMonHoc = getChungBUS.GetAllMonHoc();
+
+            CBMH_DeThi.DataSource = lsMonHoc;
+            CBMH_DeThi.DisplayMember = "TenMH";
+            CBMH_DeThi.ValueMember = "MaMH";
+
+            CBMH_DeThi.SelectedIndexChanged += CBMH_DeThi_SelectedIndexChanged;
+
+            CBMH_DeThi_SelectedIndexChanged(null, EventArgs.Empty);
+        }
+
+        private void CBMH_DeThi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maMonHoc = CBMH_DeThi.SelectedValue.ToString();
+
+            var lsChuong = getChungBUS.GetAllChuong(maMonHoc);
+
+            CBChuong_DeThi.DataSource = lsChuong;
+            CBChuong_DeThi.DisplayMember = "TenChuong";
+            CBChuong_DeThi.ValueMember = "MaChuong";
+        }
+        private void dtgvCauHoi_DETHI_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvCauHoi_DETHI.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dtgvCauHoi_DETHI.SelectedRows[0];
+                string maCauHoi = selectedRow.Cells["MaCauHoi"].Value.ToString();
+
+                DisplayInfoOnDtgvCauHoiDeThi(maCauHoi);
+            }
+        }
+        private void DisplayInfoOnDtgvCauHoiDeThi(string maCauHoi)
+        {
+            var dsCauHoiDaChon = qLDeThiBUS.GetCauHoiBUS(maCauHoi);
+
+            if (dtgvCauHoiDeThi.DataSource == null)
+            {
+                dtgvCauHoiDeThi.DataSource = dsCauHoiDaChon;
+            }
+            else
+            {
+                if (dsCauHoiDaChon.Any())
+                {
+                    var currentDataSource = (List<CauHoi_View>)dtgvCauHoiDeThi.DataSource;
+
+                    if (currentDataSource == null)
+                    {
+                        currentDataSource = new List<CauHoi_View>();
+                    }
+
+                    foreach (var cauHoi in dsCauHoiDaChon)
+                    {
+                        if (!currentDataSource.Any(ch => ch.MaCauHoi == cauHoi.MaCauHoi))
+                        {
+                            currentDataSource.Add(cauHoi);
+                        }
+                    }
+
+                    dtgvCauHoiDeThi.DataSource = null;
+                    dtgvCauHoiDeThi.DataSource = currentDataSource;
+                }
+            }
+        }
+        private void dtgvCauHoiDeThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dtgvCauHoiDeThi.Rows[e.RowIndex];
+                string maCauHoi = selectedRow.Cells["MaCauHoi"].Value.ToString();
+                string noiDungCauHoi = selectedRow.Cells["NoiDungCauHoi"].Value.ToString();
+
+                DialogResult result = MessageBox.Show($"Bạn có muốn xóa câu hỏi:\n\n{noiDungCauHoi}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    var currentDataSource = (List<CauHoi_View>)dtgvCauHoiDeThi.DataSource;
+
+                    var cauHoiToRemove = currentDataSource.FirstOrDefault(ch => ch.MaCauHoi == maCauHoi);
+                    if (cauHoiToRemove != null)
+                    {
+                        currentDataSource.Remove(cauHoiToRemove);
+
+                        dtgvCauHoiDeThi.DataSource = null;
+                        dtgvCauHoiDeThi.DataSource = currentDataSource;
+                    }
+                }
+            }
+        }
+
 
 
         //Chuyển pages
@@ -329,6 +479,6 @@ namespace Final___OOP
             TeacherPages.PageIndex = 4;
         }
 
-
+        
     }
 }
