@@ -123,16 +123,16 @@
             this.blank = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.page1 = new System.Windows.Forms.TabPage();
-            this.dtpNgaySinhSV = new System.Windows.Forms.DateTimePicker();
-            this.rbNuSV = new System.Windows.Forms.RadioButton();
-            this.rbNamSV = new System.Windows.Forms.RadioButton();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel22 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.dtpNgaySinhSV = new System.Windows.Forms.DateTimePicker();
+            this.rbNuSV = new System.Windows.Forms.RadioButton();
+            this.rbNamSV = new System.Windows.Forms.RadioButton();
+            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dtgvSinhVien = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cbLop = new Bunifu.UI.WinForms.BunifuDropdown();
             this.txtDiaChiSV = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -143,16 +143,16 @@
             this.txtMaSV = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtHoTenSV = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.bunifuLabel37 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel12 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dtpNgaySinhGV = new System.Windows.Forms.DateTimePicker();
             this.rbNuGV = new System.Windows.Forms.RadioButton();
             this.rbNamGV = new System.Windows.Forms.RadioButton();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel37 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dtgvGiangVien = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel12 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtDiaChiGV = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnXoaGV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSuaGV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -162,33 +162,33 @@
             this.txtHoTenGV = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.bunifuLabel13 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnDelLop = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DGVLop = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnChangeLop = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbMaLop = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnAddLop = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel13 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbTenLop = new Bunifu.UI.WinForms.BunifuTextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel17 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel18 = new Bunifu.UI.WinForms.BunifuLabel();
             this.DGVChuong = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cbMonHoc = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.bunifuLabel19 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnDelChuong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbTenChuong = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnChangeChuong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbMaChuong = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnAddChuong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel18 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel17 = new Bunifu.UI.WinForms.BunifuLabel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.bunifuLabel16 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
             this.DGVMon = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnDelMon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnChangeMon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAddMon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel16 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbTenMon = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbMaMon = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnchungpage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnQLGVpage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -220,10 +220,10 @@
             this.AdminPages.Location = new System.Drawing.Point(142, 0);
             this.AdminPages.Multiline = true;
             this.AdminPages.Name = "AdminPages";
-            this.AdminPages.Page = this.tabPage4;
-            this.AdminPages.PageIndex = 3;
-            this.AdminPages.PageName = "tabPage4";
-            this.AdminPages.PageTitle = "Chung";
+            this.AdminPages.Page = this.tabPage2;
+            this.AdminPages.PageIndex = 2;
+            this.AdminPages.PageName = "tabPage2";
+            this.AdminPages.PageTitle = "Quản lý giảng viên";
             this.AdminPages.SelectedIndex = 0;
             this.AdminPages.Size = new System.Drawing.Size(1294, 726);
             this.AdminPages.TabIndex = 1;
@@ -295,52 +295,6 @@
             this.page1.TabIndex = 0;
             this.page1.Text = "Quản lý sinh viên";
             // 
-            // dtpNgaySinhSV
-            // 
-            this.dtpNgaySinhSV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinhSV.Location = new System.Drawing.Point(187, 288);
-            this.dtpNgaySinhSV.Name = "dtpNgaySinhSV";
-            this.dtpNgaySinhSV.Size = new System.Drawing.Size(259, 20);
-            this.dtpNgaySinhSV.TabIndex = 3;
-            this.dtpNgaySinhSV.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
-            // 
-            // rbNuSV
-            // 
-            this.rbNuSV.AutoSize = true;
-            this.rbNuSV.Location = new System.Drawing.Point(314, 452);
-            this.rbNuSV.Name = "rbNuSV";
-            this.rbNuSV.Size = new System.Drawing.Size(39, 17);
-            this.rbNuSV.TabIndex = 111;
-            this.rbNuSV.TabStop = true;
-            this.rbNuSV.Text = "Nữ";
-            this.rbNuSV.UseVisualStyleBackColor = true;
-            // 
-            // rbNamSV
-            // 
-            this.rbNamSV.AutoSize = true;
-            this.rbNamSV.Location = new System.Drawing.Point(187, 452);
-            this.rbNamSV.Name = "rbNamSV";
-            this.rbNamSV.Size = new System.Drawing.Size(47, 17);
-            this.rbNamSV.TabIndex = 100;
-            this.rbNamSV.TabStop = true;
-            this.rbNamSV.Text = "Nam";
-            this.rbNamSV.UseVisualStyleBackColor = true;
-            // 
-            // bunifuLabel9
-            // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.CursorType = null;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel9.Location = new System.Drawing.Point(58, 366);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(42, 17);
-            this.bunifuLabel9.TabIndex = 22;
-            this.bunifuLabel9.Text = "Địa chỉ:";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel22
             // 
             this.bunifuLabel22.AllowParentOverrides = false;
@@ -401,21 +355,6 @@
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(60, 206);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(76, 17);
-            this.bunifuLabel2.TabIndex = 6;
-            this.bunifuLabel2.Text = "Mã sinh viên:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
@@ -426,11 +365,72 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(60, 249);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(96, 17);
+            this.bunifuLabel1.Size = new System.Drawing.Size(94, 17);
             this.bunifuLabel1.TabIndex = 4;
-            this.bunifuLabel1.Text = "Họ tên sinh viên:";
+            this.bunifuLabel1.Text = "Họ tên học sinh:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.CursorType = null;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Location = new System.Drawing.Point(60, 206);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(74, 17);
+            this.bunifuLabel2.TabIndex = 6;
+            this.bunifuLabel2.Text = "Mã học sinh:";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // dtpNgaySinhSV
+            // 
+            this.dtpNgaySinhSV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinhSV.Location = new System.Drawing.Point(187, 288);
+            this.dtpNgaySinhSV.Name = "dtpNgaySinhSV";
+            this.dtpNgaySinhSV.Size = new System.Drawing.Size(259, 20);
+            this.dtpNgaySinhSV.TabIndex = 3;
+            this.dtpNgaySinhSV.Value = new System.DateTime(2004, 1, 1, 0, 0, 0, 0);
+            // 
+            // rbNuSV
+            // 
+            this.rbNuSV.AutoSize = true;
+            this.rbNuSV.Location = new System.Drawing.Point(314, 452);
+            this.rbNuSV.Name = "rbNuSV";
+            this.rbNuSV.Size = new System.Drawing.Size(39, 17);
+            this.rbNuSV.TabIndex = 111;
+            this.rbNuSV.TabStop = true;
+            this.rbNuSV.Text = "Nữ";
+            this.rbNuSV.UseVisualStyleBackColor = true;
+            // 
+            // rbNamSV
+            // 
+            this.rbNamSV.AutoSize = true;
+            this.rbNamSV.Location = new System.Drawing.Point(187, 452);
+            this.rbNamSV.Name = "rbNamSV";
+            this.rbNamSV.Size = new System.Drawing.Size(47, 17);
+            this.rbNamSV.TabIndex = 100;
+            this.rbNamSV.TabStop = true;
+            this.rbNamSV.Text = "Nam";
+            this.rbNamSV.UseVisualStyleBackColor = true;
+            // 
+            // bunifuLabel9
+            // 
+            this.bunifuLabel9.AllowParentOverrides = false;
+            this.bunifuLabel9.AutoEllipsis = false;
+            this.bunifuLabel9.CursorType = null;
+            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel9.Location = new System.Drawing.Point(58, 366);
+            this.bunifuLabel9.Name = "bunifuLabel9";
+            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel9.Size = new System.Drawing.Size(42, 17);
+            this.bunifuLabel9.TabIndex = 22;
+            this.bunifuLabel9.Text = "Địa chỉ:";
+            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // dtgvSinhVien
             // 
@@ -1129,6 +1129,96 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản lý giảng viên";
             // 
+            // bunifuLabel37
+            // 
+            this.bunifuLabel37.AllowParentOverrides = false;
+            this.bunifuLabel37.AutoEllipsis = false;
+            this.bunifuLabel37.CursorType = null;
+            this.bunifuLabel37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel37.Location = new System.Drawing.Point(62, 426);
+            this.bunifuLabel37.Name = "bunifuLabel37";
+            this.bunifuLabel37.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel37.Size = new System.Drawing.Size(51, 17);
+            this.bunifuLabel37.TabIndex = 38;
+            this.bunifuLabel37.Text = "Giới tính:";
+            this.bunifuLabel37.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel37.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel8
+            // 
+            this.bunifuLabel8.AllowParentOverrides = false;
+            this.bunifuLabel8.AutoEllipsis = false;
+            this.bunifuLabel8.CursorType = null;
+            this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel8.Location = new System.Drawing.Point(62, 387);
+            this.bunifuLabel8.Name = "bunifuLabel8";
+            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel8.Size = new System.Drawing.Size(34, 17);
+            this.bunifuLabel8.TabIndex = 29;
+            this.bunifuLabel8.Text = "Email:";
+            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel7
+            // 
+            this.bunifuLabel7.AllowParentOverrides = false;
+            this.bunifuLabel7.AutoEllipsis = false;
+            this.bunifuLabel7.CursorType = null;
+            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel7.Location = new System.Drawing.Point(62, 342);
+            this.bunifuLabel7.Name = "bunifuLabel7";
+            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel7.Size = new System.Drawing.Size(42, 17);
+            this.bunifuLabel7.TabIndex = 39;
+            this.bunifuLabel7.Text = "Địa chỉ:";
+            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel10
+            // 
+            this.bunifuLabel10.AllowParentOverrides = false;
+            this.bunifuLabel10.AutoEllipsis = false;
+            this.bunifuLabel10.CursorType = null;
+            this.bunifuLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel10.Location = new System.Drawing.Point(62, 298);
+            this.bunifuLabel10.Name = "bunifuLabel10";
+            this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel10.Size = new System.Drawing.Size(61, 17);
+            this.bunifuLabel10.TabIndex = 24;
+            this.bunifuLabel10.Text = "Ngày sinh:";
+            this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel12
+            // 
+            this.bunifuLabel12.AllowParentOverrides = false;
+            this.bunifuLabel12.AutoEllipsis = false;
+            this.bunifuLabel12.CursorType = null;
+            this.bunifuLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel12.Location = new System.Drawing.Point(62, 258);
+            this.bunifuLabel12.Name = "bunifuLabel12";
+            this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel12.Size = new System.Drawing.Size(99, 17);
+            this.bunifuLabel12.TabIndex = 21;
+            this.bunifuLabel12.Text = "Họ tên giáo viên:";
+            this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel12.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel11
+            // 
+            this.bunifuLabel11.AllowParentOverrides = false;
+            this.bunifuLabel11.AutoEllipsis = false;
+            this.bunifuLabel11.CursorType = null;
+            this.bunifuLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel11.Location = new System.Drawing.Point(62, 215);
+            this.bunifuLabel11.Name = "bunifuLabel11";
+            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel11.Size = new System.Drawing.Size(79, 17);
+            this.bunifuLabel11.TabIndex = 23;
+            this.bunifuLabel11.Text = "Mã giáo viên:";
+            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // dtpNgaySinhGV
             // 
             this.dtpNgaySinhGV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -1162,36 +1252,6 @@
             this.rbNamGV.TabStop = true;
             this.rbNamGV.Text = "Nam";
             this.rbNamGV.UseVisualStyleBackColor = true;
-            // 
-            // bunifuLabel7
-            // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.CursorType = null;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(62, 342);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(42, 17);
-            this.bunifuLabel7.TabIndex = 39;
-            this.bunifuLabel7.Text = "Địa chỉ:";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel37
-            // 
-            this.bunifuLabel37.AllowParentOverrides = false;
-            this.bunifuLabel37.AutoEllipsis = false;
-            this.bunifuLabel37.CursorType = null;
-            this.bunifuLabel37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel37.Location = new System.Drawing.Point(62, 426);
-            this.bunifuLabel37.Name = "bunifuLabel37";
-            this.bunifuLabel37.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel37.Size = new System.Drawing.Size(51, 17);
-            this.bunifuLabel37.TabIndex = 38;
-            this.bunifuLabel37.Text = "Giới tính:";
-            this.bunifuLabel37.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel37.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // dtgvGiangVien
             // 
@@ -1254,66 +1314,6 @@
             this.dtgvGiangVien.TabIndex = 36;
             this.dtgvGiangVien.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dtgvGiangVien.SelectionChanged += new System.EventHandler(this.dtgvGiangVien_SelectionChanged);
-            // 
-            // bunifuLabel8
-            // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.CursorType = null;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel8.Location = new System.Drawing.Point(62, 387);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(34, 17);
-            this.bunifuLabel8.TabIndex = 29;
-            this.bunifuLabel8.Text = "Email:";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel10
-            // 
-            this.bunifuLabel10.AllowParentOverrides = false;
-            this.bunifuLabel10.AutoEllipsis = false;
-            this.bunifuLabel10.CursorType = null;
-            this.bunifuLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel10.Location = new System.Drawing.Point(62, 298);
-            this.bunifuLabel10.Name = "bunifuLabel10";
-            this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel10.Size = new System.Drawing.Size(61, 17);
-            this.bunifuLabel10.TabIndex = 24;
-            this.bunifuLabel10.Text = "Ngày sinh:";
-            this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel11
-            // 
-            this.bunifuLabel11.AllowParentOverrides = false;
-            this.bunifuLabel11.AutoEllipsis = false;
-            this.bunifuLabel11.CursorType = null;
-            this.bunifuLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel11.Location = new System.Drawing.Point(62, 215);
-            this.bunifuLabel11.Name = "bunifuLabel11";
-            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel11.Size = new System.Drawing.Size(86, 17);
-            this.bunifuLabel11.TabIndex = 23;
-            this.bunifuLabel11.Text = "Mã giảng viên:";
-            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel12
-            // 
-            this.bunifuLabel12.AllowParentOverrides = false;
-            this.bunifuLabel12.AutoEllipsis = false;
-            this.bunifuLabel12.CursorType = null;
-            this.bunifuLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel12.Location = new System.Drawing.Point(62, 258);
-            this.bunifuLabel12.Name = "bunifuLabel12";
-            this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel12.Size = new System.Drawing.Size(106, 17);
-            this.bunifuLabel12.TabIndex = 21;
-            this.bunifuLabel12.Text = "Họ tên giảng viên:";
-            this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel12.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtDiaChiGV
             // 
@@ -1911,6 +1911,36 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Lớp học";
             // 
+            // bunifuLabel13
+            // 
+            this.bunifuLabel13.AllowParentOverrides = false;
+            this.bunifuLabel13.AutoEllipsis = false;
+            this.bunifuLabel13.CursorType = null;
+            this.bunifuLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel13.Location = new System.Drawing.Point(86, 150);
+            this.bunifuLabel13.Name = "bunifuLabel13";
+            this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel13.Size = new System.Drawing.Size(47, 17);
+            this.bunifuLabel13.TabIndex = 41;
+            this.bunifuLabel13.Text = "Tên lớp:";
+            this.bunifuLabel13.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel13.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel6
+            // 
+            this.bunifuLabel6.AllowParentOverrides = false;
+            this.bunifuLabel6.AutoEllipsis = false;
+            this.bunifuLabel6.CursorType = null;
+            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel6.Location = new System.Drawing.Point(86, 107);
+            this.bunifuLabel6.Name = "bunifuLabel6";
+            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel6.Size = new System.Drawing.Size(48, 17);
+            this.bunifuLabel6.TabIndex = 39;
+            this.bunifuLabel6.Text = "Mã Lớp:";
+            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // btnDelLop
             // 
             this.btnDelLop.AllowAnimations = true;
@@ -2316,36 +2346,6 @@
             this.btnAddLop.UseDefaultRadiusAndThickness = true;
             this.btnAddLop.Click += new System.EventHandler(this.btnAddLop_Click);
             // 
-            // bunifuLabel6
-            // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(86, 107);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(48, 17);
-            this.bunifuLabel6.TabIndex = 39;
-            this.bunifuLabel6.Text = "Mã Lớp:";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel13
-            // 
-            this.bunifuLabel13.AllowParentOverrides = false;
-            this.bunifuLabel13.AutoEllipsis = false;
-            this.bunifuLabel13.CursorType = null;
-            this.bunifuLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel13.Location = new System.Drawing.Point(86, 150);
-            this.bunifuLabel13.Name = "bunifuLabel13";
-            this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel13.Size = new System.Drawing.Size(47, 17);
-            this.bunifuLabel13.TabIndex = 41;
-            this.bunifuLabel13.Text = "Tên lớp:";
-            this.bunifuLabel13.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel13.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // tbTenLop
             // 
             this.tbTenLop.AcceptsReturn = false;
@@ -2438,6 +2438,51 @@
             this.groupBox6.TabIndex = 52;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Chương";
+            // 
+            // bunifuLabel19
+            // 
+            this.bunifuLabel19.AllowParentOverrides = false;
+            this.bunifuLabel19.AutoEllipsis = false;
+            this.bunifuLabel19.CursorType = null;
+            this.bunifuLabel19.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel19.Location = new System.Drawing.Point(73, 155);
+            this.bunifuLabel19.Name = "bunifuLabel19";
+            this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel19.Size = new System.Drawing.Size(51, 15);
+            this.bunifuLabel19.TabIndex = 16;
+            this.bunifuLabel19.Text = "Môn học:";
+            this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel17
+            // 
+            this.bunifuLabel17.AllowParentOverrides = false;
+            this.bunifuLabel17.AutoEllipsis = false;
+            this.bunifuLabel17.CursorType = null;
+            this.bunifuLabel17.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel17.Location = new System.Drawing.Point(73, 112);
+            this.bunifuLabel17.Name = "bunifuLabel17";
+            this.bunifuLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel17.Size = new System.Drawing.Size(66, 15);
+            this.bunifuLabel17.TabIndex = 11;
+            this.bunifuLabel17.Text = "Tên chương:";
+            this.bunifuLabel17.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel17.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel18
+            // 
+            this.bunifuLabel18.AllowParentOverrides = false;
+            this.bunifuLabel18.AutoEllipsis = false;
+            this.bunifuLabel18.CursorType = null;
+            this.bunifuLabel18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel18.Location = new System.Drawing.Point(73, 69);
+            this.bunifuLabel18.Name = "bunifuLabel18";
+            this.bunifuLabel18.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel18.Size = new System.Drawing.Size(64, 15);
+            this.bunifuLabel18.TabIndex = 9;
+            this.bunifuLabel18.Text = "Mã chương:";
+            this.bunifuLabel18.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel18.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // DGVChuong
             // 
@@ -2541,21 +2586,6 @@
             this.cbMonHoc.Text = null;
             this.cbMonHoc.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cbMonHoc.TextLeftMargin = 5;
-            // 
-            // bunifuLabel19
-            // 
-            this.bunifuLabel19.AllowParentOverrides = false;
-            this.bunifuLabel19.AutoEllipsis = false;
-            this.bunifuLabel19.CursorType = null;
-            this.bunifuLabel19.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel19.Location = new System.Drawing.Point(73, 155);
-            this.bunifuLabel19.Name = "bunifuLabel19";
-            this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel19.Size = new System.Drawing.Size(51, 15);
-            this.bunifuLabel19.TabIndex = 16;
-            this.bunifuLabel19.Text = "Môn học:";
-            this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnDelChuong
             // 
@@ -2975,36 +3005,6 @@
             this.btnAddChuong.UseDefaultRadiusAndThickness = true;
             this.btnAddChuong.Click += new System.EventHandler(this.btnAddChuong_Click);
             // 
-            // bunifuLabel18
-            // 
-            this.bunifuLabel18.AllowParentOverrides = false;
-            this.bunifuLabel18.AutoEllipsis = false;
-            this.bunifuLabel18.CursorType = null;
-            this.bunifuLabel18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel18.Location = new System.Drawing.Point(73, 69);
-            this.bunifuLabel18.Name = "bunifuLabel18";
-            this.bunifuLabel18.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel18.Size = new System.Drawing.Size(64, 15);
-            this.bunifuLabel18.TabIndex = 9;
-            this.bunifuLabel18.Text = "Mã chương:";
-            this.bunifuLabel18.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel18.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel17
-            // 
-            this.bunifuLabel17.AllowParentOverrides = false;
-            this.bunifuLabel17.AutoEllipsis = false;
-            this.bunifuLabel17.CursorType = null;
-            this.bunifuLabel17.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel17.Location = new System.Drawing.Point(73, 112);
-            this.bunifuLabel17.Name = "bunifuLabel17";
-            this.bunifuLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel17.Size = new System.Drawing.Size(66, 15);
-            this.bunifuLabel17.TabIndex = 11;
-            this.bunifuLabel17.Text = "Tên chương:";
-            this.bunifuLabel17.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel17.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.bunifuLabel16);
@@ -3021,6 +3021,37 @@
             this.groupBox5.TabIndex = 51;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Môn học";
+            // 
+            // bunifuLabel16
+            // 
+            this.bunifuLabel16.AllowParentOverrides = false;
+            this.bunifuLabel16.AutoEllipsis = false;
+            this.bunifuLabel16.CursorType = null;
+            this.bunifuLabel16.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel16.Location = new System.Drawing.Point(73, 109);
+            this.bunifuLabel16.Name = "bunifuLabel16";
+            this.bunifuLabel16.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel16.Size = new System.Drawing.Size(73, 15);
+            this.bunifuLabel16.TabIndex = 3;
+            this.bunifuLabel16.Text = "Tên môn học:";
+            this.bunifuLabel16.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel16.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel15
+            // 
+            this.bunifuLabel15.AllowParentOverrides = false;
+            this.bunifuLabel15.AutoEllipsis = false;
+            this.bunifuLabel15.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel15.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel15.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel15.Location = new System.Drawing.Point(73, 66);
+            this.bunifuLabel15.Name = "bunifuLabel15";
+            this.bunifuLabel15.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel15.Size = new System.Drawing.Size(71, 15);
+            this.bunifuLabel15.TabIndex = 1;
+            this.bunifuLabel15.Text = "Mã môn học:";
+            this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel15.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // DGVMon
             // 
@@ -3356,21 +3387,6 @@
             this.btnAddMon.UseDefaultRadiusAndThickness = true;
             this.btnAddMon.Click += new System.EventHandler(this.btnAddMon_Click);
             // 
-            // bunifuLabel16
-            // 
-            this.bunifuLabel16.AllowParentOverrides = false;
-            this.bunifuLabel16.AutoEllipsis = false;
-            this.bunifuLabel16.CursorType = null;
-            this.bunifuLabel16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel16.Location = new System.Drawing.Point(73, 109);
-            this.bunifuLabel16.Name = "bunifuLabel16";
-            this.bunifuLabel16.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel16.Size = new System.Drawing.Size(73, 15);
-            this.bunifuLabel16.TabIndex = 3;
-            this.bunifuLabel16.Text = "Tên môn học:";
-            this.bunifuLabel16.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel16.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // tbTenMon
             // 
             this.tbTenMon.AcceptsReturn = false;
@@ -3444,22 +3460,6 @@
             this.tbTenMon.TextPlaceholder = "Enter text";
             this.tbTenMon.UseSystemPasswordChar = false;
             this.tbTenMon.WordWrap = true;
-            // 
-            // bunifuLabel15
-            // 
-            this.bunifuLabel15.AllowParentOverrides = false;
-            this.bunifuLabel15.AutoEllipsis = false;
-            this.bunifuLabel15.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel15.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel15.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel15.Location = new System.Drawing.Point(73, 66);
-            this.bunifuLabel15.Name = "bunifuLabel15";
-            this.bunifuLabel15.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel15.Size = new System.Drawing.Size(71, 15);
-            this.bunifuLabel15.TabIndex = 1;
-            this.bunifuLabel15.Text = "Mã môn học:";
-            this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel15.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // tbMaMon
             // 
@@ -3639,7 +3639,7 @@
             this.btnQLGVpage.BackColor1 = System.Drawing.Color.DodgerBlue;
             this.btnQLGVpage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQLGVpage.BackgroundImage")));
             this.btnQLGVpage.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnQLGVpage.ButtonText = "Quản lý giảng viên";
+            this.btnQLGVpage.ButtonText = "Quản lý giáo viên";
             this.btnQLGVpage.ButtonTextMarginLeft = 0;
             this.btnQLGVpage.ColorContrastOnClick = 45;
             this.btnQLGVpage.ColorContrastOnHover = 45;
@@ -3729,7 +3729,7 @@
             this.btnQLSVpage.BackColor1 = System.Drawing.Color.DodgerBlue;
             this.btnQLSVpage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQLSVpage.BackgroundImage")));
             this.btnQLSVpage.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnQLSVpage.ButtonText = "Quản lý sinh viên";
+            this.btnQLSVpage.ButtonText = "Quản lý học sinh";
             this.btnQLSVpage.ButtonTextMarginLeft = 0;
             this.btnQLSVpage.ColorContrastOnClick = 45;
             this.btnQLSVpage.ColorContrastOnHover = 45;

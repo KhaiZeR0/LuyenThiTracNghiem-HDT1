@@ -1,16 +1,16 @@
-<mxfile host="app.diagrams.net" modified="2023-12-15T06:51:57.916Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="dN2_MPwO9YoE6YORrg2S" version="22.1.9" type="device" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-12-20T19:05:51.156Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="id0yzVsXaZkWsrv1K2EQ" version="22.1.11" type="device" pages="2">
   <diagram name="Trang-1" id="SUtpHRZysYcwdnRIezqp">
-    <mxGraphModel dx="2261" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1972" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="XliUAWEANQiwk1mUZGUS-1" value="Quản Trị Viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="950" y="450" width="60" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="sksLSkYZdCt6uy0x5Zyz-1" value="Giảng Viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+        <mxCell id="sksLSkYZdCt6uy0x5Zyz-1" value="Giáo viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="-80" y="230" width="60" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="sksLSkYZdCt6uy0x5Zyz-2" value="Sinh viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+        <mxCell id="sksLSkYZdCt6uy0x5Zyz-2" value="Học sinh" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="-90" y="690" width="60" height="90" as="geometry" />
         </mxCell>
         <mxCell id="sksLSkYZdCt6uy0x5Zyz-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
@@ -207,7 +207,7 @@
         <mxCell id="XRTRLFMjSl1A3E3SzHaw-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="sksLSkYZdCt6uy0x5Zyz-1" target="5PdgZUG-WtJZ_N_17yhF-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="PfDJLeCe6VTguh8s4rkP-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XliUAWEANQiwk1mUZGUS-1" target="sksLSkYZdCt6uy0x5Zyz-28">
+        <mxCell id="PfDJLeCe6VTguh8s4rkP-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="XliUAWEANQiwk1mUZGUS-1" target="sksLSkYZdCt6uy0x5Zyz-28" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>

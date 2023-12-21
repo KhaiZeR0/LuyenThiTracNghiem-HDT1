@@ -54,7 +54,7 @@ namespace Final___OOP
         private void doitenDGV()
         {
             //Khu vực Quản lý SV
-            dtgvSinhVien.Columns["MaSV"].HeaderText = "Mã sinh viên";
+            dtgvSinhVien.Columns["MaSV"].HeaderText = "Mã học sinh";
             dtgvSinhVien.Columns["HoTen"].HeaderText = "Họ và tên";
             dtgvSinhVien.Columns["GioiTinh"].HeaderText = "Giới tính";
             dtgvSinhVien.Columns["NgaySinh"].HeaderText = "Ngày sinh";
@@ -63,7 +63,7 @@ namespace Final___OOP
 
 
             //Khu vực Quản lý GV
-            dtgvGiangVien.Columns["MaGV"].HeaderText = "Mã giảng viên";
+            dtgvGiangVien.Columns["MaGV"].HeaderText = "Mã giáo viên";
             dtgvGiangVien.Columns["HoTen"].HeaderText = "Họ và tên";
             dtgvGiangVien.Columns["GioiTinh"].HeaderText = "Giới tính";
             dtgvGiangVien.Columns["NgaySinh"].HeaderText = "Ngày sinh";

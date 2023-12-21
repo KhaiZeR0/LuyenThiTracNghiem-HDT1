@@ -166,19 +166,6 @@ namespace Final___OOP
             }
         }
 
-        private void GetDiemSV(string maLopHoc, string maMH, string maDeThi, string maSV)
-        {
-            try
-            {
-                List<TraCuuSinhVien> danhSachSV = traCuuSinhVienBUS.GetAllTraCuuSinhVien(maLopHoc, maMH, maDeThi, maSV);
-                gvDiem.DataSource = danhSachSV;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách câu hỏi: " + ex.Message);
-            }
-        }
-
         private void LoadDataCauHoi()
         {
             try
@@ -523,6 +510,36 @@ namespace Final___OOP
             }
         }
 
+        //TracuuDiem
+        private void GetDiemSV(string maLopHoc, string maMH, string maDeThi, string maSV)
+        {
+            try
+            {
+                List<TraCuuSinhVien> danhSachSV = traCuuSinhVienBUS.GetDanhSachSinhVien(maLopHoc, maMH, maDeThi, maSV);
+                gvDiem.DataSource = danhSachSV;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách câu hỏi: " + ex.Message);
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maLopHoc = cbLopHoc.SelectedValue.ToString();
+                string maMH = cbMonHocTraCuu.SelectedValue.ToString();
+                string maDeThi = cbDeThi.SelectedValue.ToString();
+
+                GetDiemSV(maLopHoc, maMH, maDeThi, maSV: null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy điểm sinh viên: " + ex.Message);
+            }
+        }
+
         //Chuyển pages
         private void btnQLCHpage_Click(object sender, EventArgs e)
         {
@@ -543,7 +560,5 @@ namespace Final___OOP
         {
             TeacherPages.PageIndex = 4;
         }
-
-
     }
 }

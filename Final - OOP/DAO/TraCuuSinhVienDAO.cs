@@ -49,7 +49,7 @@ namespace Final___OOP.DAO
                              join lophoc in DbContext.LopHocs on dethi.MaLop equals lophoc.MaLop
                              join bailam in DbContext.BaiLams on dethi.MaDeThi equals bailam.MaBaiLam
                              join thongtinsv in DbContext.ThongTinSVs on bailam.MaSV equals thongtinsv.MaSV
-                             where lophoc.MaLop == maLopHoc && dethi.MaMH == maMH && dethi.MaDeThi == maDeThi.Trim().ToString() && thongtinsv.MaSV == maSV
+                             where lophoc.MaLop == maLopHoc && dethi.MaMH == maMH && dethi.MaDeThi == maDeThi.Trim().ToString() && (maSV == null || thongtinsv.MaSV == maSV)
                              select new KetQuaThi
                              {
                                  MaDeThi = dethi.MaDeThi,
@@ -63,6 +63,7 @@ namespace Final___OOP.DAO
                              }).ToList();
 
             UpdateDiem(ketQuaThi);
+
             foreach (var ketQua in ketQuaThi)
             {
                 TraCuuSinhVien traCuuSinhVien = new TraCuuSinhVien();
@@ -73,7 +74,9 @@ namespace Final___OOP.DAO
                 traCuuSinhVien.Diem = ketQua.Diem;
                 lsTraCuuSinhVien.Add(traCuuSinhVien);
             }
+
             return lsTraCuuSinhVien;
+
         }
 
         private void UpdateDiem(List<KetQuaThi> ketQuaThi)

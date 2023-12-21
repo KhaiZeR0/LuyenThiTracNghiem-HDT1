@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Final___OOP.BUS
 {
@@ -20,7 +21,18 @@ namespace Final___OOP.BUS
         {
             return traCuuSVDAO.LayDanhSachTraCuuDAO(maLopHoc, maMH, maDeThi, maSV);
         }
-
+        public List<TraCuuSinhVien> GetDanhSachSinhVien(string maLopHoc, string maMH, string maDeThi, string maSV)
+        {
+            try
+            {
+                return traCuuSVDAO.LayDanhSachTraCuuDAO(maLopHoc, maMH, maDeThi, maSV);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
+                return new List<TraCuuSinhVien>();
+            }
+        }
         public void Dispose()
         {
             if (traCuuSVDAO != null) { traCuuSVDAO.Dispose(); }
