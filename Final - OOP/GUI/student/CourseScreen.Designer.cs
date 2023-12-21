@@ -309,7 +309,6 @@ namespace Final___OOP
             this.rbDapAn_D.TabStop = true;
             this.rbDapAn_D.Text = "Đáp án D";
             this.rbDapAn_D.UseVisualStyleBackColor = true;
-            this.rbDapAn_D.Click += new System.EventHandler(this.rbDapAn_D_Click);
             // 
             // rbDapAn_C
             // 
@@ -322,7 +321,6 @@ namespace Final___OOP
             this.rbDapAn_C.TabStop = true;
             this.rbDapAn_C.Text = "Đáp án C";
             this.rbDapAn_C.UseVisualStyleBackColor = true;
-            this.rbDapAn_C.Click += new System.EventHandler(this.rbDapAn_C_Click);
             // 
             // bunifuButton3
             // 
@@ -425,7 +423,6 @@ namespace Final___OOP
             this.rbDapAn_B.TabStop = true;
             this.rbDapAn_B.Text = "Đáp án B";
             this.rbDapAn_B.UseVisualStyleBackColor = true;
-            this.rbDapAn_B.Click += new System.EventHandler(this.rbDapAn_B_Click);
             // 
             // rbDapAn_A
             // 
@@ -438,7 +435,6 @@ namespace Final___OOP
             this.rbDapAn_A.TabStop = true;
             this.rbDapAn_A.Text = "Đáp án A";
             this.rbDapAn_A.UseVisualStyleBackColor = true;
-            this.rbDapAn_A.Click += new System.EventHandler(this.rbDapAn_A_Click);
             // 
             // groupBox2
             // 
