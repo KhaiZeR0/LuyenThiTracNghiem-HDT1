@@ -12,7 +12,7 @@ namespace Final___OOP.DTO
         private TimeSpan tGLamBai;
         private int soLuongCau;
         private string maCauHoi;
-        private string DapAnDaChon;
+        private string dapAnDaChon;
   
 
 
@@ -20,7 +20,7 @@ namespace Final___OOP.DTO
         public int SoLuongCau { get => soLuongCau; set => soLuongCau = value; }
         public string MaCauHoi { get => maCauHoi; set => maCauHoi = value; }
         public string MaDeThi { get => maDeThi; set => maDeThi = value; }
-        public string DapAnDaChon1 { get => DapAnDaChon; set => DapAnDaChon = value; }
+        public string DapAnDaChon { get => dapAnDaChon; set => dapAnDaChon = value; }
 
         public BaiThiInfoDTO() { }
     }

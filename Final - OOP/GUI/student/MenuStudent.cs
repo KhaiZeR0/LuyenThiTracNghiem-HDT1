@@ -99,12 +99,12 @@ namespace Final___OOP
         }
         private void btnketquapage_Click(object sender, EventArgs e)
         {
-            StudentPages.PageIndex = 2;
+            StudentPages.PageIndex = 1;
         }
 
         private void btnthipage_Click(object sender, EventArgs e)
         {
-            StudentPages.PageIndex = 1;
+            StudentPages.PageIndex = 2;
         }
 
         private void MenuStudent_FormClosing(object sender, FormClosingEventArgs e)

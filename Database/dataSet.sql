@@ -20,3 +20,4 @@ select * from ThongTinSV
 select * from ThongTinCB
 select * from Lophoc
 select * from DeThi
+select * from BaiLam
