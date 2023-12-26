@@ -19,7 +19,7 @@ namespace Final___OOP.DAO
         public int SoLuongCau;
         public string DapAnDaChon;
         public string MaMH;
-        public float Diem;
+        public double Diem;
     }
 
     public class TraCuuSinhVien
@@ -28,13 +28,13 @@ namespace Final___OOP.DAO
         private string hoTen;
         private DateTime ngaySinh;
         private string lop;
-        private float diem;
+        private double diem;
 
         public string MaSV { get => maSV; set => maSV = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public string Lop { get => lop; set => lop = value; }
-        public float Diem { get => diem; set => diem = value; }
+        public double Diem { get => diem; set => diem = value; }
 
         public TraCuuSinhVien() { }
     }
@@ -83,16 +83,24 @@ namespace Final___OOP.DAO
         {
             foreach (var ketqua in ketQuaThi)
             {
-                var listDapAn = ketqua.DapAnDaChon.Split(',');
+                // Tách chuỗi DapAnDaChon theo dấu '|'
+                var listDapAn = ketqua.DapAnDaChon.Split('|');
                 var cauHoi = DbContext.CauHois.Where(p => p.MaMH == ketqua.MaMH).Select(p => p.DapAnDung).ToArray();
                 int soCauDung = 0;
                 for (int i = 0; i < listDapAn.Length; i++)
                 {
-                    if (listDapAn[i].Trim().Equals(cauHoi[i].Trim()))
+                    // Loại bỏ dấu ngoặc vuông và tách chuỗi để lấy mã câu hỏi và đáp án đã chọn
+                    string[] parts = listDapAn[i].Trim('[', ']').Split(',');
+                    string maCauHoi = parts[0].Trim();
+                    string dapAn = parts[1].Trim();
+
+                    // Kiểm tra xem câu trả lời đã chọn có đúng không
+                    if (dapAn == cauHoi[i].Trim())
                         soCauDung++;
                 }
-                ketqua.Diem = soCauDung * 10 / ketqua.SoLuongCau;
+                ketqua.Diem = (float)soCauDung * 10 / ketqua.SoLuongCau;
             }
         }
+
     }
 }

@@ -14,14 +14,13 @@ namespace Final___OOP.DAO
         {
             return DbContext.CauHois.Where(c => c.MaCauHoi == maCauHoi).ToList();
         }
-        public void AddBaiLamHSDAO(string maDeThi, string maHS, string dapAnDaChon, bool trangThai)
+        public void AddBaiLamHSDAO(string maDeThi, string maHS, string dapAnDaChon)
         {
             var newBaiLam = new BaiLam
             {
                 MaBaiLam = maDeThi,
                 MaSV = maHS,
                 DapAnDaChon = dapAnDaChon,
-                TrangThai = trangThai
             };
             DbContext.BaiLams.Add(newBaiLam);
             DbContext.SaveChanges();

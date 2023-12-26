@@ -143,14 +143,6 @@
         ATEDYgbEDIgZEDMgZkDMgJgBMQNiBsQMiBkQG/PY11fgB8e+HnkZFWSpC+s7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnThhoat.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGAAAAAnCAYAAADwxU3sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACCSURBVGhD7dGhAYAwAMCwXbKX4b+dgR9wAJqaiKjKjnnu
-        Nc/7prDXO+Ar8BcDYgbEDIgZEDMgZkDMgJgBMQNiBsQMiBkQMyBmQMyAmAExA2IGxAyIGRAzIGZAzICY
-        ATEDYgbEDIgZEDMgZkDMgJgBMQNiBsQMiBkQG/PY11fgB8e+HnkZFWSpC+s7AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="bunifuLabel14.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 9.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>

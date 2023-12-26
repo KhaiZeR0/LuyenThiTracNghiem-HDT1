@@ -18,12 +18,17 @@ namespace Final___OOP
         private GetChungBUS getChungBUS;
         private ThongTinThiCuBUS thongTinThiCuBUS;
         private GetDSLopTuMaHSBUS getDSLopBUS;
+        private GetDeThiBUS getDeThiBUS;
+        private BaiThiBUS getBaiThiBUS;
+
         public MenuStudent()
         {
             InitializeComponent();
             getChungBUS = new GetChungBUS();
             thongTinThiCuBUS = new ThongTinThiCuBUS();
             getDSLopBUS = new GetDSLopTuMaHSBUS();
+            getDeThiBUS = new GetDeThiBUS();
+            getBaiThiBUS = new BaiThiBUS();
 
             //Trang thông tin thi cử
             loadCBMonHoc_DeThi();
@@ -52,28 +57,47 @@ namespace Final___OOP
                 MessageBox.Show("Không có Đề Thi nào cho môn học này.");
             }
         }
+
+
         private void btnThi_THI_Click(object sender, EventArgs e)
         {
             if (cbDeThi_THI.SelectedItem != null)
             {
-                string maDeThi = cbDeThi_THI.SelectedValue.ToString();
+                string maHS = Session.Instance.MaTK;
+                string maBaiThi = cbBaiThi_TraCuu.SelectedValue.ToString();
 
-                BaiThiInfoDTO baiThiInfo = new BaiThiInfoDTO();
-                DeThi selectedDeThi = (DeThi)cbDeThi_THI.SelectedItem;
-                baiThiInfo.MaDeThi = selectedDeThi.MaDeThi;
-                baiThiInfo.TGLamBai = selectedDeThi.TGLamBai;
-                baiThiInfo.SoLuongCau = selectedDeThi.SoLuongCau;
-                baiThiInfo.MaCauHoi = selectedDeThi.NoiDungDeThi;
+                List<BaiLam> lsbailam = thongTinThiCuBUS.getBaiLam(maHS, maBaiThi);
+                List<DeThi> DeThiList = getDeThiBUS.GetAllDeThi();
 
-                CourseScreen courseScreen = new CourseScreen(baiThiInfo);
-                courseScreen.Show();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một đề thi trước khi bắt đầu thi.");
+                DeThi deThi = DeThiList.Find(d => d.MaDeThi == maBaiThi);
+                if (deThi != null)
+                {
+                    // Kiểm tra xem bài làm đã được hoàn thành chưa
+                    if (lsbailam[0].TrangThai)
+                    {
+                        MessageBox.Show("Bạn đã hoàn thành bài thi này. Bạn không thể làm lại bài thi.");
+                        return;
+                    }
+
+                    string cauHoiDeThi = deThi.NoiDungDeThi;
+                    LoadBtnCauHoi_TraCuu(lsbailam, cauHoiDeThi);
+
+                    BaiThiInfoDTO baiThiInfo = new BaiThiInfoDTO();
+                    baiThiInfo.MaDeThi = deThi.MaDeThi;
+                    baiThiInfo.TGLamBai = deThi.TGLamBai;
+                    baiThiInfo.SoLuongCau = deThi.SoLuongCau;
+                    baiThiInfo.MaCauHoi = deThi.NoiDungDeThi;
+
+                    CourseScreen courseScreen = new CourseScreen(baiThiInfo);
+                    courseScreen.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một đề thi trước khi bắt đầu thi.");
+                }
             }
         }
-        
+
 
         void loadCBMonHoc_DeThi()
         {
@@ -132,75 +156,199 @@ namespace Final___OOP
             string maBaiThi = cbBaiThi_TraCuu.SelectedValue.ToString();
 
             List<BaiLam> lsbailam = thongTinThiCuBUS.getBaiLam(maHS, maBaiThi);
+            List<DeThi> DeThiList = getDeThiBUS.GetAllDeThi();
 
-            loadBtnCauHoi_TraCuu(lsbailam);
+            DeThi deThi = DeThiList.Find(d => d.MaDeThi == maBaiThi);
+            if (deThi != null)
+            {
+                string cauHoiDeThi = deThi.NoiDungDeThi;
+                LoadBtnCauHoi_TraCuu(lsbailam, cauHoiDeThi);
+
+                // Khởi tạo số câu đúng và điểm
+                int soCauDung = 0;
+                double diem = 0;
+
+                // Tính tổng số câu hỏi trong đề
+                int tongSoCauHoi = cauHoiDeThi.Split('|').Length;
+
+                // Tính điểm cho mỗi câu hỏi
+                double diemMoiCau = 10.0 / tongSoCauHoi;
+
+                // Tách chuỗi DapAnDaChon
+                string[] dapAnDaChonArray = lsbailam[0].DapAnDaChon.Split('|');
+
+                foreach (string dapAnDaChon in dapAnDaChonArray)
+                {
+                    // Loại bỏ dấu ngoặc vuông và tách chuỗi để lấy mã câu hỏi và đáp án đã chọn
+                    string[] parts = dapAnDaChon.Trim('[', ']').Split(',');
+                    string maCauHoi = parts[0].Trim();
+                    string dapAn = parts[1].Trim();
+
+                    // Lấy câu hỏi từ cơ sở dữ liệu
+                    List<CauHoi> cauHois = getBaiThiBUS.GetMaCauHoiBaiLamBUS(maCauHoi);
+
+                    if (cauHois.Count > 0)
+                    {
+                        CauHoi cauHoi = cauHois[0];
+
+                        // Kiểm tra xem câu trả lời đã chọn có đúng không
+                        if (dapAn == cauHoi.DapAnDung)
+                        {
+                            // Tăng số câu đúng và điểm
+                            soCauDung++;
+                            diem += diemMoiCau;
+                        }
+                    }
+                }
+
+                // Cập nhật số câu đúng và điểm
+                lbSoCauDung.Text = $"Số câu đúng: {soCauDung}/{tongSoCauHoi}";
+                lbDiem.Text = $"Điểm: {Math.Round(diem, 2)}"; // Làm tròn điểm đến 2 chữ số thập phân
+            }
+            else
+            {
+                MessageBox.Show("Lỗi khi lấy nội dung đề thi");
+            }
         }
 
-        void loadBtnCauHoi_TraCuu(List<BaiLam> lsbailam)
+
+
+
+
+        void LoadBtnCauHoi_TraCuu(List<BaiLam> lsbailam, string noiDungDeThi)
         {
             flpCauHoi.Controls.Clear();
 
-            foreach (var baiLam in lsbailam)
+            string[] cauHoiArrayDeThi = noiDungDeThi.Split('|');
+            int sttCauHoi = 1;
+
+            foreach (var cauHoiDeThi in cauHoiArrayDeThi)
             {
-                // Mã câu hỏi và đáp án đã chọn từ bài làm
-                string maBaiLam = baiLam.MaBaiLam;
-                string dapAnDaChon = baiLam.DapAnDaChon;
+                string maCauHoiDeThi = cauHoiDeThi.Trim(); // Mã câu hỏi từ DeThi
 
-                // Tách mã câu hỏi và đáp án đã chọn thành mảng
-                string[] cauHoiArray = maBaiLam.Split('|');
-                string[] dapAnArray = dapAnDaChon.Split('|');
+                Button btnCauHoi = new Button();
+                btnCauHoi.Text = $"Câu {sttCauHoi}";
+                btnCauHoi.Tag = maCauHoiDeThi; // Mã câu hỏi sẽ là Tag của nút
+                btnCauHoi.Click += btnCauHoi_Click;
 
-                for (int i = 0; i < cauHoiArray.Length; i++)
+                foreach (var baiLam in lsbailam)
                 {
-                    // Lấy mã câu hỏi và đáp án đã chọn
-                    var maCauHoiItem = cauHoiArray[i];
-                    var dapAnItem = dapAnArray.Length > i ? dapAnArray[i] : ""; // Đảm bảo không lỗi nếu số lượng đáp án không đủ
-
-                    Button btnCauHoi = new Button();
-                    btnCauHoi.Text = $"Câu {i + 1}";
-                    btnCauHoi.Tag = maCauHoiItem; // Mã câu hỏi sẽ là Tag của nút
-                    btnCauHoi.Click += btnCauHoi_Click;
-
-                    // Đặt màu nền cho nút dựa trên việc đã chọn đáp án hay chưa
-                    if (dapAnItem != "")
+                    string[] cauHoiArrayBaiLam = baiLam.DapAnDaChon.Split('|');
+                    foreach (var cauHoiBaiLam in cauHoiArrayBaiLam)
                     {
-                        // Nếu đã chọn đáp án, đặt màu nền là màu khác nhau
-                        btnCauHoi.BackColor = Color.LightGreen;
-                    }
+                        string[] parts = cauHoiBaiLam.Trim('[', ']').Split(',');
 
-                    flpCauHoi.Controls.Add(btnCauHoi);
+                        if (parts.Length == 2)
+                        {
+                            string maCauHoiBaiLam = parts[0].Trim(); 
+                            string dapAnDaChon = parts[1].Trim(); 
+
+                            if (maCauHoiBaiLam == maCauHoiDeThi)
+                            {
+                                List<CauHoi> cauHois = getBaiThiBUS.GetMaCauHoiBaiLamBUS(maCauHoiDeThi);
+
+                                if (cauHois.Count > 0)
+                                {
+                                    CauHoi cauHoi = cauHois[0];
+
+                                    if (dapAnDaChon == cauHoi.DapAnDung)
+                                    {
+                                        btnCauHoi.BackColor = Color.LightGreen; 
+                                    }
+                                    else if (dapAnDaChon != cauHoi.DapAnDung)
+                                    {
+                                        btnCauHoi.BackColor = Color.Red; 
+                                    }
+                                }
+                                break; 
+                            }
+                        }
+                    }
+                }
+                flpCauHoi.Controls.Add(btnCauHoi);
+                sttCauHoi++;
+            }
+        }
+
+
+
+
+        private void btnCauHoi_Click(object sender, EventArgs e)
+        {
+            Button btnCauHoi = (Button)sender;
+            if (btnCauHoi != null)
+            {
+                string maCauHoi = btnCauHoi.Tag.ToString();
+                List<CauHoi> cauHois = getBaiThiBUS.GetMaCauHoiBaiLamBUS(maCauHoi);
+
+                if (cauHois.Count > 0)
+                {
+                    CauHoi cauHoi = cauHois[0];
+                    lbCauHoi_TraCuu.Text = cauHoi.NoiDungCauHoi;
+                    rbDapAn_A.Text = $"A. {cauHoi.DapAnA}";
+                    rbDapAn_B.Text = $"B. {cauHoi.DapAnB}";
+                    rbDapAn_C.Text = $"C. {cauHoi.DapAnC}";
+                    rbDapAn_D.Text = $"D. {cauHoi.DapAnD}";
+
+                    // Hiển thị đáp án đúng
+                    lbDapAnDung.Text = $"Đáp án đúng: {cauHoi.DapAnDung}";
+
+                    // Lấy đáp án đã chọn từ DapAnDaChon của BaiLam
+                    string dapAnDaChon = GetSelectedAnswerFromBaiLam(maCauHoi);
+
+                    // Đặt RadioButton tương ứng với đáp án đã chọn
+                    if (dapAnDaChon == "A")
+                        rbDapAn_A.Checked = true;
+                    else if (dapAnDaChon == "B")
+                        rbDapAn_B.Checked = true;
+                    else if (dapAnDaChon == "C")
+                        rbDapAn_C.Checked = true;
+                    else if (dapAnDaChon == "D")
+                        rbDapAn_D.Checked = true;
+                    else
+                    {
+                        rbDapAn_A.Checked = false;
+                        rbDapAn_B.Checked = false;
+                        rbDapAn_C.Checked = false;
+                        rbDapAn_D.Checked = false;
+                    }
                 }
             }
         }
 
-        private void btnCauHoi_Click(object sender, EventArgs e)
-        {
-            // Xử lý sự kiện khi click vào nút câu hỏi
-            Button btnCauHoi = (Button)sender;
-            string maCauHoi = btnCauHoi.Tag.ToString();
 
-            // Gọi hàm để hiển thị nội dung câu hỏi và đáp án
-            HienThiThongTinCauHoi(maCauHoi);
-        }
-
-        private void HienThiThongTinCauHoi(string maCauHoi)
+        // Hàm kiểm tra và trả về đáp án đã chọn từ DapAnDaChon của BaiLam
+        private string GetSelectedAnswerFromBaiLam(string maCauHoi)
         {
-            // Tạo đối tượng DbContext để truy cập cơ sở dữ liệu
-            using (var dbContext = new ThiTracNghiemEntities())
+            string maHS = Session.Instance.MaTK;
+            string maBaiThi = cbBaiThi_TraCuu.SelectedValue.ToString();
+            List<BaiLam> lsbailam = thongTinThiCuBUS.getBaiLam(maHS, maBaiThi);
+
+            if (lsbailam.Count > 0)
             {
-                // Lấy thông tin của câu hỏi từ cơ sở dữ liệu
-                var cauHoi = dbContext.CauHois.SingleOrDefault(ch => ch.MaCauHoi == maCauHoi);
+                string[] cauHoiArrayBaiLam = lsbailam[0].DapAnDaChon.Split('|');
+                foreach (var cauHoiBaiLam in cauHoiArrayBaiLam)
+                {
+                    string[] parts = cauHoiBaiLam.Trim('[', ']').Split(',');
 
-                // Hiển thị nội dung câu hỏi vào lbCauHoi_TraCuu
-                lbCauHoi_TraCuu.Text = cauHoi.NoiDungCauHoi;
+                    if (parts.Length == 2)
+                    {
+                        string maCauHoiBaiLam = parts[0].Trim();
+                        string dapAnDaChon = parts[1].Trim();
 
-                // Hiển thị các câu trả lời vào các RadioButton
-                rbDapAn_A.Text = $"A. {cauHoi.DapAnA}";
-                rbDapAn_B.Text = $"B. {cauHoi.DapAnB}";
-                rbDapAn_C.Text = $"C. {cauHoi.DapAnC}";
-                rbDapAn_D.Text = $"D. {cauHoi.DapAnD}";
+                        // Kiểm tra xem câu hỏi này có trong BaiLam.DapAnDaChon hay không
+                        if (maCauHoiBaiLam == maCauHoi)
+                        {
+                            return dapAnDaChon;
+                        }
+                    }
+                }
             }
+
+            return null;
         }
+
+
 
         private void btnketquapage_Click(object sender, EventArgs e)
         {
@@ -216,7 +364,5 @@ namespace Final___OOP
         {
             
         }
-
-        
     }
 }

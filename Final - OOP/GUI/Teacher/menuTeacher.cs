@@ -311,11 +311,6 @@ namespace Final___OOP
             GetDiemSV(maLopHoc, maMH, maDeThi, maSV);
         }
 
-        private void btnThhoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             ClearTraCuuDiemInputs();

@@ -20,9 +20,9 @@ namespace Final___OOP.BUS
         {
             return baiThiDAO.GetCauHoiBaiLamDAO(maCauHoi);
         }
-        public void AddBaiThiBUS(string maBaiLam, string maHS, string baiLam, bool trangThai)
+        public void AddBaiThiBUS(string maBaiLam, string maHS, string baiLam)
         {
-            baiThiDAO.AddBaiLamHSDAO(maBaiLam, maHS, baiLam, trangThai);
+            baiThiDAO.AddBaiLamHSDAO(maBaiLam, maHS, baiLam);
         }
     }
 }

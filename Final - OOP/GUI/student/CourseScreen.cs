@@ -46,8 +46,7 @@ namespace Final___OOP
             string maHS = Session.Instance.MaTK;
             string maBaiLam = baiThiInfo.MaDeThi;
             string BaiLam = string.Join("|", selectedAnswers);
-            bool trangThai = true;
-            baiThiBUS.AddBaiThiBUS(maBaiLam, maHS, BaiLam, trangThai);
+            baiThiBUS.AddBaiThiBUS(maBaiLam, maHS, BaiLam);
             this.Close();
         }
 
@@ -106,34 +105,16 @@ namespace Final___OOP
                 }
             }
         }
-        
-        private void timeThoiGianLamBai_Tick(object sender, EventArgs e)
-        {
-            TimeSpan remainingTime = baiThiInfo.TGLamBai - (DateTime.Now - startTime);
-
-            string formattedTime = $"{(int)remainingTime.TotalMinutes:D2}:{remainingTime.Seconds:D2}";
-            lbThoiGianLamBai.Text = $"Thời gian còn lại: {formattedTime}";
-
-            if (remainingTime <= TimeSpan.Zero)
-            {
-                timer.Stop(); 
-                lbThoiGianLamBai.Text = "Hết thời gian làm bài";
-                btnNopBai.PerformClick();
-            }
-        }
-
-        
 
         private void UpdateSelectedAnswer(object sender, string answer)
         {
             RadioButton clickedRadioButton = sender as RadioButton;
-            if (clickedRadioButton != null)
+            if (clickedRadioButton != null && clickedRadioButton.Checked && Control.MouseButtons == MouseButtons.None)
             {
-                //int questionIndex = int.Parse(clickedRadioButton.Name.Substring(12)) - 1;
                 selectedAnswers[selectQuestion] = answer;
-
             }
         }
+
         private void rbDapAn_A_CheckedChanged(object sender, EventArgs e)
         {
             UpdateSelectedAnswer(sender, "A");
@@ -153,13 +134,33 @@ namespace Final___OOP
         {
             UpdateSelectedAnswer(sender, "D");
         }
+        private void timeThoiGianLamBai_Tick(object sender, EventArgs e)
+        {
+            TimeSpan remainingTime = baiThiInfo.TGLamBai - (DateTime.Now - startTime);
+
+            string formattedTime = $"{(int)remainingTime.TotalMinutes:D2}:{remainingTime.Seconds:D2}";
+            lbThoiGianLamBai.Text = $"Thời gian còn lại: {formattedTime}";
+
+            if (remainingTime <= TimeSpan.Zero)
+            {
+                timer.Stop(); 
+                lbThoiGianLamBai.Text = "Hết thời gian làm bài";
+                btnNopBai.PerformClick();
+            }
+        }
+
+        
         private void CourseScreen_Load(object sender, EventArgs e)
         {
 
         }
         private void CourseScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // Kích hoạt btnNopBai
+                btnNopBai.Enabled = true;
+            }
         }
 
     }

@@ -21,4 +21,6 @@ select * from ThongTinCB
 select * from Lophoc
 select * from DeThi
 select * from BaiLam
+select * from CauHoi
+
 delete BaiLam where MaSV = 'MH03'
