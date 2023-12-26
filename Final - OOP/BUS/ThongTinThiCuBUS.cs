@@ -19,5 +19,13 @@ namespace Final___OOP.BUS
         {
             return thongTinThiCuDAO.GetDeThiTheoMH_MaLopDAO(MaMH, maLop);
         }
+        public List<DeThi> GetDeThiDaLamTheoMaSV(string maSV)
+        {
+            return thongTinThiCuDAO.GetDeThiDaLamTheoMaSVDAO(maSV);
+        }
+        public List<BaiLam> getBaiLam(string maHS, string maBaiThi)
+        {
+            return thongTinThiCuDAO.getBaiLamDAO(maHS, maBaiThi);
+        }
     }
 }

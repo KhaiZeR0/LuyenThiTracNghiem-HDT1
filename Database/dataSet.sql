@@ -9,7 +9,7 @@ VALUES (04, N'Lớp 4A');
 GO
 
 INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
-VALUES (01, N'1', 'a', 0);
+VALUES (03, N'1', 'a', 0);
 GO
 INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
 VALUES (02, N'1', 'caophankhai123@gmail.com', 0);
@@ -21,3 +21,4 @@ select * from ThongTinCB
 select * from Lophoc
 select * from DeThi
 select * from BaiLam
+delete BaiLam where MaSV = 'MH03'

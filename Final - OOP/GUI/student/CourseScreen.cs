@@ -28,7 +28,7 @@ namespace Final___OOP
             InitializeComponent();
 
             this.baiThiInfo = baiThiInfo;
-            this.startTime = DateTime.Now; // Ghi nhận thời điểm bắt đầu làm bài
+            this.startTime = DateTime.Now; 
             baiThiBUS = new BaiThiBUS();
        
 
@@ -76,7 +76,6 @@ namespace Final___OOP
             if (clickedButton != null)
             {
                  selectQuestion = clickedButton.Tag.ToString();
-                // Sử dụng đối tượng baiThiBUS để lấy thông tin chi tiết về câu hỏi
                 List<CauHoi> cauHois = baiThiBUS.GetMaCauHoiBaiLamBUS(selectQuestion);
 
                 if (cauHois.Count > 0)
@@ -97,47 +96,33 @@ namespace Final___OOP
                         else if (selectedAnswers[selectQuestion] == "D")
                             rbDapAn_D.Checked = true;
                     }
+                    else
+                    {
+                        rbDapAn_A.Checked = false;
+                        rbDapAn_B.Checked = false;
+                        rbDapAn_C.Checked = false;
+                        rbDapAn_D.Checked = false;
+                    }
                 }
             }
         }
-
         
         private void timeThoiGianLamBai_Tick(object sender, EventArgs e)
         {
             TimeSpan remainingTime = baiThiInfo.TGLamBai - (DateTime.Now - startTime);
 
-            // Hiển thị thời gian còn lại dưới dạng mm:ss
             string formattedTime = $"{(int)remainingTime.TotalMinutes:D2}:{remainingTime.Seconds:D2}";
             lbThoiGianLamBai.Text = $"Thời gian còn lại: {formattedTime}";
 
-            // Kiểm tra nếu thời gian làm bài còn lại hết
             if (remainingTime <= TimeSpan.Zero)
             {
-                timer.Stop(); // Dừng Timer khi thời gian làm bài hết
+                timer.Stop(); 
                 lbThoiGianLamBai.Text = "Hết thời gian làm bài";
                 btnNopBai.PerformClick();
             }
         }
 
-        private void rbDapAn_A_Click(object sender, EventArgs e)
-        {
-            UpdateSelectedAnswer(sender, "A");
-        }
-
-        private void rbDapAn_B_Click(object sender, EventArgs e)
-        {
-            UpdateSelectedAnswer(sender, "B");
-        }
-
-        private void rbDapAn_C_Click(object sender, EventArgs e)
-        {
-            UpdateSelectedAnswer(sender, "C");
-        }
-
-        private void rbDapAn_D_Click(object sender, EventArgs e)
-        {
-            UpdateSelectedAnswer(sender, "D");
-        }
+        
 
         private void UpdateSelectedAnswer(object sender, string answer)
         {
@@ -149,18 +134,6 @@ namespace Final___OOP
 
             }
         }
-        
-
-        private void CourseScreen_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void CourseScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void rbDapAn_A_CheckedChanged(object sender, EventArgs e)
         {
             UpdateSelectedAnswer(sender, "A");
@@ -180,5 +153,14 @@ namespace Final___OOP
         {
             UpdateSelectedAnswer(sender, "D");
         }
+        private void CourseScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void CourseScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
     }
 }

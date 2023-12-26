@@ -21,5 +21,21 @@ namespace Final___OOP.DAO
 
             return query.ToList();
         }
+        public List<DeThi> GetDeThiDaLamTheoMaSVDAO(string maSV)
+        {
+            var query = DbContext.BaiLams
+                .Where(bl => bl.MaSV == maSV && bl.TrangThai == true)  
+                .Select(bl => bl.DeThi)
+                .Distinct();
+
+            return query.ToList();
+        }
+        public List<BaiLam> getBaiLamDAO(string maHS, string maBaiThi)
+        {
+            var query = DbContext.BaiLams.Where(bl => bl.MaBaiLam == maBaiThi && bl.MaSV == maHS).ToList();
+
+            return query.ToList();
+        }
+
     }
 }
