@@ -137,7 +137,7 @@ namespace Final___OOP
             this.blank.Controls.Add(this.pictureBox1);
             this.blank.Location = new System.Drawing.Point(4, 4);
             this.blank.Name = "blank";
-            this.blank.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.blank.Padding = new System.Windows.Forms.Padding(3);
             this.blank.Size = new System.Drawing.Size(1103, 711);
             this.blank.TabIndex = 7;
             this.blank.Text = "blank";
@@ -160,7 +160,7 @@ namespace Final___OOP
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1103, 711);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tra cứu điểm";
@@ -400,18 +400,18 @@ namespace Final___OOP
             // flpCauHoi
             // 
             this.flpCauHoi.Location = new System.Drawing.Point(6, 20);
-            this.flpCauHoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCauHoi.Margin = new System.Windows.Forms.Padding(2);
             this.flpCauHoi.Name = "flpCauHoi";
             this.flpCauHoi.Size = new System.Drawing.Size(481, 426);
             this.flpCauHoi.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbBaiThi_TraCuu);
+            this.groupBox2.Controls.Add(this.bunifuLabel9);
             this.groupBox2.Controls.Add(this.bunifuLabel1);
+            this.groupBox2.Controls.Add(this.cbBaiThi_TraCuu);
             this.groupBox2.Controls.Add(this.cbMH_TraCuu);
             this.groupBox2.Controls.Add(this.btnTraCuu);
-            this.groupBox2.Controls.Add(this.bunifuLabel9);
             this.groupBox2.Location = new System.Drawing.Point(6, 7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1091, 79);
@@ -465,11 +465,11 @@ namespace Final___OOP
             this.bunifuLabel1.AllowParentOverrides = false;
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel1.Location = new System.Drawing.Point(339, 25);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(38, 17);
+            this.bunifuLabel1.Size = new System.Drawing.Size(36, 15);
             this.bunifuLabel1.TabIndex = 56;
             this.bunifuLabel1.Text = "Bài thi:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -612,11 +612,11 @@ namespace Final___OOP
             this.bunifuLabel9.AllowParentOverrides = false;
             this.bunifuLabel9.AutoEllipsis = false;
             this.bunifuLabel9.CursorType = null;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel9.Location = new System.Drawing.Point(14, 25);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(30, 17);
+            this.bunifuLabel9.Size = new System.Drawing.Size(28, 15);
             this.bunifuLabel9.TabIndex = 50;
             this.bunifuLabel9.Text = "Môn:";
             this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -629,7 +629,7 @@ namespace Final___OOP
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1103, 711);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Thi";
@@ -748,7 +748,7 @@ namespace Final___OOP
             this.lbGhiChu.Location = new System.Drawing.Point(14, 85);
             this.lbGhiChu.Name = "lbGhiChu";
             this.lbGhiChu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbGhiChu.Size = new System.Drawing.Size(46, 17);
+            this.lbGhiChu.Size = new System.Drawing.Size(359, 133);
             this.lbGhiChu.TabIndex = 66;
             this.lbGhiChu.Text = "Ghi chú:";
             this.lbGhiChu.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -763,7 +763,7 @@ namespace Final___OOP
             this.lbThoiGianLamBai_THi.Location = new System.Drawing.Point(13, 62);
             this.lbThoiGianLamBai_THi.Name = "lbThoiGianLamBai_THi";
             this.lbThoiGianLamBai_THi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbThoiGianLamBai_THi.Size = new System.Drawing.Size(104, 17);
+            this.lbThoiGianLamBai_THi.Size = new System.Drawing.Size(782, 133);
             this.lbThoiGianLamBai_THi.TabIndex = 61;
             this.lbThoiGianLamBai_THi.Text = "Thời gian làm bài:";
             this.lbThoiGianLamBai_THi.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -778,7 +778,7 @@ namespace Final___OOP
             this.lbSLCauHoi_THI.Location = new System.Drawing.Point(13, 39);
             this.lbSLCauHoi_THI.Name = "lbSLCauHoi_THI";
             this.lbSLCauHoi_THI.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbSLCauHoi_THI.Size = new System.Drawing.Size(102, 17);
+            this.lbSLCauHoi_THI.Size = new System.Drawing.Size(768, 133);
             this.lbSLCauHoi_THI.TabIndex = 60;
             this.lbSLCauHoi_THI.Text = "Số lượng câu hỏi:";
             this.lbSLCauHoi_THI.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -793,7 +793,7 @@ namespace Final___OOP
             this.lbDeThi_THI.Location = new System.Drawing.Point(13, 20);
             this.lbDeThi_THI.Name = "lbDeThi_THI";
             this.lbDeThi_THI.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbDeThi_THI.Size = new System.Drawing.Size(38, 17);
+            this.lbDeThi_THI.Size = new System.Drawing.Size(296, 133);
             this.lbDeThi_THI.TabIndex = 58;
             this.lbDeThi_THI.Text = "Bài thi:";
             this.lbDeThi_THI.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -871,7 +871,7 @@ namespace Final___OOP
             this.bunifuLabel7.Location = new System.Drawing.Point(339, 25);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(38, 17);
+            this.bunifuLabel7.Size = new System.Drawing.Size(296, 133);
             this.bunifuLabel7.TabIndex = 56;
             this.bunifuLabel7.Text = "Bài thi:";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1018,7 +1018,7 @@ namespace Final___OOP
             this.bunifuLabel8.Location = new System.Drawing.Point(14, 25);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(30, 17);
+            this.bunifuLabel8.Size = new System.Drawing.Size(228, 133);
             this.bunifuLabel8.TabIndex = 50;
             this.bunifuLabel8.Text = "Môn:";
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
