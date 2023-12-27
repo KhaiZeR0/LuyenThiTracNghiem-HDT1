@@ -64,37 +64,29 @@ namespace Final___OOP
             if (cbDeThi_THI.SelectedItem != null)
             {
                 string maHS = Session.Instance.MaTK;
-                string maBaiThi = cbBaiThi_TraCuu.SelectedValue.ToString();
+                string maDeThi = cbDeThi_THI.SelectedValue.ToString();
 
-                List<BaiLam> lsbailam = thongTinThiCuBUS.getBaiLam(maHS, maBaiThi);
-                List<DeThi> DeThiList = getDeThiBUS.GetAllDeThi();
-
-                DeThi deThi = DeThiList.Find(d => d.MaDeThi == maBaiThi);
-                if (deThi != null)
+                List<BaiLam> baiLam = thongTinThiCuBUS.getBaiLam(maHS, maDeThi);
+                if (baiLam != null && baiLam.Any(bl => bl.TrangThai == true)) // giả sử TrangThai là thuộc tính kiểu bool
                 {
-                    // Kiểm tra xem bài làm đã được hoàn thành chưa
-                    if (lsbailam[0].TrangThai)
-                    {
-                        MessageBox.Show("Bạn đã hoàn thành bài thi này. Bạn không thể làm lại bài thi.");
-                        return;
-                    }
-
-                    string cauHoiDeThi = deThi.NoiDungDeThi;
-                    LoadBtnCauHoi_TraCuu(lsbailam, cauHoiDeThi);
-
-                    BaiThiInfoDTO baiThiInfo = new BaiThiInfoDTO();
-                    baiThiInfo.MaDeThi = deThi.MaDeThi;
-                    baiThiInfo.TGLamBai = deThi.TGLamBai;
-                    baiThiInfo.SoLuongCau = deThi.SoLuongCau;
-                    baiThiInfo.MaCauHoi = deThi.NoiDungDeThi;
-
-                    CourseScreen courseScreen = new CourseScreen(baiThiInfo);
-                    courseScreen.Show();
+                    MessageBox.Show("Bạn đã hoàn thành bài thi này. Bạn không thể làm lại bài thi.");
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn một đề thi trước khi bắt đầu thi.");
-                }
+
+
+                BaiThiInfoDTO baiThiInfo = new BaiThiInfoDTO();
+                DeThi selectedDeThi = (DeThi)cbDeThi_THI.SelectedItem;
+                baiThiInfo.MaDeThi = selectedDeThi.MaDeThi;
+                baiThiInfo.TGLamBai = selectedDeThi.TGLamBai;
+                baiThiInfo.SoLuongCau = selectedDeThi.SoLuongCau;
+                baiThiInfo.MaCauHoi = selectedDeThi.NoiDungDeThi;
+
+                CourseScreen courseScreen = new CourseScreen(baiThiInfo);
+                courseScreen.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đề thi trước khi bắt đầu thi.");
             }
         }
 
@@ -164,46 +156,37 @@ namespace Final___OOP
                 string cauHoiDeThi = deThi.NoiDungDeThi;
                 LoadBtnCauHoi_TraCuu(lsbailam, cauHoiDeThi);
 
-                // Khởi tạo số câu đúng và điểm
                 int soCauDung = 0;
                 double diem = 0;
 
-                // Tính tổng số câu hỏi trong đề
                 int tongSoCauHoi = cauHoiDeThi.Split('|').Length;
 
-                // Tính điểm cho mỗi câu hỏi
                 double diemMoiCau = 10.0 / tongSoCauHoi;
 
-                // Tách chuỗi DapAnDaChon
                 string[] dapAnDaChonArray = lsbailam[0].DapAnDaChon.Split('|');
 
                 foreach (string dapAnDaChon in dapAnDaChonArray)
                 {
-                    // Loại bỏ dấu ngoặc vuông và tách chuỗi để lấy mã câu hỏi và đáp án đã chọn
                     string[] parts = dapAnDaChon.Trim('[', ']').Split(',');
                     string maCauHoi = parts[0].Trim();
                     string dapAn = parts[1].Trim();
 
-                    // Lấy câu hỏi từ cơ sở dữ liệu
                     List<CauHoi> cauHois = getBaiThiBUS.GetMaCauHoiBaiLamBUS(maCauHoi);
 
                     if (cauHois.Count > 0)
                     {
                         CauHoi cauHoi = cauHois[0];
 
-                        // Kiểm tra xem câu trả lời đã chọn có đúng không
                         if (dapAn == cauHoi.DapAnDung)
                         {
-                            // Tăng số câu đúng và điểm
                             soCauDung++;
                             diem += diemMoiCau;
                         }
                     }
                 }
 
-                // Cập nhật số câu đúng và điểm
                 lbSoCauDung.Text = $"Số câu đúng: {soCauDung}/{tongSoCauHoi}";
-                lbDiem.Text = $"Điểm: {Math.Round(diem, 2)}"; // Làm tròn điểm đến 2 chữ số thập phân
+                lbDiem.Text = $"Điểm: {Math.Round(diem, 2)}"; 
             }
             else
             {

@@ -21,6 +21,7 @@ namespace Final___OOP.DAO
                 MaBaiLam = maDeThi,
                 MaSV = maHS,
                 DapAnDaChon = dapAnDaChon,
+                TrangThai = true
             };
             DbContext.BaiLams.Add(newBaiLam);
             DbContext.SaveChanges();
