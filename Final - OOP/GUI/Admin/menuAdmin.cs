@@ -21,7 +21,7 @@ namespace Final___OOP
             giangVienBUS = new GiangVienBUS();
             getChungBUS = new GetChungBUS();
             
-            //QL sinh viên
+            //QL học sinh
             GetAllSV();
             LoadDataCB();
 
@@ -53,7 +53,7 @@ namespace Final___OOP
 
         private void doitenDGV()
         {
-            //Khu vực Quản lý SV
+            //Khu vực Quản lý học sinh
             dtgvSinhVien.Columns["MaSV"].HeaderText = "Mã học sinh";
             dtgvSinhVien.Columns["HoTen"].HeaderText = "Họ và tên";
             dtgvSinhVien.Columns["GioiTinh"].HeaderText = "Giới tính";
@@ -62,7 +62,7 @@ namespace Final___OOP
             dtgvSinhVien.Columns["TenLop"].HeaderText = "Lớp";
 
 
-            //Khu vực Quản lý GV
+            //Khu vực Quản lý Giáo viên
             dtgvGiangVien.Columns["MaGV"].HeaderText = "Mã giáo viên";
             dtgvGiangVien.Columns["HoTen"].HeaderText = "Họ và tên";
             dtgvGiangVien.Columns["GioiTinh"].HeaderText = "Giới tính";
@@ -82,8 +82,8 @@ namespace Final___OOP
 
 
 
-        //Quản lý sinh viên
-        //Chức năng thêm sinh viên mới
+        //Quản lý học sinh
+        //Chức năng thêm học sinh mới
         private void btnThemSV_Click(object sender, EventArgs e)
         {
             try
@@ -119,9 +119,9 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi thêm sinh viên: " + ex.Message);
             }
         }
-        
-        
-        //Chức năng sửa thông tin sinh viên
+
+
+        //Chức năng sửa thông tin học sinh
         private void btnSuaSV_Click(object sender, EventArgs e)
         {
             try
@@ -152,7 +152,7 @@ namespace Final___OOP
 
         }
 
-        //Chức năng xóa thông tin sinh viên
+        //Chức năng xóa thông tin học sinh
         private void btnXoaSV_Click(object sender, EventArgs e)
         {
             try
@@ -181,9 +181,9 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi xóa sinh viên: " + ex.Message);
             }
         }
-        
-        
-        //Load danh sách lớp vào combobox ở quản lý sinh  viên
+
+
+        //Load danh sách lớp vào combobox ở quản lý học sinh
         void LoadDataCB()
         {
             var lsLopHoc = getChungBUS.GetAllLopHoc();
@@ -211,8 +211,8 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi tải danh sách sinh viên: " + ex.Message);
             }
         }
-        
-        //clear dữ liệu đầu vào sau khi thực hiện xóa thông tin sinh viên
+
+        //clear dữ liệu đầu vào sau khi thực hiện xóa thông tinhọc sinh
         private void ClearInputs()
         {
             txtMaSV.Clear();

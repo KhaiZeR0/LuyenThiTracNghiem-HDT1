@@ -137,7 +137,7 @@ namespace Final___OOP
             this.blank.Controls.Add(this.pictureBox1);
             this.blank.Location = new System.Drawing.Point(4, 4);
             this.blank.Name = "blank";
-            this.blank.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.blank.Padding = new System.Windows.Forms.Padding(3);
             this.blank.Size = new System.Drawing.Size(1103, 711);
             this.blank.TabIndex = 7;
             this.blank.Text = "blank";
@@ -160,7 +160,7 @@ namespace Final___OOP
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1103, 711);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tra cứu điểm";
@@ -400,7 +400,7 @@ namespace Final___OOP
             // flpCauHoi
             // 
             this.flpCauHoi.Location = new System.Drawing.Point(6, 20);
-            this.flpCauHoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpCauHoi.Margin = new System.Windows.Forms.Padding(2);
             this.flpCauHoi.Name = "flpCauHoi";
             this.flpCauHoi.Size = new System.Drawing.Size(481, 426);
             this.flpCauHoi.TabIndex = 0;
@@ -629,7 +629,7 @@ namespace Final___OOP
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1103, 711);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Thi";
@@ -1215,7 +1215,7 @@ namespace Final___OOP
             this.Controls.Add(this.StudentPages);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuStudent";
-            this.Text = "Trang Chủ (Sinh Viên)";
+            this.Text = "Trang Chủ (Học Sinh)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuStudent_FormClosing);
             this.StudentPages.ResumeLayout(false);
             this.blank.ResumeLayout(false);
