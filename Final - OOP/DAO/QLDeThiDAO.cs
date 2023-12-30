@@ -13,7 +13,7 @@ namespace Final___OOP.DAO
     internal class QLDeThiDAO : ThiTracNghiemDAO
     {
 
-        public void ThemDeThiDAO(string maDeThi, string tenDeThi, TimeSpan thoiGianLamBai, string maMonHoc, string maLop, string maCauHoiString, int soLuongCauHoi)
+        public void ThemDeThiDAO(string maDeThi, string tenDeThi, TimeSpan thoiGianLamBai, string maMonHoc, string maLop, string maCauHoiString, int soLuongCauHoi, string MaCB)
         {
 
             try
@@ -26,7 +26,8 @@ namespace Final___OOP.DAO
                     MaMH = maMonHoc,
                     MaLop = maLop,
                     NoiDungDeThi = maCauHoiString,
-                    SoLuongCau = soLuongCauHoi
+                    SoLuongCau = soLuongCauHoi,
+                    MaCB = MaCB
                 };
 
                 DbContext.DeThis.Add(deThi);

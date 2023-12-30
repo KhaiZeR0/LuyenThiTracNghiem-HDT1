@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class BaiThiBUS
+    internal class BaiThiBUS : IDisposable
     {
         private BaiThiDAO baiThiDAO;
         public BaiThiBUS()
@@ -23,6 +23,10 @@ namespace Final___OOP.BUS
         public void AddBaiThiBUS(string maBaiLam, string maHS, string baiLam)
         {
             baiThiDAO.AddBaiLamHSDAO(maBaiLam, maHS, baiLam);
+        }
+        public void Dispose()
+        {
+            if (baiThiDAO != null) { baiThiDAO.Dispose(); }
         }
     }
 }

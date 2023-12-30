@@ -21,6 +21,10 @@ namespace Final___OOP.DAO
 
             return query.ToList();
         }
+        public List<DeThi> getDTtheoMaDeThiDAO(string maDT)
+        {
+            return DbContext.DeThis.Where(c => c.MaDeThi == maDT).ToList();
+        }
         public List<DeThi> GetDeThiDaLamTheoMaSVDAO(string maSV)
         {
             var query = DbContext.BaiLams

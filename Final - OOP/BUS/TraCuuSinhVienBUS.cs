@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Final___OOP.BUS
 {
-    public class TraCuuSinhVienBUS
+    public class TraCuuSinhVienBUS:IDisposable
     {
         private TraCuuSinhVienDAO traCuuSVDAO;
         public TraCuuSinhVienBUS()

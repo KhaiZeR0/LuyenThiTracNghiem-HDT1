@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    public class CauHoiBUS
+    public class CauHoiBUS : IDisposable
     {
         private CauHoiDAO cauHoiDAO;
 
@@ -36,6 +36,10 @@ namespace Final___OOP.BUS
         public void DeleteCauHoiBUS(string maMH)
         {
             cauHoiDAO.DeleteCauHoiDAO(maMH);
+        }
+        public void Dispose()
+        {
+            if (cauHoiDAO != null) { cauHoiDAO.Dispose(); }
         }
     }
 }

@@ -55,6 +55,7 @@ namespace Final___OOP.BUS
         public void Dispose()
         {
             if(giangVienDAO != null) { giangVienDAO.Dispose(); }
+            if(isValid != null) { isValid.Dispose(); }
         }
 
     }

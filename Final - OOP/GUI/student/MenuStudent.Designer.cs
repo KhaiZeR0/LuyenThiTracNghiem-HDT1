@@ -60,11 +60,11 @@ namespace Final___OOP
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flpCauHoi = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbBaiThi_TraCuu = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.cbBaiThi_TraCuu = new Bunifu.UI.WinForms.BunifuDropdown();
             this.cbMH_TraCuu = new Bunifu.UI.WinForms.BunifuDropdown();
             this.btnTraCuu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnThi_THI = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -103,7 +103,8 @@ namespace Final___OOP
             this.StudentPages.Controls.Add(this.blank);
             this.StudentPages.Controls.Add(this.tabPage3);
             this.StudentPages.Controls.Add(this.tabPage1);
-            this.StudentPages.Location = new System.Drawing.Point(141, -9);
+            this.StudentPages.Location = new System.Drawing.Point(188, -11);
+            this.StudentPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
             this.StudentPages.Page = this.tabPage3;
@@ -111,7 +112,7 @@ namespace Final___OOP
             this.StudentPages.PageName = "tabPage3";
             this.StudentPages.PageTitle = "Tra cứu điểm";
             this.StudentPages.SelectedIndex = 0;
-            this.StudentPages.Size = new System.Drawing.Size(1111, 737);
+            this.StudentPages.Size = new System.Drawing.Size(1481, 907);
             this.StudentPages.TabIndex = 4;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -136,18 +137,20 @@ namespace Final___OOP
             this.blank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(132)))));
             this.blank.Controls.Add(this.pictureBox1);
             this.blank.Location = new System.Drawing.Point(4, 4);
+            this.blank.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.blank.Name = "blank";
-            this.blank.Padding = new System.Windows.Forms.Padding(3);
-            this.blank.Size = new System.Drawing.Size(1103, 711);
+            this.blank.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.blank.Size = new System.Drawing.Size(1473, 878);
             this.blank.TabIndex = 7;
             this.blank.Text = "blank";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Final___OOP.Properties.Resources._9403541;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 74);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(817, 589);
+            this.pictureBox1.Size = new System.Drawing.Size(1089, 725);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -159,9 +162,10 @@ namespace Final___OOP
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1103, 711);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1473, 878);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tra cứu điểm";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -173,9 +177,11 @@ namespace Final___OOP
             this.groupBox6.Controls.Add(this.lbDapAnDung);
             this.groupBox6.Controls.Add(this.bunifuLabel3);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(598, 558);
+            this.groupBox6.Location = new System.Drawing.Point(797, 687);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(499, 133);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Size = new System.Drawing.Size(665, 164);
             this.groupBox6.TabIndex = 61;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Kết quả";
@@ -186,10 +192,11 @@ namespace Final___OOP
             this.lbDiem.AutoEllipsis = false;
             this.lbDiem.CursorType = null;
             this.lbDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbDiem.Location = new System.Drawing.Point(6, 63);
+            this.lbDiem.Location = new System.Drawing.Point(8, 78);
+            this.lbDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbDiem.Name = "lbDiem";
             this.lbDiem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbDiem.Size = new System.Drawing.Size(31, 15);
+            this.lbDiem.Size = new System.Drawing.Size(39, 20);
             this.lbDiem.TabIndex = 3;
             this.lbDiem.Text = "Điểm:";
             this.lbDiem.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -201,10 +208,11 @@ namespace Final___OOP
             this.lbSoCauDung.AutoEllipsis = false;
             this.lbSoCauDung.CursorType = null;
             this.lbSoCauDung.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbSoCauDung.Location = new System.Drawing.Point(6, 43);
+            this.lbSoCauDung.Location = new System.Drawing.Point(8, 53);
+            this.lbSoCauDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSoCauDung.Name = "lbSoCauDung";
             this.lbSoCauDung.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbSoCauDung.Size = new System.Drawing.Size(69, 15);
+            this.lbSoCauDung.Size = new System.Drawing.Size(85, 20);
             this.lbSoCauDung.TabIndex = 2;
             this.lbSoCauDung.Text = "Số câu đúng:";
             this.lbSoCauDung.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -216,10 +224,11 @@ namespace Final___OOP
             this.lbDapAnDung.AutoEllipsis = false;
             this.lbDapAnDung.CursorType = null;
             this.lbDapAnDung.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbDapAnDung.Location = new System.Drawing.Point(6, 21);
+            this.lbDapAnDung.Location = new System.Drawing.Point(8, 26);
+            this.lbDapAnDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbDapAnDung.Name = "lbDapAnDung";
             this.lbDapAnDung.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbDapAnDung.Size = new System.Drawing.Size(71, 15);
+            this.lbDapAnDung.Size = new System.Drawing.Size(89, 20);
             this.lbDapAnDung.TabIndex = 1;
             this.lbDapAnDung.Text = "Đáp án đúng:";
             this.lbDapAnDung.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -232,7 +241,8 @@ namespace Final___OOP
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(6, 21);
+            this.bunifuLabel3.Location = new System.Drawing.Point(8, 26);
+            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(0, 0);
@@ -244,9 +254,11 @@ namespace Final___OOP
             // 
             this.groupBox5.Controls.Add(this.groupBox4);
             this.groupBox5.Controls.Add(this.groupBox1);
-            this.groupBox5.Location = new System.Drawing.Point(7, 94);
+            this.groupBox5.Location = new System.Drawing.Point(9, 116);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(591, 599);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(788, 737);
             this.groupBox5.TabIndex = 61;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Nội dung câu hỏi";
@@ -255,12 +267,14 @@ namespace Final___OOP
             // 
             this.groupBox4.Controls.Add(this.lbCauHoi_TraCuu);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(13, 19);
+            this.groupBox4.Location = new System.Drawing.Point(17, 23);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(572, 287);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(763, 353);
             this.groupBox4.TabIndex = 58;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Câu 1";
+            this.groupBox4.Text = "Câu Hỏi";
             // 
             // lbCauHoi_TraCuu
             // 
@@ -269,11 +283,12 @@ namespace Final___OOP
             this.lbCauHoi_TraCuu.AutoSize = false;
             this.lbCauHoi_TraCuu.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbCauHoi_TraCuu.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lbCauHoi_TraCuu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCauHoi_TraCuu.Location = new System.Drawing.Point(9, 21);
+            this.lbCauHoi_TraCuu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCauHoi_TraCuu.Location = new System.Drawing.Point(8, 27);
+            this.lbCauHoi_TraCuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbCauHoi_TraCuu.Name = "lbCauHoi_TraCuu";
             this.lbCauHoi_TraCuu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbCauHoi_TraCuu.Size = new System.Drawing.Size(484, 144);
+            this.lbCauHoi_TraCuu.Size = new System.Drawing.Size(755, 200);
             this.lbCauHoi_TraCuu.TabIndex = 1;
             this.lbCauHoi_TraCuu.Text = "Câu hỏi ở đây\r\n";
             this.lbCauHoi_TraCuu.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -291,9 +306,11 @@ namespace Final___OOP
             this.groupBox1.Controls.Add(this.rbDapAn_A);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 313);
+            this.groupBox1.Location = new System.Drawing.Point(17, 385);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 281);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(763, 346);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Câu trả lời";
@@ -302,9 +319,10 @@ namespace Final___OOP
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 100);
+            this.label5.Location = new System.Drawing.Point(19, 123);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 16);
+            this.label5.Size = new System.Drawing.Size(25, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "C.";
             // 
@@ -312,9 +330,10 @@ namespace Final___OOP
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 130);
+            this.label6.Location = new System.Drawing.Point(19, 160);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 16);
+            this.label6.Size = new System.Drawing.Size(26, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "D.";
             // 
@@ -322,9 +341,10 @@ namespace Final___OOP
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 71);
+            this.label4.Location = new System.Drawing.Point(20, 87);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 16);
+            this.label4.Size = new System.Drawing.Size(25, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "B.";
             // 
@@ -332,9 +352,10 @@ namespace Final___OOP
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 41);
+            this.label3.Location = new System.Drawing.Point(20, 50);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 16);
+            this.label3.Size = new System.Drawing.Size(24, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "A.";
             // 
@@ -342,9 +363,10 @@ namespace Final___OOP
             // 
             this.rbDapAn_D.AutoSize = true;
             this.rbDapAn_D.Enabled = false;
-            this.rbDapAn_D.Location = new System.Drawing.Point(37, 128);
+            this.rbDapAn_D.Location = new System.Drawing.Point(49, 158);
+            this.rbDapAn_D.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbDapAn_D.Name = "rbDapAn_D";
-            this.rbDapAn_D.Size = new System.Drawing.Size(88, 22);
+            this.rbDapAn_D.Size = new System.Drawing.Size(109, 28);
             this.rbDapAn_D.TabIndex = 10;
             this.rbDapAn_D.TabStop = true;
             this.rbDapAn_D.Text = "Đáp án D";
@@ -354,9 +376,10 @@ namespace Final___OOP
             // 
             this.rbDapAn_C.AutoSize = true;
             this.rbDapAn_C.Enabled = false;
-            this.rbDapAn_C.Location = new System.Drawing.Point(37, 98);
+            this.rbDapAn_C.Location = new System.Drawing.Point(49, 121);
+            this.rbDapAn_C.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbDapAn_C.Name = "rbDapAn_C";
-            this.rbDapAn_C.Size = new System.Drawing.Size(88, 22);
+            this.rbDapAn_C.Size = new System.Drawing.Size(109, 28);
             this.rbDapAn_C.TabIndex = 8;
             this.rbDapAn_C.TabStop = true;
             this.rbDapAn_C.Text = "Đáp án C";
@@ -366,9 +389,10 @@ namespace Final___OOP
             // 
             this.rbDapAn_B.AutoSize = true;
             this.rbDapAn_B.Enabled = false;
-            this.rbDapAn_B.Location = new System.Drawing.Point(37, 69);
+            this.rbDapAn_B.Location = new System.Drawing.Point(49, 85);
+            this.rbDapAn_B.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbDapAn_B.Name = "rbDapAn_B";
-            this.rbDapAn_B.Size = new System.Drawing.Size(87, 22);
+            this.rbDapAn_B.Size = new System.Drawing.Size(108, 28);
             this.rbDapAn_B.TabIndex = 6;
             this.rbDapAn_B.TabStop = true;
             this.rbDapAn_B.Text = "Đáp án B";
@@ -378,9 +402,10 @@ namespace Final___OOP
             // 
             this.rbDapAn_A.AutoSize = true;
             this.rbDapAn_A.Enabled = false;
-            this.rbDapAn_A.Location = new System.Drawing.Point(37, 40);
+            this.rbDapAn_A.Location = new System.Drawing.Point(49, 49);
+            this.rbDapAn_A.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbDapAn_A.Name = "rbDapAn_A";
-            this.rbDapAn_A.Size = new System.Drawing.Size(86, 22);
+            this.rbDapAn_A.Size = new System.Drawing.Size(109, 28);
             this.rbDapAn_A.TabIndex = 5;
             this.rbDapAn_A.TabStop = true;
             this.rbDapAn_A.Text = "Đáp án A";
@@ -390,19 +415,21 @@ namespace Final___OOP
             // 
             this.groupBox3.Controls.Add(this.flpCauHoi);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(598, 94);
+            this.groupBox3.Location = new System.Drawing.Point(797, 116);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(499, 458);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(665, 564);
             this.groupBox3.TabIndex = 60;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Số câu";
             // 
             // flpCauHoi
             // 
-            this.flpCauHoi.Location = new System.Drawing.Point(6, 20);
-            this.flpCauHoi.Margin = new System.Windows.Forms.Padding(2);
+            this.flpCauHoi.Location = new System.Drawing.Point(8, 25);
+            this.flpCauHoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpCauHoi.Name = "flpCauHoi";
-            this.flpCauHoi.Size = new System.Drawing.Size(481, 426);
+            this.flpCauHoi.Size = new System.Drawing.Size(641, 524);
             this.flpCauHoi.TabIndex = 0;
             // 
             // groupBox2
@@ -412,11 +439,45 @@ namespace Final___OOP
             this.groupBox2.Controls.Add(this.cbBaiThi_TraCuu);
             this.groupBox2.Controls.Add(this.cbMH_TraCuu);
             this.groupBox2.Controls.Add(this.btnTraCuu);
-            this.groupBox2.Location = new System.Drawing.Point(6, 7);
+            this.groupBox2.Location = new System.Drawing.Point(8, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1091, 79);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1455, 97);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
+            // 
+            // bunifuLabel9
+            // 
+            this.bunifuLabel9.AllowParentOverrides = false;
+            this.bunifuLabel9.AutoEllipsis = false;
+            this.bunifuLabel9.CursorType = null;
+            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel9.Location = new System.Drawing.Point(19, 31);
+            this.bunifuLabel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel9.Name = "bunifuLabel9";
+            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel9.Size = new System.Drawing.Size(33, 20);
+            this.bunifuLabel9.TabIndex = 50;
+            this.bunifuLabel9.Text = "Môn:";
+            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.CursorType = null;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel1.Location = new System.Drawing.Point(452, 31);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(45, 20);
+            this.bunifuLabel1.TabIndex = 56;
+            this.bunifuLabel1.Text = "Bài thi:";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // cbBaiThi_TraCuu
             // 
@@ -452,28 +513,14 @@ namespace Final___OOP
             this.cbBaiThi_TraCuu.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cbBaiThi_TraCuu.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cbBaiThi_TraCuu.ItemTopMargin = 3;
-            this.cbBaiThi_TraCuu.Location = new System.Drawing.Point(382, 19);
+            this.cbBaiThi_TraCuu.Location = new System.Drawing.Point(509, 23);
+            this.cbBaiThi_TraCuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbBaiThi_TraCuu.Name = "cbBaiThi_TraCuu";
-            this.cbBaiThi_TraCuu.Size = new System.Drawing.Size(415, 32);
+            this.cbBaiThi_TraCuu.Size = new System.Drawing.Size(552, 32);
             this.cbBaiThi_TraCuu.TabIndex = 57;
             this.cbBaiThi_TraCuu.Text = null;
             this.cbBaiThi_TraCuu.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cbBaiThi_TraCuu.TextLeftMargin = 5;
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(339, 25);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(36, 15);
-            this.bunifuLabel1.TabIndex = 56;
-            this.bunifuLabel1.Text = "Bài thi:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // cbMH_TraCuu
             // 
@@ -509,9 +556,10 @@ namespace Final___OOP
             this.cbMH_TraCuu.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cbMH_TraCuu.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cbMH_TraCuu.ItemTopMargin = 3;
-            this.cbMH_TraCuu.Location = new System.Drawing.Point(50, 19);
+            this.cbMH_TraCuu.Location = new System.Drawing.Point(67, 23);
+            this.cbMH_TraCuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMH_TraCuu.Name = "cbMH_TraCuu";
-            this.cbMH_TraCuu.Size = new System.Drawing.Size(269, 32);
+            this.cbMH_TraCuu.Size = new System.Drawing.Size(357, 32);
             this.cbMH_TraCuu.TabIndex = 54;
             this.cbMH_TraCuu.Text = null;
             this.cbMH_TraCuu.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -564,7 +612,8 @@ namespace Final___OOP
             this.btnTraCuu.IdleIconLeftImage = null;
             this.btnTraCuu.IdleIconRightImage = null;
             this.btnTraCuu.IndicateFocus = false;
-            this.btnTraCuu.Location = new System.Drawing.Point(819, 19);
+            this.btnTraCuu.Location = new System.Drawing.Point(1092, 23);
+            this.btnTraCuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnTraCuu.OnDisabledState.BorderRadius = 1;
@@ -598,7 +647,7 @@ namespace Final___OOP
             this.btnTraCuu.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnTraCuu.OnPressedState.IconLeftImage = null;
             this.btnTraCuu.OnPressedState.IconRightImage = null;
-            this.btnTraCuu.Size = new System.Drawing.Size(96, 39);
+            this.btnTraCuu.Size = new System.Drawing.Size(128, 48);
             this.btnTraCuu.TabIndex = 47;
             this.btnTraCuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnTraCuu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -607,30 +656,16 @@ namespace Final___OOP
             this.btnTraCuu.UseDefaultRadiusAndThickness = true;
             this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 
-            // bunifuLabel9
-            // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.CursorType = null;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel9.Location = new System.Drawing.Point(14, 25);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(28, 15);
-            this.bunifuLabel9.TabIndex = 50;
-            this.bunifuLabel9.Text = "Môn:";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnThi_THI);
             this.tabPage1.Controls.Add(this.groupBox8);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1103, 711);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1473, 878);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Thi";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -682,7 +717,8 @@ namespace Final___OOP
             this.btnThi_THI.IdleIconLeftImage = null;
             this.btnThi_THI.IdleIconRightImage = null;
             this.btnThi_THI.IndicateFocus = false;
-            this.btnThi_THI.Location = new System.Drawing.Point(499, 649);
+            this.btnThi_THI.Location = new System.Drawing.Point(665, 799);
+            this.btnThi_THI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThi_THI.Name = "btnThi_THI";
             this.btnThi_THI.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThi_THI.OnDisabledState.BorderRadius = 1;
@@ -716,7 +752,7 @@ namespace Final___OOP
             this.btnThi_THI.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnThi_THI.OnPressedState.IconLeftImage = null;
             this.btnThi_THI.OnPressedState.IconRightImage = null;
-            this.btnThi_THI.Size = new System.Drawing.Size(96, 39);
+            this.btnThi_THI.Size = new System.Drawing.Size(128, 48);
             this.btnThi_THI.TabIndex = 58;
             this.btnThi_THI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThi_THI.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -732,9 +768,11 @@ namespace Final___OOP
             this.groupBox8.Controls.Add(this.lbSLCauHoi_THI);
             this.groupBox8.Controls.Add(this.lbDeThi_THI);
             this.groupBox8.Controls.Add(this.textBox1);
-            this.groupBox8.Location = new System.Drawing.Point(7, 94);
+            this.groupBox8.Location = new System.Drawing.Point(9, 116);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1090, 549);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Size = new System.Drawing.Size(1453, 676);
             this.groupBox8.TabIndex = 59;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Chi tiết bài thi:";
@@ -745,10 +783,11 @@ namespace Final___OOP
             this.lbGhiChu.AutoEllipsis = false;
             this.lbGhiChu.CursorType = null;
             this.lbGhiChu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGhiChu.Location = new System.Drawing.Point(14, 85);
+            this.lbGhiChu.Location = new System.Drawing.Point(19, 105);
+            this.lbGhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbGhiChu.Name = "lbGhiChu";
             this.lbGhiChu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbGhiChu.Size = new System.Drawing.Size(359, 133);
+            this.lbGhiChu.Size = new System.Drawing.Size(56, 21);
             this.lbGhiChu.TabIndex = 66;
             this.lbGhiChu.Text = "Ghi chú:";
             this.lbGhiChu.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -760,10 +799,11 @@ namespace Final___OOP
             this.lbThoiGianLamBai_THi.AutoEllipsis = false;
             this.lbThoiGianLamBai_THi.CursorType = null;
             this.lbThoiGianLamBai_THi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThoiGianLamBai_THi.Location = new System.Drawing.Point(13, 62);
+            this.lbThoiGianLamBai_THi.Location = new System.Drawing.Point(17, 76);
+            this.lbThoiGianLamBai_THi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbThoiGianLamBai_THi.Name = "lbThoiGianLamBai_THi";
             this.lbThoiGianLamBai_THi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbThoiGianLamBai_THi.Size = new System.Drawing.Size(782, 133);
+            this.lbThoiGianLamBai_THi.Size = new System.Drawing.Size(123, 21);
             this.lbThoiGianLamBai_THi.TabIndex = 61;
             this.lbThoiGianLamBai_THi.Text = "Thời gian làm bài:";
             this.lbThoiGianLamBai_THi.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -775,10 +815,11 @@ namespace Final___OOP
             this.lbSLCauHoi_THI.AutoEllipsis = false;
             this.lbSLCauHoi_THI.CursorType = null;
             this.lbSLCauHoi_THI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSLCauHoi_THI.Location = new System.Drawing.Point(13, 39);
+            this.lbSLCauHoi_THI.Location = new System.Drawing.Point(17, 48);
+            this.lbSLCauHoi_THI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSLCauHoi_THI.Name = "lbSLCauHoi_THI";
             this.lbSLCauHoi_THI.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbSLCauHoi_THI.Size = new System.Drawing.Size(768, 133);
+            this.lbSLCauHoi_THI.Size = new System.Drawing.Size(120, 21);
             this.lbSLCauHoi_THI.TabIndex = 60;
             this.lbSLCauHoi_THI.Text = "Số lượng câu hỏi:";
             this.lbSLCauHoi_THI.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -790,10 +831,11 @@ namespace Final___OOP
             this.lbDeThi_THI.AutoEllipsis = false;
             this.lbDeThi_THI.CursorType = null;
             this.lbDeThi_THI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDeThi_THI.Location = new System.Drawing.Point(13, 20);
+            this.lbDeThi_THI.Location = new System.Drawing.Point(17, 25);
+            this.lbDeThi_THI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbDeThi_THI.Name = "lbDeThi_THI";
             this.lbDeThi_THI.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbDeThi_THI.Size = new System.Drawing.Size(296, 133);
+            this.lbDeThi_THI.Size = new System.Drawing.Size(46, 21);
             this.lbDeThi_THI.TabIndex = 58;
             this.lbDeThi_THI.Text = "Bài thi:";
             this.lbDeThi_THI.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -801,10 +843,11 @@ namespace Final___OOP
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 109);
+            this.textBox1.Location = new System.Drawing.Point(19, 134);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1071, 419);
+            this.textBox1.Size = new System.Drawing.Size(1427, 515);
             this.textBox1.TabIndex = 67;
             // 
             // groupBox7
@@ -814,9 +857,11 @@ namespace Final___OOP
             this.groupBox7.Controls.Add(this.cbMH_THI);
             this.groupBox7.Controls.Add(this.btnFind_THI);
             this.groupBox7.Controls.Add(this.bunifuLabel8);
-            this.groupBox7.Location = new System.Drawing.Point(6, 7);
+            this.groupBox7.Location = new System.Drawing.Point(8, 9);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1091, 79);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Size = new System.Drawing.Size(1455, 97);
             this.groupBox7.TabIndex = 58;
             this.groupBox7.TabStop = false;
             // 
@@ -854,9 +899,10 @@ namespace Final___OOP
             this.cbDeThi_THI.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cbDeThi_THI.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cbDeThi_THI.ItemTopMargin = 3;
-            this.cbDeThi_THI.Location = new System.Drawing.Point(382, 19);
+            this.cbDeThi_THI.Location = new System.Drawing.Point(509, 23);
+            this.cbDeThi_THI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbDeThi_THI.Name = "cbDeThi_THI";
-            this.cbDeThi_THI.Size = new System.Drawing.Size(415, 32);
+            this.cbDeThi_THI.Size = new System.Drawing.Size(552, 32);
             this.cbDeThi_THI.TabIndex = 57;
             this.cbDeThi_THI.Text = null;
             this.cbDeThi_THI.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -868,10 +914,11 @@ namespace Final___OOP
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(339, 25);
+            this.bunifuLabel7.Location = new System.Drawing.Point(452, 31);
+            this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(296, 133);
+            this.bunifuLabel7.Size = new System.Drawing.Size(46, 21);
             this.bunifuLabel7.TabIndex = 56;
             this.bunifuLabel7.Text = "Bài thi:";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -911,9 +958,10 @@ namespace Final___OOP
             this.cbMH_THI.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cbMH_THI.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cbMH_THI.ItemTopMargin = 3;
-            this.cbMH_THI.Location = new System.Drawing.Point(50, 19);
+            this.cbMH_THI.Location = new System.Drawing.Point(67, 23);
+            this.cbMH_THI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMH_THI.Name = "cbMH_THI";
-            this.cbMH_THI.Size = new System.Drawing.Size(269, 32);
+            this.cbMH_THI.Size = new System.Drawing.Size(357, 32);
             this.cbMH_THI.TabIndex = 54;
             this.cbMH_THI.Text = null;
             this.cbMH_THI.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -966,7 +1014,8 @@ namespace Final___OOP
             this.btnFind_THI.IdleIconLeftImage = null;
             this.btnFind_THI.IdleIconRightImage = null;
             this.btnFind_THI.IndicateFocus = false;
-            this.btnFind_THI.Location = new System.Drawing.Point(819, 19);
+            this.btnFind_THI.Location = new System.Drawing.Point(1092, 23);
+            this.btnFind_THI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFind_THI.Name = "btnFind_THI";
             this.btnFind_THI.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnFind_THI.OnDisabledState.BorderRadius = 1;
@@ -1000,7 +1049,7 @@ namespace Final___OOP
             this.btnFind_THI.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnFind_THI.OnPressedState.IconLeftImage = null;
             this.btnFind_THI.OnPressedState.IconRightImage = null;
-            this.btnFind_THI.Size = new System.Drawing.Size(96, 39);
+            this.btnFind_THI.Size = new System.Drawing.Size(128, 48);
             this.btnFind_THI.TabIndex = 47;
             this.btnFind_THI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnFind_THI.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1015,10 +1064,11 @@ namespace Final___OOP
             this.bunifuLabel8.AutoEllipsis = false;
             this.bunifuLabel8.CursorType = null;
             this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel8.Location = new System.Drawing.Point(14, 25);
+            this.bunifuLabel8.Location = new System.Drawing.Point(19, 31);
+            this.bunifuLabel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(228, 133);
+            this.bunifuLabel8.Size = new System.Drawing.Size(35, 21);
             this.bunifuLabel8.TabIndex = 50;
             this.bunifuLabel8.Text = "Môn:";
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1071,7 +1121,8 @@ namespace Final___OOP
             this.btnketquapage.IdleIconLeftImage = null;
             this.btnketquapage.IdleIconRightImage = null;
             this.btnketquapage.IndicateFocus = false;
-            this.btnketquapage.Location = new System.Drawing.Point(1, 47);
+            this.btnketquapage.Location = new System.Drawing.Point(1, 58);
+            this.btnketquapage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnketquapage.Name = "btnketquapage";
             this.btnketquapage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnketquapage.OnDisabledState.BorderRadius = 1;
@@ -1105,7 +1156,7 @@ namespace Final___OOP
             this.btnketquapage.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnketquapage.OnPressedState.IconLeftImage = null;
             this.btnketquapage.OnPressedState.IconRightImage = null;
-            this.btnketquapage.Size = new System.Drawing.Size(138, 39);
+            this.btnketquapage.Size = new System.Drawing.Size(184, 48);
             this.btnketquapage.TabIndex = 6;
             this.btnketquapage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnketquapage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1162,6 +1213,7 @@ namespace Final___OOP
             this.btnthipage.IdleIconRightImage = null;
             this.btnthipage.IndicateFocus = false;
             this.btnthipage.Location = new System.Drawing.Point(1, 1);
+            this.btnthipage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnthipage.Name = "btnthipage";
             this.btnthipage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnthipage.OnDisabledState.BorderRadius = 1;
@@ -1195,7 +1247,7 @@ namespace Final___OOP
             this.btnthipage.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnthipage.OnPressedState.IconLeftImage = null;
             this.btnthipage.OnPressedState.IconRightImage = null;
-            this.btnthipage.Size = new System.Drawing.Size(138, 39);
+            this.btnthipage.Size = new System.Drawing.Size(184, 48);
             this.btnthipage.TabIndex = 5;
             this.btnthipage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnthipage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1206,14 +1258,15 @@ namespace Final___OOP
             // 
             // MenuStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1155, 687);
+            this.ClientSize = new System.Drawing.Size(1540, 846);
             this.Controls.Add(this.btnketquapage);
             this.Controls.Add(this.btnthipage);
             this.Controls.Add(this.StudentPages);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuStudent";
             this.Text = "Trang Chủ (Sinh Viên)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuStudent_FormClosing);

@@ -23,6 +23,8 @@ namespace Final___OOP
         private Timer timer;
         private string selectQuestion;
         Dictionary<string, string> selectedAnswers = new Dictionary<string, string>();
+        private bool isUserClickedButton = false;
+
         public CourseScreen(BaiThiInfoDTO baiThiInfo)
         {
             InitializeComponent();
@@ -41,15 +43,16 @@ namespace Final___OOP
             timer.Tick += timeThoiGianLamBai_Tick;
             timer.Start();
         }
+
         private void btnNopBai_Click(object sender, EventArgs e)
         {
+            isUserClickedButton = true;
             string maHS = Session.Instance.MaTK;
             string maBaiLam = baiThiInfo.MaDeThi;
             string BaiLam = string.Join("|", selectedAnswers);
             baiThiBUS.AddBaiThiBUS(maBaiLam, maHS, BaiLam);
             this.Close();
         }
-
         private void HienThiNutCauHoi()
         {
             flpCauHoi.Controls.Clear();
@@ -154,12 +157,16 @@ namespace Final___OOP
         {
 
         }
+        
         private void CourseScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (!isUserClickedButton)
             {
-                // Kích hoạt btnNopBai
-                btnNopBai.Enabled = true;
+                btnNopBai.PerformClick();
+            }
+            if (baiThiBUS != null)
+            {
+                baiThiBUS.Dispose();
             }
         }
 

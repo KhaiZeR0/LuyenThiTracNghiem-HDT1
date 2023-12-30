@@ -9,11 +9,9 @@ VALUES (04, N'Lớp 4A');
 GO
 
 INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
-VALUES (03, N'1', 'a', 0);
+VALUES (01, N'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 'caophankhai123@gmail.com', 0);
 GO
-INSERT INTO TaiKhoan(MaTK, MatKhau, Email , LoaiTK)
-VALUES (02, N'1', 'caophankhai123@gmail.com', 0);
-GO
+--pass 123
 select * from TaiKhoan
 select * from DanhSachLop
 select * from ThongTinSV
@@ -23,4 +21,4 @@ select * from DeThi
 select * from BaiLam
 select * from CauHoi
 
-delete BaiLam where MaSV = 'MH03'
+delete BaiLam where MaSV = 'SV001'

@@ -22,7 +22,14 @@ namespace Final___OOP
         private TraCuuSinhVienBUS traCuuSinhVienBUS;
         private GetChungBUS getChungBUS;
         private QLDeThiBUS qLDeThiBUS;
-
+        private void MenuTeacher_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(cauHoiBUS != null) { cauHoiBUS.Dispose(); }
+            if(dethiBUS != null) { dethiBUS.Dispose(); }
+            if(traCuuSinhVienBUS != null) { traCuuSinhVienBUS.Dispose(); }
+            if(getChungBUS != null) { getChungBUS.Dispose(); }
+            if(qLDeThiBUS != null) { qLDeThiBUS.Dispose(); }
+        }
         public MenuTeacher()
         {
             InitializeComponent();
@@ -76,7 +83,7 @@ namespace Final___OOP
             DGVQLDeThi.Columns["TenLop"].HeaderText = "Tên lớp";
             DGVQLDeThi.Columns["TenMH"].HeaderText = "Tên môn học";
         }
-            void LoadDataCB()
+        void LoadDataCB()
         {
             var lsMonHoc = getChungBUS.GetAllMonHoc();
 
@@ -166,24 +173,7 @@ namespace Final___OOP
             }
         }
 
-        private void LoadDataCauHoi()
-        {
-            try
-            {
-                List<CauHoi> danhSachCauHoi = cauHoiBUS.LayDanhSachCauHoiBUS();
-                gvCauHoi.DataSource = danhSachCauHoi;
-
-                // Kiểm tra nếu không có dòng nào được chọn
-                if (gvCauHoi.SelectedRows.Count == 0)
-                {
-                    ClearCauHoiInputs();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải danh sách câu hỏi: " + ex.Message);
-            }
-        }
+        
         private void ClearCauHoiInputs()
         {
             txtMaCauHoi.Clear();
@@ -192,6 +182,11 @@ namespace Final___OOP
             txtDapAnB.Clear();
             txtDapAnC.Clear();
             txtDapAnD.Clear();
+            rdA.Checked = false;
+            rdB.Checked = false;
+            rdC.Checked = false;
+            rdD.Checked = false;
+
         }
 
         private void ClearTraCuuDiemInputs()
@@ -331,6 +326,7 @@ namespace Final___OOP
             {
                 string maDeTHi = txtMDT_DeThi.Text;
                 string tenDeThi = txtTen_DeThi.Text;
+                string MaCB = Session.Instance.MaTK;
 
                 int thoiGianLamBai = Convert.ToInt32(txtThoiGianLamBai.Text);
 
@@ -353,7 +349,7 @@ namespace Final___OOP
                 string maCauHoiString = string.Join("|", maCauHoiList);
 
                 // Thêm đề thi mới vào cơ sở dữ liệu
-                qLDeThiBUS.ThemDeThiBUS(maDeTHi, tenDeThi, TGLamBai, maMH, maLop, maCauHoiString, soLuongCauHoi);
+                qLDeThiBUS.ThemDeThiBUS(maDeTHi, tenDeThi, TGLamBai, maMH, maLop, maCauHoiString, soLuongCauHoi, MaCB);
 
                 MessageBox.Show("Thêm đề thi thành công!");
                 LoadDanhSachDeThi();
@@ -443,31 +439,7 @@ namespace Final___OOP
                 }
             }
         }
-        private void dtgvCauHoiDeThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dtgvCauHoiDeThi.Rows[e.RowIndex];
-                string maCauHoi = selectedRow.Cells["MaCauHoi"].Value.ToString();
-                string noiDungCauHoi = selectedRow.Cells["NoiDungCauHoi"].Value.ToString();
-
-                DialogResult result = MessageBox.Show($"Bạn có muốn xóa câu hỏi:\n\n{noiDungCauHoi}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    var currentDataSource = (List<CauHoi_View>)dtgvCauHoiDeThi.DataSource;
-
-                    var cauHoiToRemove = currentDataSource.FirstOrDefault(ch => ch.MaCauHoi == maCauHoi);
-                    if (cauHoiToRemove != null)
-                    {
-                        currentDataSource.Remove(cauHoiToRemove);
-
-                        dtgvCauHoiDeThi.DataSource = null;
-                        dtgvCauHoiDeThi.DataSource = currentDataSource;
-                    }
-                }
-            }
-        }
+        
         //QL De Thi
 
         private void LoadDanhSachDeThi()
@@ -483,27 +455,7 @@ namespace Final___OOP
                 MessageBox.Show("Lỗi khi tải danh sách đề thi: " + ex.Message);
             }
         }
-        private void delDeThi_Click(object sender, EventArgs e)
-        {
-            if (DGVQLDeThi.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = DGVQLDeThi.SelectedRows[0];
-                string maDeThi = selectedRow.Cells["MaDeThi"].Value.ToString();
-
-                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa đề thi này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    qLDeThiBUS.XoaDeThiBUS(maDeThi);
-                    MessageBox.Show("Xóa đề thi thành công!");
-                    LoadDanhSachDeThi();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một đề thi để xóa.");
-            }
-        }
+        
 
         //TracuuDiem
         private void GetDiemSV(string maLopHoc, string maMH, string maDeThi, string maSV)
@@ -555,5 +507,32 @@ namespace Final___OOP
         {
             TeacherPages.PageIndex = 4;
         }
+
+        private void dtgvCauHoiDeThi_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvCauHoiDeThi.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dtgvCauHoiDeThi.SelectedRows[0];
+                string maCauHoi = selectedRow.Cells["MaCauHoi"].Value.ToString();
+                string noiDungCauHoi = selectedRow.Cells["NoiDungCauHoi"].Value.ToString();
+
+                DialogResult result = MessageBox.Show($"Bạn có muốn xóa câu hỏi:\n\n{noiDungCauHoi}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    var currentDataSource = (List<CauHoi_View>)dtgvCauHoiDeThi.DataSource;
+
+                    var cauHoiToRemove = currentDataSource.FirstOrDefault(ch => ch.MaCauHoi == maCauHoi);
+                    if (cauHoiToRemove != null)
+                    {
+                        currentDataSource.Remove(cauHoiToRemove);
+
+                        dtgvCauHoiDeThi.DataSource = null;
+                        dtgvCauHoiDeThi.DataSource = currentDataSource;
+                    }
+                }
+            }
+        }
+
     }
 }

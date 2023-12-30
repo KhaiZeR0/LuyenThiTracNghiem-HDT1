@@ -32,7 +32,7 @@ namespace Final___OOP.DAO
                 return builder.ToString();
             }
         }
-            public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
+        public void AddSinhVienDAO(string maSV, string hoTenSV, DateTime ngaySinhSV, string maLop, string diaChi, string email, bool gioiTinh)
         {
             var hashedPassword = GetSha256Hash(maSV);
             var newTaiKhoan = new TaiKhoan

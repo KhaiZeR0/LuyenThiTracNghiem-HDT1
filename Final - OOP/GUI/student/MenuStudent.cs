@@ -20,7 +20,14 @@ namespace Final___OOP
         private GetDSLopTuMaHSBUS getDSLopBUS;
         private GetDeThiBUS getDeThiBUS;
         private BaiThiBUS getBaiThiBUS;
-
+        private void MenuStudent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(getChungBUS != null) { getChungBUS.Dispose(); }
+            if(thongTinThiCuBUS != null) { thongTinThiCuBUS.Dispose(); }
+            if(getDSLopBUS != null) { getDSLopBUS.Dispose(); }
+            if(getDeThiBUS != null) { getDeThiBUS.Dispose(); }
+            if(getBaiThiBUS != null) { getBaiThiBUS.Dispose(); }
+        }
         public MenuStudent()
         {
             InitializeComponent();
@@ -39,13 +46,13 @@ namespace Final___OOP
         }
         private void btnFind_THI_Click(object sender, EventArgs e)
         {
-            string maMH = cbMH_THI.SelectedValue.ToString();
+            string maMH = cbDeThi_THI.SelectedValue.ToString();
 
-            var lsDeThi = thongTinThiCuBUS.GetDeThiTheoMH_MaLopBUS(maMH, null);
+            var lsDeThi = thongTinThiCuBUS.GetDTtheoMaDeThiBUS(maMH);
 
             if (lsDeThi.Any())
             {
-                DeThi firstDeThi = lsDeThi.First();
+                DeThi firstDeThi = lsDeThi.FirstOrDefault();
 
                 lbDeThi_THI.Text = $"Bài thi: {firstDeThi.TenDeThi}";
                 lbSLCauHoi_THI.Text = $"Số lượng câu hỏi: {firstDeThi.SoLuongCau} câu";
@@ -82,7 +89,7 @@ namespace Final___OOP
                 baiThiInfo.MaCauHoi = selectedDeThi.NoiDungDeThi;
 
                 CourseScreen courseScreen = new CourseScreen(baiThiInfo);
-                courseScreen.Show();
+                courseScreen.ShowDialog();
             }
             else
             {
@@ -186,7 +193,7 @@ namespace Final___OOP
                 }
 
                 lbSoCauDung.Text = $"Số câu đúng: {soCauDung}/{tongSoCauHoi}";
-                lbDiem.Text = $"Điểm: {Math.Round(diem, 2)}"; 
+                lbDiem.Text = $"Điểm: {Math.Round(diem, 2)}/10"; 
             }
             else
             {
@@ -234,14 +241,10 @@ namespace Final___OOP
                                 {
                                     CauHoi cauHoi = cauHois[0];
 
-                                    if (dapAnDaChon == cauHoi.DapAnDung)
-                                    {
+                                    if (dapAnDaChon == cauHoi.DapAnDung) 
                                         btnCauHoi.BackColor = Color.LightGreen; 
-                                    }
-                                    else if (dapAnDaChon != cauHoi.DapAnDung)
-                                    {
-                                        btnCauHoi.BackColor = Color.Red; 
-                                    }
+                                                                        
+                                    else btnCauHoi.BackColor = Color.Red;
                                 }
                                 break; 
                             }
@@ -336,6 +339,7 @@ namespace Final___OOP
         private void btnketquapage_Click(object sender, EventArgs e)
         {
             StudentPages.PageIndex = 1;
+            loadCBTraCuu();
         }
 
         private void btnthipage_Click(object sender, EventArgs e)
@@ -343,9 +347,6 @@ namespace Final___OOP
             StudentPages.PageIndex = 2;
         }
 
-        private void MenuStudent_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
+        
     }
 }

@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Final___OOP.BUS
 {
-    internal class QLDeThiBUS
+    internal class QLDeThiBUS : IDisposable
     {
         private QLDeThiDAO QLDeThiDAO;
         public QLDeThiBUS()
         {
             QLDeThiDAO = new QLDeThiDAO();
         }
-        public void ThemDeThiBUS(string maDeThi, string tenDeThi, TimeSpan thoiGianLamBai, string maMonHoc, string maLop, string maCauHoiString, int soLuong)
+        public void ThemDeThiBUS(string maDeThi, string tenDeThi, TimeSpan thoiGianLamBai, string maMonHoc, string maLop, string maCauHoiString, int soLuong, string MaCB)
         {
-            QLDeThiDAO.ThemDeThiDAO(maDeThi, tenDeThi, thoiGianLamBai, maMonHoc, maLop, maCauHoiString, soLuong);
+            QLDeThiDAO.ThemDeThiDAO(maDeThi, tenDeThi, thoiGianLamBai, maMonHoc, maLop, maCauHoiString, soLuong, MaCB);
         }
 
         public List<CauHoi_View> GetCauHoiByChuongBUS(string maChuong)

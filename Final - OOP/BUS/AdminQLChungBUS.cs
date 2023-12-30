@@ -13,6 +13,9 @@ namespace Final___OOP
         {
             adminQLChungDAO = new AdminQLChungDAO();
         }
+
+
+
         public void Dispose()
         {
             if (adminQLChungDAO != null) { adminQLChungDAO.Dispose(); }
