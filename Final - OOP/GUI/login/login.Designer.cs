@@ -95,7 +95,6 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(288, 35);
             this.txtemail.TabIndex = 1;
-            this.txtemail.Text = "SV001";
             // 
             // txtpass
             // 
@@ -106,7 +105,6 @@
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(288, 35);
             this.txtpass.TabIndex = 2;
-            this.txtpass.Text = "SV001";
             // 
             // linkForgot
             // 

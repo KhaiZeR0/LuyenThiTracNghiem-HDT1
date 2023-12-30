@@ -1,3 +1,15 @@
+﻿	
+--Ghi Chú:
+
+--Tên đăng nhập của admin: 1
+--pass: 123
+
+--Tên đăng nhập và password mặc định của tài khoản sinh viên = mã sinh viên (MaTK)
+
+--Tên đăng nhập và password mặc định của tài khoản giảng viên = mã giảng viên (MaTK)
+
+	
+	
 	USE master
 	GO
 
